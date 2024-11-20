@@ -1,0 +1,8094 @@
+[
+  {
+    "name": "Warframes",
+    "ungrouped": [
+      {
+        "name": "revenant prime",
+        "value": 5.14
+      },
+      {
+        "name": "wukong prime",
+        "value": 5.09
+      },
+      {
+        "name": "volt prime",
+        "value": 4.26
+      },
+      {
+        "name": "excalibur",
+        "value": 4.06
+      },
+      {
+        "name": "khora prime",
+        "value": 3.2
+      },
+      {
+        "name": "mesa prime",
+        "value": 3.12
+      },
+      {
+        "name": "volt",
+        "value": 3.07
+      },
+      {
+        "name": "wisp",
+        "value": 2.82
+      },
+      {
+        "name": "saryn prime",
+        "value": 2.74
+      },
+      {
+        "name": "excalibur umbra",
+        "value": 2.55
+      },
+      {
+        "name": "titania prime",
+        "value": 2.52
+      },
+      {
+        "name": "wisp prime",
+        "value": 2.38
+      },
+      {
+        "name": "gauss",
+        "value": 2.19
+      },
+      {
+        "name": "octavia prime",
+        "value": 2.18
+      },
+      {
+        "name": "rhino prime",
+        "value": 2.17
+      },
+      {
+        "name": "nekros prime",
+        "value": 2.17
+      },
+      {
+        "name": "garuda prime",
+        "value": 1.88
+      },
+      {
+        "name": "rhino",
+        "value": 1.75
+      },
+      {
+        "name": "wukong",
+        "value": 1.71
+      },
+      {
+        "name": "mirage prime",
+        "value": 1.47
+      },
+      {
+        "name": "xaku",
+        "value": 1.43
+      },
+      {
+        "name": "nezha prime",
+        "value": 1.41
+      },
+      {
+        "name": "nidus prime",
+        "value": 1.41
+      },
+      {
+        "name": "octavia",
+        "value": 1.38
+      },
+      {
+        "name": "hildryn prime",
+        "value": 1.37
+      },
+      {
+        "name": "ivara prime",
+        "value": 1.35
+      },
+      {
+        "name": "harrow prime",
+        "value": 1.32
+      },
+      {
+        "name": "mag",
+        "value": 1.26
+      },
+      {
+        "name": "protea",
+        "value": 1.16
+      },
+      {
+        "name": "styanax",
+        "value": 1.14
+      },
+      {
+        "name": "inaros prime",
+        "value": 1.11
+      },
+      {
+        "name": "kullervo",
+        "value": 1.07
+      },
+      {
+        "name": "mag prime",
+        "value": 1.05
+      },
+      {
+        "name": "loki prime",
+        "value": 1.05
+      },
+      {
+        "name": "ash prime",
+        "value": 1.02
+      },
+      {
+        "name": "baruuk prime",
+        "value": 1.01
+      },
+      {
+        "name": "nova prime",
+        "value": 1
+      },
+      {
+        "name": "voruna",
+        "value": 0.99
+      },
+      {
+        "name": "nekros",
+        "value": 0.97
+      },
+      {
+        "name": "gara prime",
+        "value": 0.87
+      },
+      {
+        "name": "citrine",
+        "value": 0.85
+      },
+      {
+        "name": "frost prime",
+        "value": 0.84
+      },
+      {
+        "name": "vauban prime",
+        "value": 0.81
+      },
+      {
+        "name": "chroma prime",
+        "value": 0.8
+      },
+      {
+        "name": "gyre",
+        "value": 0.78
+      },
+      {
+        "name": "zephyr prime",
+        "value": 0.7
+      },
+      {
+        "name": "trinity prime",
+        "value": 0.62
+      },
+      {
+        "name": "hydroid prime",
+        "value": 0.61
+      },
+      {
+        "name": "revenant",
+        "value": 0.55
+      },
+      {
+        "name": "ember prime",
+        "value": 0.54
+      },
+      {
+        "name": "lavos",
+        "value": 0.54
+      },
+      {
+        "name": "equinox prime",
+        "value": 0.54
+      },
+      {
+        "name": "yareli",
+        "value": 0.52
+      },
+      {
+        "name": "valkyr prime",
+        "value": 0.51
+      },
+      {
+        "name": "vauban",
+        "value": 0.5
+      },
+      {
+        "name": "limbo prime",
+        "value": 0.5
+      },
+      {
+        "name": "ember",
+        "value": 0.49
+      },
+      {
+        "name": "oberon prime",
+        "value": 0.49
+      },
+      {
+        "name": "dagath",
+        "value": 0.46
+      },
+      {
+        "name": "khora",
+        "value": 0.41
+      },
+      {
+        "name": "sevagoth",
+        "value": 0.41
+      },
+      {
+        "name": "limbo",
+        "value": 0.37
+      },
+      {
+        "name": "hildryn",
+        "value": 0.37
+      },
+      {
+        "name": "saryn",
+        "value": 0.36
+      },
+      {
+        "name": "nezha",
+        "value": 0.36
+      },
+      {
+        "name": "nidus",
+        "value": 0.35
+      },
+      {
+        "name": "atlas prime",
+        "value": 0.34
+      },
+      {
+        "name": "zephyr",
+        "value": 0.34
+      },
+      {
+        "name": "frost",
+        "value": 0.34
+      },
+      {
+        "name": "loki",
+        "value": 0.32
+      },
+      {
+        "name": "titania",
+        "value": 0.31
+      },
+      {
+        "name": "grendel",
+        "value": 0.3
+      },
+      {
+        "name": "mirage",
+        "value": 0.29
+      },
+      {
+        "name": "gara",
+        "value": 0.27
+      },
+      {
+        "name": "banshee prime",
+        "value": 0.27
+      },
+      {
+        "name": "nyx prime",
+        "value": 0.25
+      },
+      {
+        "name": "valkyr",
+        "value": 0.23
+      },
+      {
+        "name": "mesa",
+        "value": 0.21
+      },
+      {
+        "name": "inaros",
+        "value": 0.19
+      },
+      {
+        "name": "hydroid",
+        "value": 0.19
+      },
+      {
+        "name": "ivara",
+        "value": 0.18
+      },
+      {
+        "name": "garuda",
+        "value": 0.16
+      },
+      {
+        "name": "caliban",
+        "value": 0.16
+      },
+      {
+        "name": "oberon",
+        "value": 0.15
+      },
+      {
+        "name": "grendel prime",
+        "value": 0.14
+      },
+      {
+        "name": "qorvex",
+        "value": 0.13
+      },
+      {
+        "name": "nyx",
+        "value": 0.13
+      },
+      {
+        "name": "ash",
+        "value": 0.13
+      },
+      {
+        "name": "baruuk",
+        "value": 0.12
+      },
+      {
+        "name": "nova",
+        "value": 0.12
+      },
+      {
+        "name": "banshee",
+        "value": 0.11
+      },
+      {
+        "name": "harrow",
+        "value": 0.11
+      },
+      {
+        "name": "chroma",
+        "value": 0.1
+      },
+      {
+        "name": "equinox",
+        "value": 0.08
+      },
+      {
+        "name": "trinity",
+        "value": 0.07
+      },
+      {
+        "name": "atlas",
+        "value": 0.06
+      },
+      {
+        "name": "excalibur prime",
+        "value": 0.03
+      },
+      {
+        "name": "stalker",
+        "value": 0
+      }
+    ],
+    "grouped": [
+      {
+        "name": "volt",
+        "variants": [
+          {
+            "name": "none",
+            "value": 3.07,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 4.26,
+            "order": 3
+          }
+        ],
+        "value": 7.33
+      },
+      {
+        "name": "wukong",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.71,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 5.09,
+            "order": 3
+          }
+        ],
+        "value": 6.8
+      },
+      {
+        "name": "excalibur",
+        "variants": [
+          {
+            "name": "none",
+            "value": 4.06,
+            "order": 0
+          },
+          {
+            "name": "umbra",
+            "value": 2.55,
+            "order": 2
+          },
+          {
+            "name": "prime",
+            "value": 0.03,
+            "order": 3
+          }
+        ],
+        "value": 6.64
+      },
+      {
+        "name": "revenant",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.55,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 5.14,
+            "order": 3
+          }
+        ],
+        "value": 5.69
+      },
+      {
+        "name": "wisp",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.82,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.38,
+            "order": 3
+          }
+        ],
+        "value": 5.2
+      },
+      {
+        "name": "rhino",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.75,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.17,
+            "order": 3
+          }
+        ],
+        "value": 3.92
+      },
+      {
+        "name": "khora",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.41,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 3.2,
+            "order": 3
+          }
+        ],
+        "value": 3.61
+      },
+      {
+        "name": "octavia",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.38,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.18,
+            "order": 3
+          }
+        ],
+        "value": 3.56
+      },
+      {
+        "name": "mesa",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.21,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 3.12,
+            "order": 3
+          }
+        ],
+        "value": 3.33
+      },
+      {
+        "name": "nekros",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.97,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.17,
+            "order": 3
+          }
+        ],
+        "value": 3.14
+      },
+      {
+        "name": "saryn",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.36,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.74,
+            "order": 3
+          }
+        ],
+        "value": 3.1
+      },
+      {
+        "name": "titania",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.31,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.52,
+            "order": 3
+          }
+        ],
+        "value": 2.83
+      },
+      {
+        "name": "mag",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.26,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.05,
+            "order": 3
+          }
+        ],
+        "value": 2.31
+      },
+      {
+        "name": "gauss",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.19,
+            "order": 0
+          }
+        ],
+        "value": 2.19
+      },
+      {
+        "name": "garuda",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.88,
+            "order": 3
+          }
+        ],
+        "value": 2.04
+      },
+      {
+        "name": "nezha",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.36,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.41,
+            "order": 3
+          }
+        ],
+        "value": 1.77
+      },
+      {
+        "name": "mirage",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.29,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.47,
+            "order": 3
+          }
+        ],
+        "value": 1.76
+      },
+      {
+        "name": "nidus",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.35,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.41,
+            "order": 3
+          }
+        ],
+        "value": 1.76
+      },
+      {
+        "name": "hildryn",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.37,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.37,
+            "order": 3
+          }
+        ],
+        "value": 1.74
+      },
+      {
+        "name": "ivara",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.35,
+            "order": 3
+          }
+        ],
+        "value": 1.53
+      },
+      {
+        "name": "xaku",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.43,
+            "order": 0
+          }
+        ],
+        "value": 1.43
+      },
+      {
+        "name": "harrow",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.32,
+            "order": 3
+          }
+        ],
+        "value": 1.43
+      },
+      {
+        "name": "loki",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.32,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.05,
+            "order": 3
+          }
+        ],
+        "value": 1.37
+      },
+      {
+        "name": "vauban",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.5,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.81,
+            "order": 3
+          }
+        ],
+        "value": 1.31
+      },
+      {
+        "name": "inaros",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.11,
+            "order": 3
+          }
+        ],
+        "value": 1.3
+      },
+      {
+        "name": "frost",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.34,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.84,
+            "order": 3
+          }
+        ],
+        "value": 1.18
+      },
+      {
+        "name": "protea",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.16,
+            "order": 0
+          }
+        ],
+        "value": 1.16
+      },
+      {
+        "name": "ash",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.02,
+            "order": 3
+          }
+        ],
+        "value": 1.15
+      },
+      {
+        "name": "styanax",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.14,
+            "order": 0
+          }
+        ],
+        "value": 1.14
+      },
+      {
+        "name": "gara",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.87,
+            "order": 3
+          }
+        ],
+        "value": 1.14
+      },
+      {
+        "name": "baruuk",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.01,
+            "order": 3
+          }
+        ],
+        "value": 1.13
+      },
+      {
+        "name": "nova",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1,
+            "order": 3
+          }
+        ],
+        "value": 1.12
+      },
+      {
+        "name": "kullervo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.07,
+            "order": 0
+          }
+        ],
+        "value": 1.07
+      },
+      {
+        "name": "zephyr",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.34,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.7,
+            "order": 3
+          }
+        ],
+        "value": 1.04
+      },
+      {
+        "name": "ember",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.49,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.54,
+            "order": 3
+          }
+        ],
+        "value": 1.03
+      },
+      {
+        "name": "voruna",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.99,
+            "order": 0
+          }
+        ],
+        "value": 0.99
+      },
+      {
+        "name": "chroma",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.8,
+            "order": 3
+          }
+        ],
+        "value": 0.9
+      },
+      {
+        "name": "limbo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.37,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.5,
+            "order": 3
+          }
+        ],
+        "value": 0.87
+      },
+      {
+        "name": "citrine",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.85,
+            "order": 0
+          }
+        ],
+        "value": 0.85
+      },
+      {
+        "name": "hydroid",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.61,
+            "order": 3
+          }
+        ],
+        "value": 0.8
+      },
+      {
+        "name": "gyre",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.78,
+            "order": 0
+          }
+        ],
+        "value": 0.78
+      },
+      {
+        "name": "valkyr",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.23,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.51,
+            "order": 3
+          }
+        ],
+        "value": 0.74
+      },
+      {
+        "name": "trinity",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.62,
+            "order": 3
+          }
+        ],
+        "value": 0.69
+      },
+      {
+        "name": "oberon",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.49,
+            "order": 3
+          }
+        ],
+        "value": 0.64
+      },
+      {
+        "name": "equinox",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.08,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.54,
+            "order": 3
+          }
+        ],
+        "value": 0.62
+      },
+      {
+        "name": "lavos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.54,
+            "order": 0
+          }
+        ],
+        "value": 0.54
+      },
+      {
+        "name": "yareli",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.52,
+            "order": 0
+          }
+        ],
+        "value": 0.52
+      },
+      {
+        "name": "dagath",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.46,
+            "order": 0
+          }
+        ],
+        "value": 0.46
+      },
+      {
+        "name": "grendel",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.3,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.14,
+            "order": 3
+          }
+        ],
+        "value": 0.44
+      },
+      {
+        "name": "sevagoth",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.41,
+            "order": 0
+          }
+        ],
+        "value": 0.41
+      },
+      {
+        "name": "atlas",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.34,
+            "order": 3
+          }
+        ],
+        "value": 0.4
+      },
+      {
+        "name": "banshee",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.27,
+            "order": 3
+          }
+        ],
+        "value": 0.38
+      },
+      {
+        "name": "nyx",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.25,
+            "order": 3
+          }
+        ],
+        "value": 0.38
+      },
+      {
+        "name": "caliban",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          }
+        ],
+        "value": 0.16
+      },
+      {
+        "name": "qorvex",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          }
+        ],
+        "value": 0.13
+      },
+      {
+        "name": "stalker",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0,
+            "order": 0
+          }
+        ],
+        "value": 0
+      }
+    ]
+  },
+  {
+    "name": "Primaries",
+    "ungrouped": [
+      {
+        "name": "nataruk",
+        "value": 5.93
+      },
+      {
+        "name": "ignis wraith",
+        "value": 5.6
+      },
+      {
+        "name": "felarx",
+        "value": 5.09
+      },
+      {
+        "name": "tenet arca plasmor",
+        "value": 4.52
+      },
+      {
+        "name": "tenet envoy",
+        "value": 3.06
+      },
+      {
+        "name": "acceltra",
+        "value": 2.89
+      },
+      {
+        "name": "shedu",
+        "value": 2.77
+      },
+      {
+        "name": "cedo",
+        "value": 2.41
+      },
+      {
+        "name": "kuva bramma",
+        "value": 2.39
+      },
+      {
+        "name": "phenmor",
+        "value": 2.35
+      },
+      {
+        "name": "rubico prime",
+        "value": 2.16
+      },
+      {
+        "name": "kuva zarr",
+        "value": 2.01
+      },
+      {
+        "name": "boltor",
+        "value": 2.01
+      },
+      {
+        "name": "torid",
+        "value": 1.93
+      },
+      {
+        "name": "kuva ogris",
+        "value": 1.7
+      },
+      {
+        "name": "fulmin",
+        "value": 1.62
+      },
+      {
+        "name": "bubonico",
+        "value": 1.51
+      },
+      {
+        "name": "phantasma prime",
+        "value": 1.49
+      },
+      {
+        "name": "mk1-paris",
+        "value": 1.43
+      },
+      {
+        "name": "kuva tonkor",
+        "value": 1.38
+      },
+      {
+        "name": "dread",
+        "value": 1.32
+      },
+      {
+        "name": "braton prime",
+        "value": 1.26
+      },
+      {
+        "name": "soma prime",
+        "value": 1.26
+      },
+      {
+        "name": "fulmin prime",
+        "value": 1.15
+      },
+      {
+        "name": "strun prime",
+        "value": 1.04
+      },
+      {
+        "name": "mk1-braton",
+        "value": 1.01
+      },
+      {
+        "name": "ignis",
+        "value": 1.01
+      },
+      {
+        "name": "gotva prime",
+        "value": 0.98
+      },
+      {
+        "name": "burston prime",
+        "value": 0.91
+      },
+      {
+        "name": "braton",
+        "value": 0.88
+      },
+      {
+        "name": "kuva hek",
+        "value": 0.88
+      },
+      {
+        "name": "zenith",
+        "value": 0.88
+      },
+      {
+        "name": "latron prime",
+        "value": 0.86
+      },
+      {
+        "name": "amprex",
+        "value": 0.84
+      },
+      {
+        "name": "phantasma",
+        "value": 0.79
+      },
+      {
+        "name": "hek",
+        "value": 0.72
+      },
+      {
+        "name": "kuva chakkhurr",
+        "value": 0.69
+      },
+      {
+        "name": "proboscis cernos",
+        "value": 0.67
+      },
+      {
+        "name": "boar prime",
+        "value": 0.63
+      },
+      {
+        "name": "gorgon",
+        "value": 0.63
+      },
+      {
+        "name": "soma",
+        "value": 0.63
+      },
+      {
+        "name": "trumna",
+        "value": 0.61
+      },
+      {
+        "name": "arca plasmor",
+        "value": 0.6
+      },
+      {
+        "name": "vectis prime",
+        "value": 0.57
+      },
+      {
+        "name": "boltor prime",
+        "value": 0.57
+      },
+      {
+        "name": "kuva kohm",
+        "value": 0.55
+      },
+      {
+        "name": "vermisplicer",
+        "value": 0.53
+      },
+      {
+        "name": "opticor vandal",
+        "value": 0.52
+      },
+      {
+        "name": "dex sybaris",
+        "value": 0.51
+      },
+      {
+        "name": "corinth prime",
+        "value": 0.49
+      },
+      {
+        "name": "vulkar",
+        "value": 0.48
+      },
+      {
+        "name": "drakgoon",
+        "value": 0.47
+      },
+      {
+        "name": "karak",
+        "value": 0.47
+      },
+      {
+        "name": "astilla prime",
+        "value": 0.47
+      },
+      {
+        "name": "stahlta",
+        "value": 0.42
+      },
+      {
+        "name": "strun",
+        "value": 0.4
+      },
+      {
+        "name": "perigale",
+        "value": 0.39
+      },
+      {
+        "name": "paris prime",
+        "value": 0.38
+      },
+      {
+        "name": "baza prime",
+        "value": 0.37
+      },
+      {
+        "name": "tigris prime",
+        "value": 0.36
+      },
+      {
+        "name": "vectis",
+        "value": 0.36
+      },
+      {
+        "name": "kuva karak",
+        "value": 0.35
+      },
+      {
+        "name": "rubico",
+        "value": 0.34
+      },
+      {
+        "name": "daikyu",
+        "value": 0.34
+      },
+      {
+        "name": "kohm",
+        "value": 0.33
+      },
+      {
+        "name": "tenet flux rifle",
+        "value": 0.33
+      },
+      {
+        "name": "corinth",
+        "value": 0.32
+      },
+      {
+        "name": "zarr",
+        "value": 0.32
+      },
+      {
+        "name": "boar",
+        "value": 0.31
+      },
+      {
+        "name": "mutalist cernos",
+        "value": 0.31
+      },
+      {
+        "name": "tombfinger",
+        "value": 0.31
+      },
+      {
+        "name": "ogris",
+        "value": 0.29
+      },
+      {
+        "name": "basmu",
+        "value": 0.29
+      },
+      {
+        "name": "tenora prime",
+        "value": 0.28
+      },
+      {
+        "name": "scourge prime",
+        "value": 0.28
+      },
+      {
+        "name": "paris",
+        "value": 0.27
+      },
+      {
+        "name": "miter",
+        "value": 0.27
+      },
+      {
+        "name": "telos boltor",
+        "value": 0.27
+      },
+      {
+        "name": "tiberon prime",
+        "value": 0.27
+      },
+      {
+        "name": "mk1-strun",
+        "value": 0.27
+      },
+      {
+        "name": "steflos",
+        "value": 0.26
+      },
+      {
+        "name": "tenet tetra",
+        "value": 0.25
+      },
+      {
+        "name": "tonkor",
+        "value": 0.25
+      },
+      {
+        "name": "rauta",
+        "value": 0.24
+      },
+      {
+        "name": "baza",
+        "value": 0.24
+      },
+      {
+        "name": "kuva quartakk",
+        "value": 0.24
+      },
+      {
+        "name": "alternox",
+        "value": 0.23
+      },
+      {
+        "name": "sobek",
+        "value": 0.23
+      },
+      {
+        "name": "nagantaka prime",
+        "value": 0.23
+      },
+      {
+        "name": "afentis",
+        "value": 0.23
+      },
+      {
+        "name": "kuva hind",
+        "value": 0.22
+      },
+      {
+        "name": "penta",
+        "value": 0.21
+      },
+      {
+        "name": "ambassador",
+        "value": 0.21
+      },
+      {
+        "name": "tenet ferrox",
+        "value": 0.2
+      },
+      {
+        "name": "cernos",
+        "value": 0.2
+      },
+      {
+        "name": "scourge",
+        "value": 0.2
+      },
+      {
+        "name": "tigris",
+        "value": 0.2
+      },
+      {
+        "name": "supra vandal",
+        "value": 0.19
+      },
+      {
+        "name": "prisma lenz",
+        "value": 0.19
+      },
+      {
+        "name": "quellor",
+        "value": 0.18
+      },
+      {
+        "name": "sybaris prime",
+        "value": 0.18
+      },
+      {
+        "name": "prisma gorgon",
+        "value": 0.18
+      },
+      {
+        "name": "burston",
+        "value": 0.18
+      },
+      {
+        "name": "grakata",
+        "value": 0.17
+      },
+      {
+        "name": "cinta",
+        "value": 0.17
+      },
+      {
+        "name": "tetra",
+        "value": 0.17
+      },
+      {
+        "name": "glaxion vandal",
+        "value": 0.16
+      },
+      {
+        "name": "kuva drakgoon",
+        "value": 0.16
+      },
+      {
+        "name": "stradavar prime",
+        "value": 0.15
+      },
+      {
+        "name": "lenz",
+        "value": 0.15
+      },
+      {
+        "name": "lanka",
+        "value": 0.15
+      },
+      {
+        "name": "phage",
+        "value": 0.15
+      },
+      {
+        "name": "tiberon",
+        "value": 0.15
+      },
+      {
+        "name": "latron",
+        "value": 0.15
+      },
+      {
+        "name": "vaykor hek",
+        "value": 0.14
+      },
+      {
+        "name": "synapse",
+        "value": 0.14
+      },
+      {
+        "name": "exergis",
+        "value": 0.14
+      },
+      {
+        "name": "astilla",
+        "value": 0.14
+      },
+      {
+        "name": "panthera prime",
+        "value": 0.13
+      },
+      {
+        "name": "grinlok",
+        "value": 0.13
+      },
+      {
+        "name": "cernos prime",
+        "value": 0.13
+      },
+      {
+        "name": "nagantaka",
+        "value": 0.13
+      },
+      {
+        "name": "synoid simulor",
+        "value": 0.12
+      },
+      {
+        "name": "argonak",
+        "value": 0.12
+      },
+      {
+        "name": "aeolak",
+        "value": 0.12
+      },
+      {
+        "name": "zhuge prime",
+        "value": 0.12
+      },
+      {
+        "name": "battacor",
+        "value": 0.12
+      },
+      {
+        "name": "quartakk",
+        "value": 0.11
+      },
+      {
+        "name": "convectrix",
+        "value": 0.11
+      },
+      {
+        "name": "tenora",
+        "value": 0.11
+      },
+      {
+        "name": "hind",
+        "value": 0.11
+      },
+      {
+        "name": "prisma grakata",
+        "value": 0.1
+      },
+      {
+        "name": "opticor",
+        "value": 0.1
+      },
+      {
+        "name": "quanta vandal",
+        "value": 0.1
+      },
+      {
+        "name": "sybaris",
+        "value": 0.1
+      },
+      {
+        "name": "stradavar",
+        "value": 0.09
+      },
+      {
+        "name": "gaze",
+        "value": 0.09
+      },
+      {
+        "name": "attica",
+        "value": 0.09
+      },
+      {
+        "name": "komorex",
+        "value": 0.09
+      },
+      {
+        "name": "snipetron vandal",
+        "value": 0.08
+      },
+      {
+        "name": "harpak",
+        "value": 0.08
+      },
+      {
+        "name": "sporelacer",
+        "value": 0.08
+      },
+      {
+        "name": "quanta",
+        "value": 0.07
+      },
+      {
+        "name": "vulkar wraith",
+        "value": 0.07
+      },
+      {
+        "name": "buzlok",
+        "value": 0.07
+      },
+      {
+        "name": "veldt",
+        "value": 0.07
+      },
+      {
+        "name": "prisma grinlok",
+        "value": 0.07
+      },
+      {
+        "name": "dera vandal",
+        "value": 0.07
+      },
+      {
+        "name": "latron wraith",
+        "value": 0.07
+      },
+      {
+        "name": "dera",
+        "value": 0.06
+      },
+      {
+        "name": "sancti tigris",
+        "value": 0.06
+      },
+      {
+        "name": "rakta cernos",
+        "value": 0.06
+      },
+      {
+        "name": "gorgon wraith",
+        "value": 0.06
+      },
+      {
+        "name": "hema",
+        "value": 0.06
+      },
+      {
+        "name": "rattleguts",
+        "value": 0.06
+      },
+      {
+        "name": "ferrox",
+        "value": 0.06
+      },
+      {
+        "name": "strun wraith",
+        "value": 0.06
+      },
+      {
+        "name": "javlok",
+        "value": 0.05
+      },
+      {
+        "name": "braton vandal",
+        "value": 0.05
+      },
+      {
+        "name": "zhuge",
+        "value": 0.05
+      },
+      {
+        "name": "glaxion",
+        "value": 0.05
+      },
+      {
+        "name": "prisma tetra",
+        "value": 0.05
+      },
+      {
+        "name": "catchmoon",
+        "value": 0.04
+      },
+      {
+        "name": "flux rifle",
+        "value": 0.04
+      },
+      {
+        "name": "secura penta",
+        "value": 0.04
+      },
+      {
+        "name": "sporothrix",
+        "value": 0.04
+      },
+      {
+        "name": "karak wraith",
+        "value": 0.04
+      },
+      {
+        "name": "mutalist quanta",
+        "value": 0.04
+      },
+      {
+        "name": "paracyst",
+        "value": 0.04
+      },
+      {
+        "name": "panthera",
+        "value": 0.04
+      },
+      {
+        "name": "supra",
+        "value": 0.03
+      },
+      {
+        "name": "snipetron",
+        "value": 0.03
+      },
+      {
+        "name": "simulor",
+        "value": 0.03
+      },
+      {
+        "name": "carmine penta",
+        "value": 0.02
+      }
+    ],
+    "grouped": [
+      {
+        "name": "ignis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.01,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 5.6,
+            "order": 2
+          }
+        ],
+        "value": 6.61
+      },
+      {
+        "name": "nataruk",
+        "variants": [
+          {
+            "name": "none",
+            "value": 5.93,
+            "order": 0
+          }
+        ],
+        "value": 5.93
+      },
+      {
+        "name": "arca plasmor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.6,
+            "order": 0
+          },
+          {
+            "name": "tenet",
+            "value": 4.52,
+            "order": 3
+          }
+        ],
+        "value": 5.12
+      },
+      {
+        "name": "felarx",
+        "variants": [
+          {
+            "name": "none",
+            "value": 5.09,
+            "order": 0
+          }
+        ],
+        "value": 5.09
+      },
+      {
+        "name": "braton",
+        "variants": [
+          {
+            "name": "mk1-",
+            "value": 1.01,
+            "order": -1
+          },
+          {
+            "name": "none",
+            "value": 0.88,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.05,
+            "order": 2
+          },
+          {
+            "name": "prime",
+            "value": 1.26,
+            "order": 3
+          }
+        ],
+        "value": 3.2
+      },
+      {
+        "name": "envoy",
+        "variants": [
+          {
+            "name": "tenet",
+            "value": 3.06,
+            "order": 3
+          }
+        ],
+        "value": 3.06
+      },
+      {
+        "name": "acceltra",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.89,
+            "order": 0
+          }
+        ],
+        "value": 2.89
+      },
+      {
+        "name": "boltor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.01,
+            "order": 0
+          },
+          {
+            "name": "telos",
+            "value": 0.27,
+            "order": 1
+          },
+          {
+            "name": "prime",
+            "value": 0.57,
+            "order": 3
+          }
+        ],
+        "value": 2.85
+      },
+      {
+        "name": "shedu",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.77,
+            "order": 0
+          }
+        ],
+        "value": 2.77
+      },
+      {
+        "name": "fulmin",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.62,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.15,
+            "order": 3
+          }
+        ],
+        "value": 2.77
+      },
+      {
+        "name": "rubico",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.34,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.16,
+            "order": 3
+          }
+        ],
+        "value": 2.5
+      },
+      {
+        "name": "cedo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.41,
+            "order": 0
+          }
+        ],
+        "value": 2.41
+      },
+      {
+        "name": "bramma",
+        "variants": [
+          {
+            "name": "kuva",
+            "value": 2.39,
+            "order": 3
+          }
+        ],
+        "value": 2.39
+      },
+      {
+        "name": "phenmor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.35,
+            "order": 0
+          }
+        ],
+        "value": 2.35
+      },
+      {
+        "name": "zarr",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.32,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 2.01,
+            "order": 3
+          }
+        ],
+        "value": 2.33
+      },
+      {
+        "name": "phantasma",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.79,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.49,
+            "order": 3
+          }
+        ],
+        "value": 2.28
+      },
+      {
+        "name": "paris",
+        "variants": [
+          {
+            "name": "mk1-",
+            "value": 1.43,
+            "order": -1
+          },
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.38,
+            "order": 3
+          }
+        ],
+        "value": 2.08
+      },
+      {
+        "name": "ogris",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.29,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 1.7,
+            "order": 3
+          }
+        ],
+        "value": 1.99
+      },
+      {
+        "name": "torid",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.93,
+            "order": 0
+          }
+        ],
+        "value": 1.93
+      },
+      {
+        "name": "soma",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.63,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.26,
+            "order": 3
+          }
+        ],
+        "value": 1.89
+      },
+      {
+        "name": "strun",
+        "variants": [
+          {
+            "name": "mk1-",
+            "value": 0.27,
+            "order": -1
+          },
+          {
+            "name": "none",
+            "value": 0.4,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.06,
+            "order": 2
+          },
+          {
+            "name": "prime",
+            "value": 1.04,
+            "order": 3
+          }
+        ],
+        "value": 1.77
+      },
+      {
+        "name": "hek",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.72,
+            "order": 0
+          },
+          {
+            "name": "vaykor",
+            "value": 0.14,
+            "order": 1
+          },
+          {
+            "name": "kuva",
+            "value": 0.88,
+            "order": 3
+          }
+        ],
+        "value": 1.74
+      },
+      {
+        "name": "tonkor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.25,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 1.38,
+            "order": 3
+          }
+        ],
+        "value": 1.63
+      },
+      {
+        "name": "bubonico",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.51,
+            "order": 0
+          }
+        ],
+        "value": 1.51
+      },
+      {
+        "name": "dread",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.32,
+            "order": 0
+          }
+        ],
+        "value": 1.32
+      },
+      {
+        "name": "burston",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.91,
+            "order": 3
+          }
+        ],
+        "value": 1.09
+      },
+      {
+        "name": "latron",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.07,
+            "order": 2
+          },
+          {
+            "name": "prime",
+            "value": 0.86,
+            "order": 3
+          }
+        ],
+        "value": 1.08
+      },
+      {
+        "name": "gotva",
+        "variants": [
+          {
+            "name": "prime",
+            "value": 0.98,
+            "order": 3
+          }
+        ],
+        "value": 0.98
+      },
+      {
+        "name": "boar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.31,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.63,
+            "order": 3
+          }
+        ],
+        "value": 0.94
+      },
+      {
+        "name": "vectis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.36,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.57,
+            "order": 3
+          }
+        ],
+        "value": 0.93
+      },
+      {
+        "name": "zenith",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.88,
+            "order": 0
+          }
+        ],
+        "value": 0.88
+      },
+      {
+        "name": "kohm",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.33,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 0.55,
+            "order": 3
+          }
+        ],
+        "value": 0.88
+      },
+      {
+        "name": "gorgon",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.63,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.18,
+            "order": 2
+          },
+          {
+            "name": "wraith",
+            "value": 0.06,
+            "order": 2
+          }
+        ],
+        "value": 0.87
+      },
+      {
+        "name": "karak",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.47,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.04,
+            "order": 2
+          },
+          {
+            "name": "kuva",
+            "value": 0.35,
+            "order": 3
+          }
+        ],
+        "value": 0.86
+      },
+      {
+        "name": "amprex",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.84,
+            "order": 0
+          }
+        ],
+        "value": 0.84
+      },
+      {
+        "name": "corinth",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.32,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.49,
+            "order": 3
+          }
+        ],
+        "value": 0.81
+      },
+      {
+        "name": "sybaris",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          },
+          {
+            "name": "dex",
+            "value": 0.51,
+            "order": 1
+          },
+          {
+            "name": "prime",
+            "value": 0.18,
+            "order": 3
+          }
+        ],
+        "value": 0.79
+      },
+      {
+        "name": "chakkhurr",
+        "variants": [
+          {
+            "name": "kuva",
+            "value": 0.69,
+            "order": 3
+          }
+        ],
+        "value": 0.69
+      },
+      {
+        "name": "proboscis cernos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.67,
+            "order": 0
+          }
+        ],
+        "value": 0.67
+      },
+      {
+        "name": "drakgoon",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.47,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 0.16,
+            "order": 3
+          }
+        ],
+        "value": 0.63
+      },
+      {
+        "name": "opticor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.52,
+            "order": 2
+          }
+        ],
+        "value": 0.62
+      },
+      {
+        "name": "tigris",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          },
+          {
+            "name": "sancti",
+            "value": 0.06,
+            "order": 1
+          },
+          {
+            "name": "prime",
+            "value": 0.36,
+            "order": 3
+          }
+        ],
+        "value": 0.62
+      },
+      {
+        "name": "trumna",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.61,
+            "order": 0
+          }
+        ],
+        "value": 0.61
+      },
+      {
+        "name": "astilla",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.47,
+            "order": 3
+          }
+        ],
+        "value": 0.61
+      },
+      {
+        "name": "baza",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.24,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.37,
+            "order": 3
+          }
+        ],
+        "value": 0.61
+      },
+      {
+        "name": "vulkar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.48,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.07,
+            "order": 2
+          }
+        ],
+        "value": 0.55
+      },
+      {
+        "name": "vermisplicer",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.53,
+            "order": 0
+          }
+        ],
+        "value": 0.53
+      },
+      {
+        "name": "scourge",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.28,
+            "order": 3
+          }
+        ],
+        "value": 0.48
+      },
+      {
+        "name": "tetra",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.17,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.05,
+            "order": 2
+          },
+          {
+            "name": "tenet",
+            "value": 0.25,
+            "order": 3
+          }
+        ],
+        "value": 0.47
+      },
+      {
+        "name": "stahlta",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.42,
+            "order": 0
+          }
+        ],
+        "value": 0.42
+      },
+      {
+        "name": "tiberon",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.27,
+            "order": 3
+          }
+        ],
+        "value": 0.42
+      },
+      {
+        "name": "perigale",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.39,
+            "order": 0
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "tenora",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.28,
+            "order": 3
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "cernos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          },
+          {
+            "name": "rakta",
+            "value": 0.06,
+            "order": 1
+          },
+          {
+            "name": "prime",
+            "value": 0.13,
+            "order": 3
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "flux rifle",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          },
+          {
+            "name": "tenet",
+            "value": 0.33,
+            "order": 3
+          }
+        ],
+        "value": 0.37
+      },
+      {
+        "name": "nagantaka",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.23,
+            "order": 3
+          }
+        ],
+        "value": 0.36
+      },
+      {
+        "name": "quartakk",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 0.24,
+            "order": 3
+          }
+        ],
+        "value": 0.35
+      },
+      {
+        "name": "daikyu",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.34,
+            "order": 0
+          }
+        ],
+        "value": 0.34
+      },
+      {
+        "name": "lenz",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.19,
+            "order": 2
+          }
+        ],
+        "value": 0.34
+      },
+      {
+        "name": "hind",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 0.22,
+            "order": 3
+          }
+        ],
+        "value": 0.33
+      },
+      {
+        "name": "mutalist cernos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.31,
+            "order": 0
+          }
+        ],
+        "value": 0.31
+      },
+      {
+        "name": "tombfinger",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.31,
+            "order": 0
+          }
+        ],
+        "value": 0.31
+      },
+      {
+        "name": "basmu",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.29,
+            "order": 0
+          }
+        ],
+        "value": 0.29
+      },
+      {
+        "name": "miter",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          }
+        ],
+        "value": 0.27
+      },
+      {
+        "name": "penta",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.21,
+            "order": 0
+          },
+          {
+            "name": "secura",
+            "value": 0.04,
+            "order": 1
+          },
+          {
+            "name": "carmine",
+            "value": 0.02,
+            "order": 1
+          }
+        ],
+        "value": 0.27
+      },
+      {
+        "name": "grakata",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.17,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.1,
+            "order": 2
+          }
+        ],
+        "value": 0.27
+      },
+      {
+        "name": "steflos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.26,
+            "order": 0
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "ferrox",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          },
+          {
+            "name": "tenet",
+            "value": 0.2,
+            "order": 3
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "rauta",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.24,
+            "order": 0
+          }
+        ],
+        "value": 0.24
+      },
+      {
+        "name": "stradavar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.15,
+            "order": 3
+          }
+        ],
+        "value": 0.24
+      },
+      {
+        "name": "alternox",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.23,
+            "order": 0
+          }
+        ],
+        "value": 0.23
+      },
+      {
+        "name": "sobek",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.23,
+            "order": 0
+          }
+        ],
+        "value": 0.23
+      },
+      {
+        "name": "afentis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.23,
+            "order": 0
+          }
+        ],
+        "value": 0.23
+      },
+      {
+        "name": "supra",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.03,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.19,
+            "order": 2
+          }
+        ],
+        "value": 0.22
+      },
+      {
+        "name": "ambassador",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.21,
+            "order": 0
+          }
+        ],
+        "value": 0.21
+      },
+      {
+        "name": "glaxion",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.05,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.16,
+            "order": 2
+          }
+        ],
+        "value": 0.21
+      },
+      {
+        "name": "grinlok",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.07,
+            "order": 2
+          }
+        ],
+        "value": 0.2
+      },
+      {
+        "name": "quellor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          }
+        ],
+        "value": 0.18
+      },
+      {
+        "name": "cinta",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.17,
+            "order": 0
+          }
+        ],
+        "value": 0.17
+      },
+      {
+        "name": "panthera",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.13,
+            "order": 3
+          }
+        ],
+        "value": 0.17
+      },
+      {
+        "name": "zhuge",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.05,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.12,
+            "order": 3
+          }
+        ],
+        "value": 0.17
+      },
+      {
+        "name": "quanta",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.1,
+            "order": 2
+          }
+        ],
+        "value": 0.17
+      },
+      {
+        "name": "lanka",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "phage",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "simulor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.03,
+            "order": 0
+          },
+          {
+            "name": "synoid",
+            "value": 0.12,
+            "order": 1
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "synapse",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          }
+        ],
+        "value": 0.14
+      },
+      {
+        "name": "exergis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          }
+        ],
+        "value": 0.14
+      },
+      {
+        "name": "dera",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.07,
+            "order": 2
+          }
+        ],
+        "value": 0.13
+      },
+      {
+        "name": "argonak",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "aeolak",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "battacor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "convectrix",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          }
+        ],
+        "value": 0.11
+      },
+      {
+        "name": "snipetron",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.03,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.08,
+            "order": 2
+          }
+        ],
+        "value": 0.11
+      },
+      {
+        "name": "gaze",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          }
+        ],
+        "value": 0.09
+      },
+      {
+        "name": "attica",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          }
+        ],
+        "value": 0.09
+      },
+      {
+        "name": "komorex",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          }
+        ],
+        "value": 0.09
+      },
+      {
+        "name": "harpak",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.08,
+            "order": 0
+          }
+        ],
+        "value": 0.08
+      },
+      {
+        "name": "sporelacer",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.08,
+            "order": 0
+          }
+        ],
+        "value": 0.08
+      },
+      {
+        "name": "buzlok",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          }
+        ],
+        "value": 0.07
+      },
+      {
+        "name": "veldt",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          }
+        ],
+        "value": 0.07
+      },
+      {
+        "name": "hema",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          }
+        ],
+        "value": 0.06
+      },
+      {
+        "name": "rattleguts",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          }
+        ],
+        "value": 0.06
+      },
+      {
+        "name": "javlok",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.05,
+            "order": 0
+          }
+        ],
+        "value": 0.05
+      },
+      {
+        "name": "catchmoon",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          }
+        ],
+        "value": 0.04
+      },
+      {
+        "name": "sporothrix",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          }
+        ],
+        "value": 0.04
+      },
+      {
+        "name": "mutalist quanta",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          }
+        ],
+        "value": 0.04
+      },
+      {
+        "name": "paracyst",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          }
+        ],
+        "value": 0.04
+      }
+    ]
+  },
+  {
+    "name": "Secondaries",
+    "ungrouped": [
+      {
+        "name": "kuva nukor",
+        "value": 11.25
+      },
+      {
+        "name": "laetum",
+        "value": 11.09
+      },
+      {
+        "name": "epitaph",
+        "value": 6.63
+      },
+      {
+        "name": "tenet cycron",
+        "value": 4.35
+      },
+      {
+        "name": "sporelacer",
+        "value": 3.32
+      },
+      {
+        "name": "lex prime",
+        "value": 3.19
+      },
+      {
+        "name": "pyrana prime",
+        "value": 2.62
+      },
+      {
+        "name": "dex furis",
+        "value": 2.17
+      },
+      {
+        "name": "ocucor",
+        "value": 2.02
+      },
+      {
+        "name": "atomos",
+        "value": 1.86
+      },
+      {
+        "name": "grimoire",
+        "value": 1.58
+      },
+      {
+        "name": "tenet plinx",
+        "value": 1.49
+      },
+      {
+        "name": "akarius",
+        "value": 1.46
+      },
+      {
+        "name": "lato",
+        "value": 1.42
+      },
+      {
+        "name": "furis",
+        "value": 1.36
+      },
+      {
+        "name": "knell prime",
+        "value": 1.32
+      },
+      {
+        "name": "mk1-kunai",
+        "value": 1.13
+      },
+      {
+        "name": "twin grakatas",
+        "value": 1.13
+      },
+      {
+        "name": "tenet diplos",
+        "value": 1.09
+      },
+      {
+        "name": "gammacor",
+        "value": 1.06
+      },
+      {
+        "name": "dual toxocyst",
+        "value": 1.04
+      },
+      {
+        "name": "cestra",
+        "value": 0.94
+      },
+      {
+        "name": "akstiletto prime",
+        "value": 0.89
+      },
+      {
+        "name": "hystrix prime",
+        "value": 0.89
+      },
+      {
+        "name": "tenet detron",
+        "value": 0.86
+      },
+      {
+        "name": "pyrana",
+        "value": 0.81
+      },
+      {
+        "name": "kuva twin stubbas",
+        "value": 0.81
+      },
+      {
+        "name": "aksomati prime",
+        "value": 0.78
+      },
+      {
+        "name": "catchmoon",
+        "value": 0.77
+      },
+      {
+        "name": "afuris prime",
+        "value": 0.72
+      },
+      {
+        "name": "kuva brakk",
+        "value": 0.72
+      },
+      {
+        "name": "aklato",
+        "value": 0.69
+      },
+      {
+        "name": "lex",
+        "value": 0.66
+      },
+      {
+        "name": "despair",
+        "value": 0.66
+      },
+      {
+        "name": "mk1-furis",
+        "value": 0.66
+      },
+      {
+        "name": "kraken",
+        "value": 0.66
+      },
+      {
+        "name": "euphona prime",
+        "value": 0.6
+      },
+      {
+        "name": "akjagara prime",
+        "value": 0.59
+      },
+      {
+        "name": "nukor",
+        "value": 0.58
+      },
+      {
+        "name": "zakti prime",
+        "value": 0.56
+      },
+      {
+        "name": "staticor",
+        "value": 0.54
+      },
+      {
+        "name": "akzani",
+        "value": 0.54
+      },
+      {
+        "name": "synoid gammacor",
+        "value": 0.5
+      },
+      {
+        "name": "kompressa",
+        "value": 0.5
+      },
+      {
+        "name": "cyanex",
+        "value": 0.49
+      },
+      {
+        "name": "vasto prime",
+        "value": 0.48
+      },
+      {
+        "name": "hikou",
+        "value": 0.47
+      },
+      {
+        "name": "azima",
+        "value": 0.47
+      },
+      {
+        "name": "akbolto prime",
+        "value": 0.45
+      },
+      {
+        "name": "tombfinger",
+        "value": 0.44
+      },
+      {
+        "name": "prisma angstrum",
+        "value": 0.43
+      },
+      {
+        "name": "athodai",
+        "value": 0.42
+      },
+      {
+        "name": "tenet spirex",
+        "value": 0.4
+      },
+      {
+        "name": "magnus prime",
+        "value": 0.4
+      },
+      {
+        "name": "aegrit",
+        "value": 0.4
+      },
+      {
+        "name": "kuva seer",
+        "value": 0.39
+      },
+      {
+        "name": "pandero prime",
+        "value": 0.39
+      },
+      {
+        "name": "kunai",
+        "value": 0.39
+      },
+      {
+        "name": "bronco prime",
+        "value": 0.38
+      },
+      {
+        "name": "hikou prime",
+        "value": 0.37
+      },
+      {
+        "name": "sicarus",
+        "value": 0.36
+      },
+      {
+        "name": "sonicor",
+        "value": 0.35
+      },
+      {
+        "name": "spira",
+        "value": 0.34
+      },
+      {
+        "name": "vasto",
+        "value": 0.33
+      },
+      {
+        "name": "gaze",
+        "value": 0.33
+      },
+      {
+        "name": "aklex prime",
+        "value": 0.33
+      },
+      {
+        "name": "rattleguts",
+        "value": 0.33
+      },
+      {
+        "name": "twin rogga",
+        "value": 0.32
+      },
+      {
+        "name": "prisma twin gremlins",
+        "value": 0.31
+      },
+      {
+        "name": "akbronco prime",
+        "value": 0.31
+      },
+      {
+        "name": "akstiletto",
+        "value": 0.3
+      },
+      {
+        "name": "twin gremlins",
+        "value": 0.29
+      },
+      {
+        "name": "akmagnus",
+        "value": 0.29
+      },
+      {
+        "name": "akjagara",
+        "value": 0.29
+      },
+      {
+        "name": "vaykor marelok",
+        "value": 0.28
+      },
+      {
+        "name": "sepulcrum",
+        "value": 0.27
+      },
+      {
+        "name": "hystrix",
+        "value": 0.27
+      },
+      {
+        "name": "catabolyst",
+        "value": 0.26
+      },
+      {
+        "name": "mara detron",
+        "value": 0.26
+      },
+      {
+        "name": "sicarus prime",
+        "value": 0.26
+      },
+      {
+        "name": "kuva kraken",
+        "value": 0.25
+      },
+      {
+        "name": "velox",
+        "value": 0.24
+      },
+      {
+        "name": "quatz",
+        "value": 0.24
+      },
+      {
+        "name": "lato vandal",
+        "value": 0.24
+      },
+      {
+        "name": "ballistica prime",
+        "value": 0.24
+      },
+      {
+        "name": "kulstar",
+        "value": 0.23
+      },
+      {
+        "name": "tysis",
+        "value": 0.23
+      },
+      {
+        "name": "aklex",
+        "value": 0.22
+      },
+      {
+        "name": "stubba",
+        "value": 0.22
+      },
+      {
+        "name": "cycron",
+        "value": 0.22
+      },
+      {
+        "name": "zylok prime",
+        "value": 0.21
+      },
+      {
+        "name": "spira prime",
+        "value": 0.21
+      },
+      {
+        "name": "stug",
+        "value": 0.21
+      },
+      {
+        "name": "pandero",
+        "value": 0.2
+      },
+      {
+        "name": "viper",
+        "value": 0.2
+      },
+      {
+        "name": "vermisplicer",
+        "value": 0.2
+      },
+      {
+        "name": "akvasto prime",
+        "value": 0.2
+      },
+      {
+        "name": "angstrum",
+        "value": 0.2
+      },
+      {
+        "name": "afuris",
+        "value": 0.19
+      },
+      {
+        "name": "twin kohmak",
+        "value": 0.18
+      },
+      {
+        "name": "pox",
+        "value": 0.18
+      },
+      {
+        "name": "zylok",
+        "value": 0.18
+      },
+      {
+        "name": "zymos",
+        "value": 0.17
+      },
+      {
+        "name": "arca scisco",
+        "value": 0.16
+      },
+      {
+        "name": "zakti",
+        "value": 0.16
+      },
+      {
+        "name": "twin vipers",
+        "value": 0.16
+      },
+      {
+        "name": "magnus",
+        "value": 0.16
+      },
+      {
+        "name": "akvasto",
+        "value": 0.15
+      },
+      {
+        "name": "dual cestra",
+        "value": 0.15
+      },
+      {
+        "name": "fusilai",
+        "value": 0.15
+      },
+      {
+        "name": "aksomati",
+        "value": 0.15
+      },
+      {
+        "name": "bronco",
+        "value": 0.15
+      },
+      {
+        "name": "spectra vandal",
+        "value": 0.15
+      },
+      {
+        "name": "ballistica",
+        "value": 0.15
+      },
+      {
+        "name": "secura dual cestra",
+        "value": 0.15
+      },
+      {
+        "name": "twin vipers wraith",
+        "value": 0.14
+      },
+      {
+        "name": "seer",
+        "value": 0.14
+      },
+      {
+        "name": "kohmak",
+        "value": 0.13
+      },
+      {
+        "name": "bolto",
+        "value": 0.12
+      },
+      {
+        "name": "knell",
+        "value": 0.12
+      },
+      {
+        "name": "castanas",
+        "value": 0.12
+      },
+      {
+        "name": "viper wraith",
+        "value": 0.12
+      },
+      {
+        "name": "marelok",
+        "value": 0.11
+      },
+      {
+        "name": "embolist",
+        "value": 0.1
+      },
+      {
+        "name": "plinx",
+        "value": 0.09
+      },
+      {
+        "name": "talons",
+        "value": 0.09
+      },
+      {
+        "name": "rakta ballistica",
+        "value": 0.09
+      },
+      {
+        "name": "sancti castanas",
+        "value": 0.09
+      },
+      {
+        "name": "akbronco",
+        "value": 0.08
+      },
+      {
+        "name": "telos akbolto",
+        "value": 0.08
+      },
+      {
+        "name": "acrid",
+        "value": 0.08
+      },
+      {
+        "name": "brakk",
+        "value": 0.07
+      },
+      {
+        "name": "akbolto",
+        "value": 0.07
+      },
+      {
+        "name": "spectra",
+        "value": 0.06
+      },
+      {
+        "name": "detron",
+        "value": 0.04
+      },
+      {
+        "name": "lato prime",
+        "value": 0.01
+      }
+    ],
+    "grouped": [
+      {
+        "name": "nukor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.58,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 11.25,
+            "order": 3
+          }
+        ],
+        "value": 11.83
+      },
+      {
+        "name": "laetum",
+        "variants": [
+          {
+            "name": "none",
+            "value": 11.09,
+            "order": 0
+          }
+        ],
+        "value": 11.09
+      },
+      {
+        "name": "epitaph",
+        "variants": [
+          {
+            "name": "none",
+            "value": 6.63,
+            "order": 0
+          }
+        ],
+        "value": 6.63
+      },
+      {
+        "name": "cycron",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.22,
+            "order": 0
+          },
+          {
+            "name": "tenet",
+            "value": 4.35,
+            "order": 3
+          }
+        ],
+        "value": 4.57
+      },
+      {
+        "name": "furis",
+        "variants": [
+          {
+            "name": "mk1-",
+            "value": 0.66,
+            "order": -1
+          },
+          {
+            "name": "none",
+            "value": 1.36,
+            "order": 0
+          },
+          {
+            "name": "dex",
+            "value": 2.17,
+            "order": 1
+          }
+        ],
+        "value": 4.19
+      },
+      {
+        "name": "lex",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.66,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 3.19,
+            "order": 3
+          }
+        ],
+        "value": 3.85
+      },
+      {
+        "name": "pyrana",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.81,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.62,
+            "order": 3
+          }
+        ],
+        "value": 3.43
+      },
+      {
+        "name": "sporelacer",
+        "variants": [
+          {
+            "name": "none",
+            "value": 3.32,
+            "order": 0
+          }
+        ],
+        "value": 3.32
+      },
+      {
+        "name": "ocucor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.02,
+            "order": 0
+          }
+        ],
+        "value": 2.02
+      },
+      {
+        "name": "atomos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.86,
+            "order": 0
+          }
+        ],
+        "value": 1.86
+      },
+      {
+        "name": "lato",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.42,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.24,
+            "order": 2
+          },
+          {
+            "name": "prime",
+            "value": 0.01,
+            "order": 3
+          }
+        ],
+        "value": 1.67
+      },
+      {
+        "name": "grimoire",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.58,
+            "order": 0
+          }
+        ],
+        "value": 1.58
+      },
+      {
+        "name": "plinx",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          },
+          {
+            "name": "tenet",
+            "value": 1.49,
+            "order": 3
+          }
+        ],
+        "value": 1.58
+      },
+      {
+        "name": "gammacor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.06,
+            "order": 0
+          },
+          {
+            "name": "synoid",
+            "value": 0.5,
+            "order": 1
+          }
+        ],
+        "value": 1.56
+      },
+      {
+        "name": "kunai",
+        "variants": [
+          {
+            "name": "mk1-",
+            "value": 1.13,
+            "order": -1
+          },
+          {
+            "name": "none",
+            "value": 0.39,
+            "order": 0
+          }
+        ],
+        "value": 1.52
+      },
+      {
+        "name": "akarius",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.46,
+            "order": 0
+          }
+        ],
+        "value": 1.46
+      },
+      {
+        "name": "knell",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.32,
+            "order": 3
+          }
+        ],
+        "value": 1.44
+      },
+      {
+        "name": "akstiletto",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.3,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.89,
+            "order": 3
+          }
+        ],
+        "value": 1.19
+      },
+      {
+        "name": "hystrix",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.89,
+            "order": 3
+          }
+        ],
+        "value": 1.16
+      },
+      {
+        "name": "twin grakatas",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.13,
+            "order": 0
+          }
+        ],
+        "value": 1.13
+      },
+      {
+        "name": "diplos",
+        "variants": [
+          {
+            "name": "tenet",
+            "value": 1.09,
+            "order": 3
+          }
+        ],
+        "value": 1.09
+      },
+      {
+        "name": "dual toxocyst",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.04,
+            "order": 0
+          }
+        ],
+        "value": 1.04
+      },
+      {
+        "name": "cestra",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.94,
+            "order": 0
+          }
+        ],
+        "value": 0.94
+      },
+      {
+        "name": "aksomati",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.78,
+            "order": 3
+          }
+        ],
+        "value": 0.93
+      },
+      {
+        "name": "afuris",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.72,
+            "order": 3
+          }
+        ],
+        "value": 0.91
+      },
+      {
+        "name": "kraken",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.66,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 0.25,
+            "order": 3
+          }
+        ],
+        "value": 0.91
+      },
+      {
+        "name": "detron",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          },
+          {
+            "name": "tenet",
+            "value": 0.86,
+            "order": 3
+          }
+        ],
+        "value": 0.9
+      },
+      {
+        "name": "akjagara",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.29,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.59,
+            "order": 3
+          }
+        ],
+        "value": 0.88
+      },
+      {
+        "name": "hikou",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.47,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.37,
+            "order": 3
+          }
+        ],
+        "value": 0.84
+      },
+      {
+        "name": "twin stubbas",
+        "variants": [
+          {
+            "name": "kuva",
+            "value": 0.81,
+            "order": 3
+          }
+        ],
+        "value": 0.81
+      },
+      {
+        "name": "vasto",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.33,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.48,
+            "order": 3
+          }
+        ],
+        "value": 0.81
+      },
+      {
+        "name": "brakk",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 0.72,
+            "order": 3
+          }
+        ],
+        "value": 0.79
+      },
+      {
+        "name": "catchmoon",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.77,
+            "order": 0
+          }
+        ],
+        "value": 0.77
+      },
+      {
+        "name": "zakti",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.56,
+            "order": 3
+          }
+        ],
+        "value": 0.72
+      },
+      {
+        "name": "aklato",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.69,
+            "order": 0
+          }
+        ],
+        "value": 0.69
+      },
+      {
+        "name": "despair",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.66,
+            "order": 0
+          }
+        ],
+        "value": 0.66
+      },
+      {
+        "name": "angstrum",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.43,
+            "order": 2
+          }
+        ],
+        "value": 0.63
+      },
+      {
+        "name": "sicarus",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.36,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.26,
+            "order": 3
+          }
+        ],
+        "value": 0.62
+      },
+      {
+        "name": "euphona",
+        "variants": [
+          {
+            "name": "prime",
+            "value": 0.6,
+            "order": 3
+          }
+        ],
+        "value": 0.6
+      },
+      {
+        "name": "akbolto",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          },
+          {
+            "name": "telos",
+            "value": 0.08,
+            "order": 1
+          },
+          {
+            "name": "prime",
+            "value": 0.45,
+            "order": 3
+          }
+        ],
+        "value": 0.6
+      },
+      {
+        "name": "twin gremlins",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.29,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.31,
+            "order": 2
+          }
+        ],
+        "value": 0.6
+      },
+      {
+        "name": "pandero",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.39,
+            "order": 3
+          }
+        ],
+        "value": 0.59
+      },
+      {
+        "name": "magnus",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.4,
+            "order": 3
+          }
+        ],
+        "value": 0.56
+      },
+      {
+        "name": "spira",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.34,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.21,
+            "order": 3
+          }
+        ],
+        "value": 0.55
+      },
+      {
+        "name": "aklex",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.22,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.33,
+            "order": 3
+          }
+        ],
+        "value": 0.55
+      },
+      {
+        "name": "staticor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.54,
+            "order": 0
+          }
+        ],
+        "value": 0.54
+      },
+      {
+        "name": "akzani",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.54,
+            "order": 0
+          }
+        ],
+        "value": 0.54
+      },
+      {
+        "name": "seer",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          },
+          {
+            "name": "kuva",
+            "value": 0.39,
+            "order": 3
+          }
+        ],
+        "value": 0.53
+      },
+      {
+        "name": "bronco",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.38,
+            "order": 3
+          }
+        ],
+        "value": 0.53
+      },
+      {
+        "name": "kompressa",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.5,
+            "order": 0
+          }
+        ],
+        "value": 0.5
+      },
+      {
+        "name": "cyanex",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.49,
+            "order": 0
+          }
+        ],
+        "value": 0.49
+      },
+      {
+        "name": "ballistica",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "rakta",
+            "value": 0.09,
+            "order": 1
+          },
+          {
+            "name": "prime",
+            "value": 0.24,
+            "order": 3
+          }
+        ],
+        "value": 0.48
+      },
+      {
+        "name": "azima",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.47,
+            "order": 0
+          }
+        ],
+        "value": 0.47
+      },
+      {
+        "name": "tombfinger",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.44,
+            "order": 0
+          }
+        ],
+        "value": 0.44
+      },
+      {
+        "name": "athodai",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.42,
+            "order": 0
+          }
+        ],
+        "value": 0.42
+      },
+      {
+        "name": "spirex",
+        "variants": [
+          {
+            "name": "tenet",
+            "value": 0.4,
+            "order": 3
+          }
+        ],
+        "value": 0.4
+      },
+      {
+        "name": "aegrit",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.4,
+            "order": 0
+          }
+        ],
+        "value": 0.4
+      },
+      {
+        "name": "akbronco",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.08,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.31,
+            "order": 3
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "marelok",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "vaykor",
+            "value": 0.28,
+            "order": 1
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "zylok",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.21,
+            "order": 3
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "sonicor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.35,
+            "order": 0
+          }
+        ],
+        "value": 0.35
+      },
+      {
+        "name": "akvasto",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.2,
+            "order": 3
+          }
+        ],
+        "value": 0.35
+      },
+      {
+        "name": "gaze",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.33,
+            "order": 0
+          }
+        ],
+        "value": 0.33
+      },
+      {
+        "name": "rattleguts",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.33,
+            "order": 0
+          }
+        ],
+        "value": 0.33
+      },
+      {
+        "name": "twin rogga",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.32,
+            "order": 0
+          }
+        ],
+        "value": 0.32
+      },
+      {
+        "name": "viper",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.12,
+            "order": 2
+          }
+        ],
+        "value": 0.32
+      },
+      {
+        "name": "twin vipers",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.14,
+            "order": 2
+          }
+        ],
+        "value": 0.3
+      },
+      {
+        "name": "dual cestra",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          },
+          {
+            "name": "secura",
+            "value": 0.15,
+            "order": 1
+          }
+        ],
+        "value": 0.3
+      },
+      {
+        "name": "akmagnus",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.29,
+            "order": 0
+          }
+        ],
+        "value": 0.29
+      },
+      {
+        "name": "sepulcrum",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          }
+        ],
+        "value": 0.27
+      },
+      {
+        "name": "catabolyst",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.26,
+            "order": 0
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "mara detron",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.26,
+            "order": 0
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "velox",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.24,
+            "order": 0
+          }
+        ],
+        "value": 0.24
+      },
+      {
+        "name": "quatz",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.24,
+            "order": 0
+          }
+        ],
+        "value": 0.24
+      },
+      {
+        "name": "kulstar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.23,
+            "order": 0
+          }
+        ],
+        "value": 0.23
+      },
+      {
+        "name": "tysis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.23,
+            "order": 0
+          }
+        ],
+        "value": 0.23
+      },
+      {
+        "name": "stubba",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.22,
+            "order": 0
+          }
+        ],
+        "value": 0.22
+      },
+      {
+        "name": "stug",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.21,
+            "order": 0
+          }
+        ],
+        "value": 0.21
+      },
+      {
+        "name": "spectra",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.15,
+            "order": 2
+          }
+        ],
+        "value": 0.21
+      },
+      {
+        "name": "castanas",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          },
+          {
+            "name": "sancti",
+            "value": 0.09,
+            "order": 1
+          }
+        ],
+        "value": 0.21
+      },
+      {
+        "name": "vermisplicer",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          }
+        ],
+        "value": 0.2
+      },
+      {
+        "name": "twin kohmak",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          }
+        ],
+        "value": 0.18
+      },
+      {
+        "name": "pox",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          }
+        ],
+        "value": 0.18
+      },
+      {
+        "name": "zymos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.17,
+            "order": 0
+          }
+        ],
+        "value": 0.17
+      },
+      {
+        "name": "arca scisco",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          }
+        ],
+        "value": 0.16
+      },
+      {
+        "name": "fusilai",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "kohmak",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          }
+        ],
+        "value": 0.13
+      },
+      {
+        "name": "bolto",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "embolist",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          }
+        ],
+        "value": 0.1
+      },
+      {
+        "name": "talons",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          }
+        ],
+        "value": 0.09
+      },
+      {
+        "name": "acrid",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.08,
+            "order": 0
+          }
+        ],
+        "value": 0.08
+      }
+    ]
+  },
+  {
+    "name": "Melees",
+    "ungrouped": [
+      {
+        "name": "xoris",
+        "value": 7.51
+      },
+      {
+        "name": "glaive prime",
+        "value": 6.83
+      },
+      {
+        "name": "broken war",
+        "value": 5.07
+      },
+      {
+        "name": "skiajati",
+        "value": 4.4
+      },
+      {
+        "name": "nikana prime",
+        "value": 2.89
+      },
+      {
+        "name": "praedos",
+        "value": 2.34
+      },
+      {
+        "name": "guandao prime",
+        "value": 2.21
+      },
+      {
+        "name": "skana",
+        "value": 2.19
+      },
+      {
+        "name": "stropha",
+        "value": 2.14
+      },
+      {
+        "name": "kronen prime",
+        "value": 2.01
+      },
+      {
+        "name": "orthos prime",
+        "value": 1.77
+      },
+      {
+        "name": "paracesis",
+        "value": 1.56
+      },
+      {
+        "name": "vastilok",
+        "value": 1.54
+      },
+      {
+        "name": "heat sword",
+        "value": 1.45
+      },
+      {
+        "name": "redeemer prime",
+        "value": 1.36
+      },
+      {
+        "name": "dual keres prime",
+        "value": 1.27
+      },
+      {
+        "name": "sun &amp; moon",
+        "value": 1.26
+      },
+      {
+        "name": "innodem",
+        "value": 1.22
+      },
+      {
+        "name": "mk1-bo",
+        "value": 1.22
+      },
+      {
+        "name": "balla",
+        "value": 1.16
+      },
+      {
+        "name": "sepfahn",
+        "value": 1.13
+      },
+      {
+        "name": "cerata",
+        "value": 1.13
+      },
+      {
+        "name": "hate",
+        "value": 0.99
+      },
+      {
+        "name": "war",
+        "value": 0.93
+      },
+      {
+        "name": "syam",
+        "value": 0.92
+      },
+      {
+        "name": "gram prime",
+        "value": 0.87
+      },
+      {
+        "name": "dokrahm",
+        "value": 0.86
+      },
+      {
+        "name": "kronsh",
+        "value": 0.86
+      },
+      {
+        "name": "reaper prime",
+        "value": 0.82
+      },
+      {
+        "name": "corufell",
+        "value": 0.82
+      },
+      {
+        "name": "tatsu prime",
+        "value": 0.82
+      },
+      {
+        "name": "dragon nikana",
+        "value": 0.82
+      },
+      {
+        "name": "lesion",
+        "value": 0.81
+      },
+      {
+        "name": "dex dakra",
+        "value": 0.8
+      },
+      {
+        "name": "hespar",
+        "value": 0.76
+      },
+      {
+        "name": "plague kripath",
+        "value": 0.74
+      },
+      {
+        "name": "prisma skana",
+        "value": 0.72
+      },
+      {
+        "name": "ceramic dagger",
+        "value": 0.61
+      },
+      {
+        "name": "pennant",
+        "value": 0.58
+      },
+      {
+        "name": "nikana",
+        "value": 0.57
+      },
+      {
+        "name": "kuva shildeg",
+        "value": 0.56
+      },
+      {
+        "name": "galatine prime",
+        "value": 0.54
+      },
+      {
+        "name": "broken scepter",
+        "value": 0.54
+      },
+      {
+        "name": "dual ichor",
+        "value": 0.52
+      },
+      {
+        "name": "venka prime",
+        "value": 0.5
+      },
+      {
+        "name": "guandao",
+        "value": 0.49
+      },
+      {
+        "name": "ohma",
+        "value": 0.47
+      },
+      {
+        "name": "galatine",
+        "value": 0.47
+      },
+      {
+        "name": "ether daggers",
+        "value": 0.45
+      },
+      {
+        "name": "amphis",
+        "value": 0.42
+      },
+      {
+        "name": "cronus",
+        "value": 0.42
+      },
+      {
+        "name": "azothane",
+        "value": 0.41
+      },
+      {
+        "name": "mire",
+        "value": 0.41
+      },
+      {
+        "name": "fang prime",
+        "value": 0.4
+      },
+      {
+        "name": "ripkas",
+        "value": 0.39
+      },
+      {
+        "name": "dual heat swords",
+        "value": 0.39
+      },
+      {
+        "name": "orthos",
+        "value": 0.38
+      },
+      {
+        "name": "rumblejack",
+        "value": 0.38
+      },
+      {
+        "name": "tenet livia",
+        "value": 0.38
+      },
+      {
+        "name": "dual skana",
+        "value": 0.37
+      },
+      {
+        "name": "fragor",
+        "value": 0.35
+      },
+      {
+        "name": "hirudo",
+        "value": 0.35
+      },
+      {
+        "name": "zenistar",
+        "value": 0.34
+      },
+      {
+        "name": "kronen",
+        "value": 0.34
+      },
+      {
+        "name": "gunsen prime",
+        "value": 0.33
+      },
+      {
+        "name": "sarofang",
+        "value": 0.33
+      },
+      {
+        "name": "mk1-furax",
+        "value": 0.32
+      },
+      {
+        "name": "plague keewar",
+        "value": 0.31
+      },
+      {
+        "name": "bo",
+        "value": 0.31
+      },
+      {
+        "name": "orvius",
+        "value": 0.3
+      },
+      {
+        "name": "furax wraith",
+        "value": 0.3
+      },
+      {
+        "name": "tenet exec",
+        "value": 0.3
+      },
+      {
+        "name": "fragor prime",
+        "value": 0.29
+      },
+      {
+        "name": "cobra &amp; crane prime",
+        "value": 0.28
+      },
+      {
+        "name": "nami skyla prime",
+        "value": 0.28
+      },
+      {
+        "name": "silva &amp; aegis",
+        "value": 0.28
+      },
+      {
+        "name": "dakra prime",
+        "value": 0.27
+      },
+      {
+        "name": "scindo prime",
+        "value": 0.27
+      },
+      {
+        "name": "wolf sledge",
+        "value": 0.27
+      },
+      {
+        "name": "dual ether",
+        "value": 0.27
+      },
+      {
+        "name": "dorrclave",
+        "value": 0.27
+      },
+      {
+        "name": "edun",
+        "value": 0.27
+      },
+      {
+        "name": "ceti lacera",
+        "value": 0.26
+      },
+      {
+        "name": "vitrica",
+        "value": 0.26
+      },
+      {
+        "name": "nepheri",
+        "value": 0.26
+      },
+      {
+        "name": "pangolin prime",
+        "value": 0.26
+      },
+      {
+        "name": "karyst prime",
+        "value": 0.25
+      },
+      {
+        "name": "silva &amp; aegis prime",
+        "value": 0.25
+      },
+      {
+        "name": "rabvee",
+        "value": 0.24
+      },
+      {
+        "name": "bo prime",
+        "value": 0.24
+      },
+      {
+        "name": "ether reaper",
+        "value": 0.24
+      },
+      {
+        "name": "tenet grigori",
+        "value": 0.24
+      },
+      {
+        "name": "falcor",
+        "value": 0.23
+      },
+      {
+        "name": "quassus",
+        "value": 0.23
+      },
+      {
+        "name": "dual kamas prime",
+        "value": 0.23
+      },
+      {
+        "name": "anku",
+        "value": 0.22
+      },
+      {
+        "name": "prisma ohma",
+        "value": 0.22
+      },
+      {
+        "name": "tenet agendus",
+        "value": 0.21
+      },
+      {
+        "name": "rakta dark dagger",
+        "value": 0.21
+      },
+      {
+        "name": "mewan",
+        "value": 0.2
+      },
+      {
+        "name": "destreza prime",
+        "value": 0.2
+      },
+      {
+        "name": "sigma &amp; octantis",
+        "value": 0.2
+      },
+      {
+        "name": "fang",
+        "value": 0.19
+      },
+      {
+        "name": "gram",
+        "value": 0.19
+      },
+      {
+        "name": "tatsu",
+        "value": 0.19
+      },
+      {
+        "name": "cyath",
+        "value": 0.19
+      },
+      {
+        "name": "jat kusar",
+        "value": 0.19
+      },
+      {
+        "name": "sarpa",
+        "value": 0.19
+      },
+      {
+        "name": "atterax",
+        "value": 0.19
+      },
+      {
+        "name": "cassowar",
+        "value": 0.19
+      },
+      {
+        "name": "glaive",
+        "value": 0.18
+      },
+      {
+        "name": "lecta",
+        "value": 0.18
+      },
+      {
+        "name": "volnus prime",
+        "value": 0.18
+      },
+      {
+        "name": "dual zoren",
+        "value": 0.18
+      },
+      {
+        "name": "dual keres",
+        "value": 0.17
+      },
+      {
+        "name": "ninkondi prime",
+        "value": 0.17
+      },
+      {
+        "name": "sancti magistar",
+        "value": 0.17
+      },
+      {
+        "name": "slaytra",
+        "value": 0.17
+      },
+      {
+        "name": "prisma dual cleavers",
+        "value": 0.16
+      },
+      {
+        "name": "arca titron",
+        "value": 0.16
+      },
+      {
+        "name": "nami solo",
+        "value": 0.16
+      },
+      {
+        "name": "ooltha",
+        "value": 0.16
+      },
+      {
+        "name": "pathocyst",
+        "value": 0.16
+      },
+      {
+        "name": "korumm",
+        "value": 0.15
+      },
+      {
+        "name": "mios",
+        "value": 0.15
+      },
+      {
+        "name": "verdilac",
+        "value": 0.15
+      },
+      {
+        "name": "telos boltace",
+        "value": 0.15
+      },
+      {
+        "name": "twin basolk",
+        "value": 0.15
+      },
+      {
+        "name": "twin krohkur",
+        "value": 0.14
+      },
+      {
+        "name": "magistar",
+        "value": 0.14
+      },
+      {
+        "name": "dehtat",
+        "value": 0.14
+      },
+      {
+        "name": "scindo",
+        "value": 0.14
+      },
+      {
+        "name": "vericres",
+        "value": 0.14
+      },
+      {
+        "name": "tekko prime",
+        "value": 0.14
+      },
+      {
+        "name": "argo &amp; vel",
+        "value": 0.13
+      },
+      {
+        "name": "lacera",
+        "value": 0.13
+      },
+      {
+        "name": "dual cleavers",
+        "value": 0.13
+      },
+      {
+        "name": "synoid heliocor",
+        "value": 0.13
+      },
+      {
+        "name": "ack &amp; brunt",
+        "value": 0.13
+      },
+      {
+        "name": "jaw sword",
+        "value": 0.13
+      },
+      {
+        "name": "ether sword",
+        "value": 0.12
+      },
+      {
+        "name": "cadus",
+        "value": 0.12
+      },
+      {
+        "name": "kesheg",
+        "value": 0.12
+      },
+      {
+        "name": "kogake prime",
+        "value": 0.12
+      },
+      {
+        "name": "tonbo",
+        "value": 0.12
+      },
+      {
+        "name": "sibear",
+        "value": 0.12
+      },
+      {
+        "name": "destreza",
+        "value": 0.12
+      },
+      {
+        "name": "redeemer",
+        "value": 0.12
+      },
+      {
+        "name": "sampotes",
+        "value": 0.12
+      },
+      {
+        "name": "tipedo prime",
+        "value": 0.11
+      },
+      {
+        "name": "dark split-sword (dual swor...",
+        "value": 0.11
+      },
+      {
+        "name": "okina",
+        "value": 0.11
+      },
+      {
+        "name": "dual kamas",
+        "value": 0.11
+      },
+      {
+        "name": "boltace",
+        "value": 0.11
+      },
+      {
+        "name": "gunsen",
+        "value": 0.11
+      },
+      {
+        "name": "nami skyla",
+        "value": 0.11
+      },
+      {
+        "name": "ankyros",
+        "value": 0.11
+      },
+      {
+        "name": "ghoulsaw",
+        "value": 0.1
+      },
+      {
+        "name": "masseter",
+        "value": 0.1
+      },
+      {
+        "name": "secura lecta",
+        "value": 0.1
+      },
+      {
+        "name": "caustacyst",
+        "value": 0.1
+      },
+      {
+        "name": "furax",
+        "value": 0.1
+      },
+      {
+        "name": "tipedo",
+        "value": 0.1
+      },
+      {
+        "name": "kogake",
+        "value": 0.1
+      },
+      {
+        "name": "cobra &amp; crane",
+        "value": 0.1
+      },
+      {
+        "name": "krohkur",
+        "value": 0.1
+      },
+      {
+        "name": "kama",
+        "value": 0.1
+      },
+      {
+        "name": "serro",
+        "value": 0.1
+      },
+      {
+        "name": "karyst",
+        "value": 0.09
+      },
+      {
+        "name": "dark sword",
+        "value": 0.09
+      },
+      {
+        "name": "masseter prime",
+        "value": 0.09
+      },
+      {
+        "name": "keratinos",
+        "value": 0.09
+      },
+      {
+        "name": "vaykor sydon",
+        "value": 0.09
+      },
+      {
+        "name": "venka",
+        "value": 0.09
+      },
+      {
+        "name": "obex",
+        "value": 0.09
+      },
+      {
+        "name": "gazal machete",
+        "value": 0.09
+      },
+      {
+        "name": "jat kittag",
+        "value": 0.09
+      },
+      {
+        "name": "ninkondi",
+        "value": 0.08
+      },
+      {
+        "name": "endura",
+        "value": 0.08
+      },
+      {
+        "name": "volnus",
+        "value": 0.08
+      },
+      {
+        "name": "machete wraith",
+        "value": 0.08
+      },
+      {
+        "name": "kestrel",
+        "value": 0.07
+      },
+      {
+        "name": "scoliac",
+        "value": 0.07
+      },
+      {
+        "name": "ankyros prime",
+        "value": 0.07
+      },
+      {
+        "name": "sheev",
+        "value": 0.07
+      },
+      {
+        "name": "plasma sword",
+        "value": 0.07
+      },
+      {
+        "name": "pulmonars",
+        "value": 0.07
+      },
+      {
+        "name": "heliocor",
+        "value": 0.07
+      },
+      {
+        "name": "tekko",
+        "value": 0.07
+      },
+      {
+        "name": "prisma obex",
+        "value": 0.07
+      },
+      {
+        "name": "prisma machete",
+        "value": 0.06
+      },
+      {
+        "name": "halikar wraith",
+        "value": 0.06
+      },
+      {
+        "name": "halikar",
+        "value": 0.06
+      },
+      {
+        "name": "sydon",
+        "value": 0.06
+      },
+      {
+        "name": "pupacyst",
+        "value": 0.06
+      },
+      {
+        "name": "venato",
+        "value": 0.06
+      },
+      {
+        "name": "dual raza",
+        "value": 0.05
+      },
+      {
+        "name": "prova",
+        "value": 0.05
+      },
+      {
+        "name": "prova vandal",
+        "value": 0.05
+      },
+      {
+        "name": "arum spinosa",
+        "value": 0.05
+      },
+      {
+        "name": "pangolin sword",
+        "value": 0.05
+      },
+      {
+        "name": "dark dagger",
+        "value": 0.04
+      },
+      {
+        "name": "ekhein",
+        "value": 0.04
+      },
+      {
+        "name": "shaku",
+        "value": 0.04
+      },
+      {
+        "name": "heat dagger",
+        "value": 0.04
+      },
+      {
+        "name": "korrudo",
+        "value": 0.04
+      },
+      {
+        "name": "galvacord",
+        "value": 0.03
+      },
+      {
+        "name": "machete",
+        "value": 0.03
+      },
+      {
+        "name": "kreska",
+        "value": 0.03
+      },
+      {
+        "name": "dark split-sword (heavy bla...",
+        "value": 0.02
+      }
+    ],
+    "grouped": [
+      {
+        "name": "xoris",
+        "variants": [
+          {
+            "name": "none",
+            "value": 7.51,
+            "order": 0
+          }
+        ],
+        "value": 7.51
+      },
+      {
+        "name": "glaive",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 6.83,
+            "order": 3
+          }
+        ],
+        "value": 7.01
+      },
+      {
+        "name": "broken war",
+        "variants": [
+          {
+            "name": "none",
+            "value": 5.07,
+            "order": 0
+          }
+        ],
+        "value": 5.07
+      },
+      {
+        "name": "skiajati",
+        "variants": [
+          {
+            "name": "none",
+            "value": 4.4,
+            "order": 0
+          }
+        ],
+        "value": 4.4
+      },
+      {
+        "name": "nikana",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.57,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.89,
+            "order": 3
+          }
+        ],
+        "value": 3.46
+      },
+      {
+        "name": "skana",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.19,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.72,
+            "order": 2
+          }
+        ],
+        "value": 2.91
+      },
+      {
+        "name": "guandao",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.49,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.21,
+            "order": 3
+          }
+        ],
+        "value": 2.7
+      },
+      {
+        "name": "kronen",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.34,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 2.01,
+            "order": 3
+          }
+        ],
+        "value": 2.35
+      },
+      {
+        "name": "praedos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.34,
+            "order": 0
+          }
+        ],
+        "value": 2.34
+      },
+      {
+        "name": "orthos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.38,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.77,
+            "order": 3
+          }
+        ],
+        "value": 2.15
+      },
+      {
+        "name": "stropha",
+        "variants": [
+          {
+            "name": "none",
+            "value": 2.14,
+            "order": 0
+          }
+        ],
+        "value": 2.14
+      },
+      {
+        "name": "bo",
+        "variants": [
+          {
+            "name": "mk1-",
+            "value": 1.22,
+            "order": -1
+          },
+          {
+            "name": "none",
+            "value": 0.31,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.24,
+            "order": 3
+          }
+        ],
+        "value": 1.77
+      },
+      {
+        "name": "paracesis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.56,
+            "order": 0
+          }
+        ],
+        "value": 1.56
+      },
+      {
+        "name": "vastilok",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.54,
+            "order": 0
+          }
+        ],
+        "value": 1.54
+      },
+      {
+        "name": "redeemer",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.36,
+            "order": 3
+          }
+        ],
+        "value": 1.48
+      },
+      {
+        "name": "heat sword",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.45,
+            "order": 0
+          }
+        ],
+        "value": 1.45
+      },
+      {
+        "name": "dual keres",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.17,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 1.27,
+            "order": 3
+          }
+        ],
+        "value": 1.44
+      },
+      {
+        "name": "sun &amp; moon",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.26,
+            "order": 0
+          }
+        ],
+        "value": 1.26
+      },
+      {
+        "name": "innodem",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.22,
+            "order": 0
+          }
+        ],
+        "value": 1.22
+      },
+      {
+        "name": "balla",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.16,
+            "order": 0
+          }
+        ],
+        "value": 1.16
+      },
+      {
+        "name": "sepfahn",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.13,
+            "order": 0
+          }
+        ],
+        "value": 1.13
+      },
+      {
+        "name": "cerata",
+        "variants": [
+          {
+            "name": "none",
+            "value": 1.13,
+            "order": 0
+          }
+        ],
+        "value": 1.13
+      },
+      {
+        "name": "dakra",
+        "variants": [
+          {
+            "name": "dex",
+            "value": 0.8,
+            "order": 1
+          },
+          {
+            "name": "prime",
+            "value": 0.27,
+            "order": 3
+          }
+        ],
+        "value": 1.07
+      },
+      {
+        "name": "gram",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.87,
+            "order": 3
+          }
+        ],
+        "value": 1.06
+      },
+      {
+        "name": "tatsu",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.82,
+            "order": 3
+          }
+        ],
+        "value": 1.01
+      },
+      {
+        "name": "galatine",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.47,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.54,
+            "order": 3
+          }
+        ],
+        "value": 1.01
+      },
+      {
+        "name": "hate",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.99,
+            "order": 0
+          }
+        ],
+        "value": 0.99
+      },
+      {
+        "name": "war",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.93,
+            "order": 0
+          }
+        ],
+        "value": 0.93
+      },
+      {
+        "name": "syam",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.92,
+            "order": 0
+          }
+        ],
+        "value": 0.92
+      },
+      {
+        "name": "dokrahm",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.86,
+            "order": 0
+          }
+        ],
+        "value": 0.86
+      },
+      {
+        "name": "kronsh",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.86,
+            "order": 0
+          }
+        ],
+        "value": 0.86
+      },
+      {
+        "name": "reaper",
+        "variants": [
+          {
+            "name": "prime",
+            "value": 0.82,
+            "order": 3
+          }
+        ],
+        "value": 0.82
+      },
+      {
+        "name": "corufell",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.82,
+            "order": 0
+          }
+        ],
+        "value": 0.82
+      },
+      {
+        "name": "dragon nikana",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.82,
+            "order": 0
+          }
+        ],
+        "value": 0.82
+      },
+      {
+        "name": "lesion",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.81,
+            "order": 0
+          }
+        ],
+        "value": 0.81
+      },
+      {
+        "name": "hespar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.76,
+            "order": 0
+          }
+        ],
+        "value": 0.76
+      },
+      {
+        "name": "plague kripath",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.74,
+            "order": 0
+          }
+        ],
+        "value": 0.74
+      },
+      {
+        "name": "furax",
+        "variants": [
+          {
+            "name": "mk1-",
+            "value": 0.32,
+            "order": -1
+          },
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.3,
+            "order": 2
+          }
+        ],
+        "value": 0.72
+      },
+      {
+        "name": "ohma",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.47,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.22,
+            "order": 2
+          }
+        ],
+        "value": 0.69
+      },
+      {
+        "name": "fragor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.35,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.29,
+            "order": 3
+          }
+        ],
+        "value": 0.64
+      },
+      {
+        "name": "ceramic dagger",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.61,
+            "order": 0
+          }
+        ],
+        "value": 0.61
+      },
+      {
+        "name": "venka",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.5,
+            "order": 3
+          }
+        ],
+        "value": 0.59
+      },
+      {
+        "name": "fang",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.4,
+            "order": 3
+          }
+        ],
+        "value": 0.59
+      },
+      {
+        "name": "pennant",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.58,
+            "order": 0
+          }
+        ],
+        "value": 0.58
+      },
+      {
+        "name": "shildeg",
+        "variants": [
+          {
+            "name": "kuva",
+            "value": 0.56,
+            "order": 3
+          }
+        ],
+        "value": 0.56
+      },
+      {
+        "name": "broken scepter",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.54,
+            "order": 0
+          }
+        ],
+        "value": 0.54
+      },
+      {
+        "name": "silva &amp; aegis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.28,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.25,
+            "order": 3
+          }
+        ],
+        "value": 0.53
+      },
+      {
+        "name": "dual ichor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.52,
+            "order": 0
+          }
+        ],
+        "value": 0.52
+      },
+      {
+        "name": "ether daggers",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.45,
+            "order": 0
+          }
+        ],
+        "value": 0.45
+      },
+      {
+        "name": "gunsen",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.33,
+            "order": 3
+          }
+        ],
+        "value": 0.44
+      },
+      {
+        "name": "amphis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.42,
+            "order": 0
+          }
+        ],
+        "value": 0.42
+      },
+      {
+        "name": "cronus",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.42,
+            "order": 0
+          }
+        ],
+        "value": 0.42
+      },
+      {
+        "name": "azothane",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.41,
+            "order": 0
+          }
+        ],
+        "value": 0.41
+      },
+      {
+        "name": "mire",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.41,
+            "order": 0
+          }
+        ],
+        "value": 0.41
+      },
+      {
+        "name": "scindo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.27,
+            "order": 3
+          }
+        ],
+        "value": 0.41
+      },
+      {
+        "name": "ripkas",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.39,
+            "order": 0
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "dual heat swords",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.39,
+            "order": 0
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "nami skyla",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.28,
+            "order": 3
+          }
+        ],
+        "value": 0.39
+      },
+      {
+        "name": "rumblejack",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.38,
+            "order": 0
+          }
+        ],
+        "value": 0.38
+      },
+      {
+        "name": "livia",
+        "variants": [
+          {
+            "name": "tenet",
+            "value": 0.38,
+            "order": 3
+          }
+        ],
+        "value": 0.38
+      },
+      {
+        "name": "cobra &amp; crane",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.28,
+            "order": 3
+          }
+        ],
+        "value": 0.38
+      },
+      {
+        "name": "dual skana",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.37,
+            "order": 0
+          }
+        ],
+        "value": 0.37
+      },
+      {
+        "name": "hirudo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.35,
+            "order": 0
+          }
+        ],
+        "value": 0.35
+      },
+      {
+        "name": "zenistar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.34,
+            "order": 0
+          }
+        ],
+        "value": 0.34
+      },
+      {
+        "name": "karyst",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.25,
+            "order": 3
+          }
+        ],
+        "value": 0.34
+      },
+      {
+        "name": "dual kamas",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.23,
+            "order": 3
+          }
+        ],
+        "value": 0.34
+      },
+      {
+        "name": "sarofang",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.33,
+            "order": 0
+          }
+        ],
+        "value": 0.33
+      },
+      {
+        "name": "destreza",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.2,
+            "order": 3
+          }
+        ],
+        "value": 0.32
+      },
+      {
+        "name": "plague keewar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.31,
+            "order": 0
+          }
+        ],
+        "value": 0.31
+      },
+      {
+        "name": "magistar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          },
+          {
+            "name": "sancti",
+            "value": 0.17,
+            "order": 1
+          }
+        ],
+        "value": 0.31
+      },
+      {
+        "name": "orvius",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.3,
+            "order": 0
+          }
+        ],
+        "value": 0.3
+      },
+      {
+        "name": "exec",
+        "variants": [
+          {
+            "name": "tenet",
+            "value": 0.3,
+            "order": 3
+          }
+        ],
+        "value": 0.3
+      },
+      {
+        "name": "dual cleavers",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.16,
+            "order": 2
+          }
+        ],
+        "value": 0.29
+      },
+      {
+        "name": "lecta",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          },
+          {
+            "name": "secura",
+            "value": 0.1,
+            "order": 1
+          }
+        ],
+        "value": 0.28
+      },
+      {
+        "name": "wolf sledge",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          }
+        ],
+        "value": 0.27
+      },
+      {
+        "name": "dual ether",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          }
+        ],
+        "value": 0.27
+      },
+      {
+        "name": "dorrclave",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          }
+        ],
+        "value": 0.27
+      },
+      {
+        "name": "edun",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.27,
+            "order": 0
+          }
+        ],
+        "value": 0.27
+      },
+      {
+        "name": "ceti lacera",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.26,
+            "order": 0
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "vitrica",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.26,
+            "order": 0
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "nepheri",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.26,
+            "order": 0
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "pangolin",
+        "variants": [
+          {
+            "name": "prime",
+            "value": 0.26,
+            "order": 3
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "volnus",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.08,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.18,
+            "order": 3
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "boltace",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "telos",
+            "value": 0.15,
+            "order": 1
+          }
+        ],
+        "value": 0.26
+      },
+      {
+        "name": "dark dagger",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          },
+          {
+            "name": "rakta",
+            "value": 0.21,
+            "order": 1
+          }
+        ],
+        "value": 0.25
+      },
+      {
+        "name": "ninkondi",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.08,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.17,
+            "order": 3
+          }
+        ],
+        "value": 0.25
+      },
+      {
+        "name": "rabvee",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.24,
+            "order": 0
+          }
+        ],
+        "value": 0.24
+      },
+      {
+        "name": "ether reaper",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.24,
+            "order": 0
+          }
+        ],
+        "value": 0.24
+      },
+      {
+        "name": "grigori",
+        "variants": [
+          {
+            "name": "tenet",
+            "value": 0.24,
+            "order": 3
+          }
+        ],
+        "value": 0.24
+      },
+      {
+        "name": "falcor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.23,
+            "order": 0
+          }
+        ],
+        "value": 0.23
+      },
+      {
+        "name": "quassus",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.23,
+            "order": 0
+          }
+        ],
+        "value": 0.23
+      },
+      {
+        "name": "anku",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.22,
+            "order": 0
+          }
+        ],
+        "value": 0.22
+      },
+      {
+        "name": "kogake",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.12,
+            "order": 3
+          }
+        ],
+        "value": 0.22
+      },
+      {
+        "name": "agendus",
+        "variants": [
+          {
+            "name": "tenet",
+            "value": 0.21,
+            "order": 3
+          }
+        ],
+        "value": 0.21
+      },
+      {
+        "name": "tekko",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.14,
+            "order": 3
+          }
+        ],
+        "value": 0.21
+      },
+      {
+        "name": "tipedo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.11,
+            "order": 3
+          }
+        ],
+        "value": 0.21
+      },
+      {
+        "name": "mewan",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          }
+        ],
+        "value": 0.2
+      },
+      {
+        "name": "sigma &amp; octantis",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.2,
+            "order": 0
+          }
+        ],
+        "value": 0.2
+      },
+      {
+        "name": "heliocor",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          },
+          {
+            "name": "synoid",
+            "value": 0.13,
+            "order": 1
+          }
+        ],
+        "value": 0.2
+      },
+      {
+        "name": "cyath",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          }
+        ],
+        "value": 0.19
+      },
+      {
+        "name": "jat kusar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          }
+        ],
+        "value": 0.19
+      },
+      {
+        "name": "sarpa",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          }
+        ],
+        "value": 0.19
+      },
+      {
+        "name": "atterax",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          }
+        ],
+        "value": 0.19
+      },
+      {
+        "name": "cassowar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.19,
+            "order": 0
+          }
+        ],
+        "value": 0.19
+      },
+      {
+        "name": "masseter",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.09,
+            "order": 3
+          }
+        ],
+        "value": 0.19
+      },
+      {
+        "name": "dual zoren",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.18,
+            "order": 0
+          }
+        ],
+        "value": 0.18
+      },
+      {
+        "name": "ankyros",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          },
+          {
+            "name": "prime",
+            "value": 0.07,
+            "order": 3
+          }
+        ],
+        "value": 0.18
+      },
+      {
+        "name": "slaytra",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.17,
+            "order": 0
+          }
+        ],
+        "value": 0.17
+      },
+      {
+        "name": "machete",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.03,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.08,
+            "order": 2
+          },
+          {
+            "name": "prisma",
+            "value": 0.06,
+            "order": 2
+          }
+        ],
+        "value": 0.17
+      },
+      {
+        "name": "arca titron",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          }
+        ],
+        "value": 0.16
+      },
+      {
+        "name": "nami solo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          }
+        ],
+        "value": 0.16
+      },
+      {
+        "name": "ooltha",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          }
+        ],
+        "value": 0.16
+      },
+      {
+        "name": "pathocyst",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.16,
+            "order": 0
+          }
+        ],
+        "value": 0.16
+      },
+      {
+        "name": "obex",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          },
+          {
+            "name": "prisma",
+            "value": 0.07,
+            "order": 2
+          }
+        ],
+        "value": 0.16
+      },
+      {
+        "name": "korumm",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "mios",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "verdilac",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "twin basolk",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.15,
+            "order": 0
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "sydon",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          },
+          {
+            "name": "vaykor",
+            "value": 0.09,
+            "order": 1
+          }
+        ],
+        "value": 0.15
+      },
+      {
+        "name": "twin krohkur",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          }
+        ],
+        "value": 0.14
+      },
+      {
+        "name": "dehtat",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          }
+        ],
+        "value": 0.14
+      },
+      {
+        "name": "vericres",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.14,
+            "order": 0
+          }
+        ],
+        "value": 0.14
+      },
+      {
+        "name": "argo &amp; vel",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          }
+        ],
+        "value": 0.13
+      },
+      {
+        "name": "lacera",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          }
+        ],
+        "value": 0.13
+      },
+      {
+        "name": "ack &amp; brunt",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          }
+        ],
+        "value": 0.13
+      },
+      {
+        "name": "jaw sword",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.13,
+            "order": 0
+          }
+        ],
+        "value": 0.13
+      },
+      {
+        "name": "ether sword",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "cadus",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "kesheg",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "tonbo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "sibear",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "sampotes",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.12,
+            "order": 0
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "halikar",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          },
+          {
+            "name": "wraith",
+            "value": 0.06,
+            "order": 2
+          }
+        ],
+        "value": 0.12
+      },
+      {
+        "name": "dark split-sword (dual swor...",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          }
+        ],
+        "value": 0.11
+      },
+      {
+        "name": "okina",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.11,
+            "order": 0
+          }
+        ],
+        "value": 0.11
+      },
+      {
+        "name": "ghoulsaw",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          }
+        ],
+        "value": 0.1
+      },
+      {
+        "name": "caustacyst",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          }
+        ],
+        "value": 0.1
+      },
+      {
+        "name": "krohkur",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          }
+        ],
+        "value": 0.1
+      },
+      {
+        "name": "kama",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          }
+        ],
+        "value": 0.1
+      },
+      {
+        "name": "serro",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.1,
+            "order": 0
+          }
+        ],
+        "value": 0.1
+      },
+      {
+        "name": "prova",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.05,
+            "order": 0
+          },
+          {
+            "name": "vandal",
+            "value": 0.05,
+            "order": 2
+          }
+        ],
+        "value": 0.1
+      },
+      {
+        "name": "dark sword",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          }
+        ],
+        "value": 0.09
+      },
+      {
+        "name": "keratinos",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          }
+        ],
+        "value": 0.09
+      },
+      {
+        "name": "gazal machete",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          }
+        ],
+        "value": 0.09
+      },
+      {
+        "name": "jat kittag",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.09,
+            "order": 0
+          }
+        ],
+        "value": 0.09
+      },
+      {
+        "name": "endura",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.08,
+            "order": 0
+          }
+        ],
+        "value": 0.08
+      },
+      {
+        "name": "kestrel",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          }
+        ],
+        "value": 0.07
+      },
+      {
+        "name": "scoliac",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          }
+        ],
+        "value": 0.07
+      },
+      {
+        "name": "sheev",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          }
+        ],
+        "value": 0.07
+      },
+      {
+        "name": "plasma sword",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          }
+        ],
+        "value": 0.07
+      },
+      {
+        "name": "pulmonars",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.07,
+            "order": 0
+          }
+        ],
+        "value": 0.07
+      },
+      {
+        "name": "pupacyst",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          }
+        ],
+        "value": 0.06
+      },
+      {
+        "name": "venato",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.06,
+            "order": 0
+          }
+        ],
+        "value": 0.06
+      },
+      {
+        "name": "dual raza",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.05,
+            "order": 0
+          }
+        ],
+        "value": 0.05
+      },
+      {
+        "name": "arum spinosa",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.05,
+            "order": 0
+          }
+        ],
+        "value": 0.05
+      },
+      {
+        "name": "pangolin sword",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.05,
+            "order": 0
+          }
+        ],
+        "value": 0.05
+      },
+      {
+        "name": "ekhein",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          }
+        ],
+        "value": 0.04
+      },
+      {
+        "name": "shaku",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          }
+        ],
+        "value": 0.04
+      },
+      {
+        "name": "heat dagger",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          }
+        ],
+        "value": 0.04
+      },
+      {
+        "name": "korrudo",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.04,
+            "order": 0
+          }
+        ],
+        "value": 0.04
+      },
+      {
+        "name": "galvacord",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.03,
+            "order": 0
+          }
+        ],
+        "value": 0.03
+      },
+      {
+        "name": "kreska",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.03,
+            "order": 0
+          }
+        ],
+        "value": 0.03
+      },
+      {
+        "name": "dark split-sword (heavy bla...",
+        "variants": [
+          {
+            "name": "none",
+            "value": 0.02,
+            "order": 0
+          }
+        ],
+        "value": 0.02
+      }
+    ]
+  }
+]

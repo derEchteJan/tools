@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
+@="checksum"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum\command]
+@="powershell -NoProfile -Command \"$host.UI.RawUI.WindowTitle = \\\"checksum of %0 \\\"; [console]::WindowWidth=80; [console]::WindowHeight=2; [console]::BufferWidth=[console]::WindowWidth; $(Get-FileHash -Path \\\"%0\\\" -Algorithm MD5).Hash; pause\""
