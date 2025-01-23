@@ -2,6 +2,14 @@ Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
 @="checksum"
-
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
+"Icon"="\"%systemroot%\\system32\\shell32.dll\",72"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum\command]
 @="powershell -NoProfile -Command \"$host.UI.RawUI.WindowTitle = \\\"checksum of %0 \\\"; [console]::WindowWidth=80; [console]::WindowHeight=2; [console]::BufferWidth=[console]::WindowWidth; $(Get-FileHash -Path \\\"%0\\\" -Algorithm MD5).Hash; pause\""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast]
+@="delete folder fast"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast]
+"Icon"="\"%systemroot%\\system32\\shell32.dll\",32"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast\command]
+@="cmd /c \"echo deleting \"%0\" && del /f /s /q \"%0\" > nul && rmdir /s /q \"%0\"\""
