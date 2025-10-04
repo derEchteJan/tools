@@ -1,0 +1,14 @@
+# Contents of /etc/systemd/system/myservice.service
+[Unit]
+Description=redirecter client
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/bin/bash /home/kowalski/tools/redirecter/main.sh client
+WorkingDirectory=/home/kowalski/tools/redirecter
+User=kowalski
+
+[Install]
+WantedBy=multi-user.target

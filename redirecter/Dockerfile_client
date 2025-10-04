@@ -3,5 +3,4 @@
 FROM debian:stable
 WORKDIR /app
 COPY . .
-CMD ["bash", "main.sh", "server"]
-EXPOSE 19133
+CMD ["bash", "main.sh", "client"]

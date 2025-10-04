@@ -1,0 +1,10 @@
+#!/bin/bash
+# file with aliases for build/run commands etc.
+# can be loaded with 'source bashrc' in your terminal
+alias shell="sudo docker container exec -it redirecter bash"
+alias logs="sudo docker container logs -f redirecter"
+alias docker="sudo docker"
+alias systemctl="sudo systemctl"
+alias start="./start.sh"
+alias stop="./stop.sh"
+alias build="./build.sh"
