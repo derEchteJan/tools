@@ -6,23 +6,32 @@
 
 #include "ShmChat.h"
 
-#if 1 // WINDOWS_BUILD
+#if WINDOWS_BUILD
 #include <windows.h>
 #include <stdio.h>
 #include <conio.h>
 #include <tchar.h>
 #else // LINUX_BUILD
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/mman.h>
+#include <fcntl.h>
 #endif
 
 #define BUFFER_SIZE 1024 * 8
 #define buffer_t LPCTSTR
 
-void shmc_println(ShmChat* shmc, std::string line)
+static void shmc_sleep();
+
+
+void shmc_println(ShmChat* shmc, const std::string &line)
 {
     shmc_print(shmc, line + "\n");
 }
 
-void shmc_print(ShmChat* shmc, std::string line)
+void shmc_print(ShmChat* shmc, const std::string &line)
 {
     if (!shmc)
     {
@@ -30,10 +39,9 @@ void shmc_print(ShmChat* shmc, std::string line)
         return;
     }
 
-#if 1 // WINDOWS_BUILD
     while (shmc->lock != 0)
     {
-        Sleep(1);
+        shmc_sleep();
     }
     shmc->lock = 1;
 
@@ -48,7 +56,7 @@ void shmc_print(ShmChat* shmc, std::string line)
     //const char* srcEnd = &data[len - 1];
 
     // calc cap left
-    uint32_t cap;
+    long cap;
     if (shmc->wIdx >= shmc->rIdx)
     {
         cap = shmc->size - (shmc->wIdx - shmc->rIdx);
@@ -83,8 +91,6 @@ void shmc_print(ShmChat* shmc, std::string line)
     }
 
     shmc->lock = 0;
-#else // LINUX_BUILD
-#endif
 }
 
 std::string shmc_read(ShmChat *shmc)
@@ -96,13 +102,10 @@ std::string shmc_read(ShmChat *shmc)
         return result;
     }
 
-    
-
-#if 1 // WINDOWS_BUILD
     // acquire lock
     while (shmc->lock != 0)
     {
-        Sleep(1);
+        shmc_sleep();
     }
     shmc->lock = 1;
 
@@ -123,22 +126,22 @@ std::string shmc_read(ShmChat *shmc)
     }
     else // empty
     {
-        Sleep(1);
+        shmc_sleep();
     }
     shmc->rIdx = shmc->wIdx;
 
     // release lock
     shmc->lock = 0;
-#else
-#endif
+
 	return result;
 }
 
-ShmChat* shmc_open(std::string name, bool create)
+ShmChat* shmc_open(const std::string &name, bool create)
 {
+    ShmChat* result = nullptr;
     int32_t fileSize = sizeof(ShmChat) - sizeof(ShmChat::buffer) + BUFFER_SIZE;
 
-#if 1 // WINDOWS_BUILD
+#if WINDOWS_BUILD
 
     HANDLE hMapFile;
     LPCTSTR pBuf;
@@ -159,7 +162,7 @@ ShmChat* shmc_open(std::string name, bool create)
         return nullptr;
     }
     pBuf = (LPTSTR)MapViewOfFile(hMapFile,   // handle to map object
-        FILE_MAP_ALL_ACCESS, // read/write permission
+        FILE_MAP_ALL_ACCESS,                 // read/write permission
         0,
         0,
         fileSize);
@@ -173,8 +176,22 @@ ShmChat* shmc_open(std::string name, bool create)
         return nullptr;
     }
 
-    ShmChat* result = (ShmChat*)pBuf;
-    
+    result = (ShmChat*)pBuf;
+
+#else // LINUX_BUILD
+
+    // open named shm file
+    int fd = shm_open(name.c_str(), O_CREAT | O_RDWR, 0666);
+
+    // configure the size of the shm file
+    ftruncate(fd, fileSize);
+
+    // map shm file to memory
+    result = (ShmChat*)(mmap(0, fileSize, PROT_WRITE, MAP_SHARED, fd, 0));
+
+#endif
+
+    // initialize state if newly created
     if (create)
     {
         result->size = BUFFER_SIZE;
@@ -184,20 +201,15 @@ ShmChat* shmc_open(std::string name, bool create)
         memset(result->buffer, 0, result->size);
     }
 
-    //CopyMemory((PVOID)pBuf, szMsg, (_tcslen(szMsg) * sizeof(TCHAR)));
-    //_getch();
-
     return result;
-#endif
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+void shmc_sleep()
+{
+    // brief delay to avoid cpu usage while polling etc
+#if WINDOWS_BUILD
+    Sleep(1);
+#else // LINUX_BUILD
+    usleep(1000);
+#endif
+}
