@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
+    <title>Web</title>
+    <style type="text/css" media="screen">
+    textarea {
+        width: 80%;
+        height: 300px;
+    }
+    </style>
+  </head>
+  <body>
+    <h3>ShmChat API Test</h3>
+    <pre>
+Input
+-----
+<textarea id="textIn"></textarea>
+<input type="checkbox" id="debug_checkbox" name="debug_checkbox" checked /><label for="debug">Debug</label>
+
+<button onclick="sendPressed()">Send</button> <button onclick="getPressed()">Get</button>
+
+
+Output
+------
+<textarea id="textOut"></textarea>
+    </pre>
+    <script src="shmchat.js"></script>
+  </body>
+</html>

@@ -136,7 +136,7 @@ std::string shmc_read(ShmChat *shmc)
 	return result;
 }
 
-ShmChat* shmc_open(const std::string &name, bool create)
+ShmChat* shmc_open(const std::string &name, bool create) // MARK JAN: TODO - 'create' -> auto determine, do not pass this in
 {
     ShmChat* result = nullptr;
     int32_t fileSize = sizeof(ShmChat) - sizeof(ShmChat::buffer) + BUFFER_SIZE;
@@ -181,7 +181,22 @@ ShmChat* shmc_open(const std::string &name, bool create)
 #else // LINUX_BUILD
 
     // open named shm file
-    int fd = shm_open(name.c_str(), O_CREAT | O_RDWR, 0666);
+    int fd = shm_open(name.c_str(), O_RDWR, 0666);
+    create = false;
+
+    if(fd == -1)
+    {
+        // create if it doesnt yet exist
+        fd = shm_open(name.c_str(), O_CREAT | O_RDWR, 0666);
+        create = true;
+    }
+
+    if(fd == -1)
+    {
+        std::cerr << "unable to open shm file" << std::endl;
+        perror("shmc_open:");
+        return nullptr;
+    }
 
     // configure the size of the shm file
     ftruncate(fd, fileSize);
@@ -190,6 +205,8 @@ ShmChat* shmc_open(const std::string &name, bool create)
     result = (ShmChat*)(mmap(0, fileSize, PROT_WRITE, MAP_SHARED, fd, 0));
 
 #endif
+
+    if(!result) return nullptr;
 
     // initialize state if newly created
     if (create)
