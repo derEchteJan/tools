@@ -1,5 +1,0 @@
-#!/bin/bash
-# configures shell for build commands
-chmod 777 *.sh
-alias build="./build.sh"
-alias run="./run.sh"

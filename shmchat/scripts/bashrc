@@ -1,0 +1,6 @@
+#!/bin/bash
+# configures shell for build commands
+chmod 777 scripts/*.sh
+alias build="./scripts/build.sh"
+alias run="./scripts/run.sh"
+alias install="./scripts/install.sh"

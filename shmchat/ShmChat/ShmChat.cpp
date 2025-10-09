@@ -17,6 +17,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <sys/mman.h>
+#include <sys/stat.h>
 #include <fcntl.h>
 #endif
 
@@ -181,13 +182,16 @@ ShmChat* shmc_open(const std::string &name, bool create) // MARK JAN: TODO - 'cr
 #else // LINUX_BUILD
 
     // open named shm file
-    int fd = shm_open(name.c_str(), O_RDWR, 0666);
+
+    mode_t permissions = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH; // rwx: 777
+    int fd = shm_open(name.c_str(), O_RDWR, permissions);
     create = false;
 
     if(fd == -1)
     {
         // create if it doesnt yet exist
-        fd = shm_open(name.c_str(), O_CREAT | O_RDWR, 0666);
+        fd = shm_open(name.c_str(), O_CREAT | O_RDWR, permissions);
+        fchmod(fd, permissions); // otherwise default umask unsets S_IWOTH
         create = true;
     }
 
