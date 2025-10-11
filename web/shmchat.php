@@ -9,11 +9,11 @@ if($_GET['debug'] == "true") $DEBUG = true;
 
 if($method == "GET")
 {
-    $cmd = "shmchat get apache2";
+    $cmd = "shmchat get bedrock_server1";
 }
 elseif($method == "POST")
 {
-    $cmd = "shmchat send apache2";
+    $cmd = "shmchat send bedrock_server0";
     $body = file_get_contents('php://input');
     $args = $body;
 }

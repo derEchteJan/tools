@@ -91,7 +91,7 @@ public:
     void WriteLine(const std::string &line)
     {
         ::write(out(), line.c_str(), line.length());
-        ::write(out(), "\r\n", 2);
+        ::write(out(), "\n", 1);
     }
 
 };
@@ -142,13 +142,18 @@ int main(int argc, char **argv)
     else
     { 
         // --- PARENT PROCESS ---
+        std::string arg1(argv[1]);
+        std::string shmcInId = arg1 + "0";
+        std::string shmcOutId = arg1 + "1";
 
         fv::setNoBlock(STDIN_FILENO);
         fv::setNoBlock(upPipe.in());
 
-        auto shmc = shmc_open("piper", true);
-        if(!shmc) { std::cerr << "unable to open shmc" << std::endl; exit(1); };
-        std::cout << "creates shmc 'piper'" << std::endl;
+        auto shmcIn = shmc_open(shmcInId, true);
+        if(!shmcIn) { std::cerr << "unable to open input shmc instance '" << shmcInId << "'" << std::endl; exit(1); };
+        auto shmcOut = shmc_open(shmcOutId, true);
+        if(!shmcOut) { std::cerr << "unable to open output shmc instance '" << shmcOutId << "'" << std::endl; exit(1); };
+        std::cout << "shmc in/out streams created: '" << shmcInId << "', '" << shmcOutId << "'" << std::endl;
         
         std::string input;
         std::string response;
@@ -166,7 +171,7 @@ int main(int argc, char **argv)
             }
 
             // read from shmchat
-            input = shmc_read(shmc); // TODO: properly remove trailing linebreaks, split string by linebreaks and foreach
+            input = shmc_read(shmcIn); // TODO: properly remove trailing linebreaks, split string by linebreaks and foreach
             if(!input.empty())
             {
                 input.erase(std::remove(input.begin(), input.end(), '\n'), input.cend());
@@ -180,8 +185,8 @@ int main(int argc, char **argv)
             response = upPipe.readLine();
             if(!response.empty())
             {
-                //std::cout << "response: \n'" << response << "\"" << std::endl;
                 std::cout << response << std::endl;
+                shmc_print(shmcOut, response);
             }
 
             // TODO: send back to shmc as well
