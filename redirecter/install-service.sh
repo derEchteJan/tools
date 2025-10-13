@@ -11,6 +11,9 @@ cat $sfile
 echo ""
 
 sudo systemctl daemon-reload
+sleep 1
+sudo systemctl enable redirecter13
+sleep 1
 sudo systemctl restart redirecter13
-sleep 3
+sleep 1
 sudo systemctl status redirecter13

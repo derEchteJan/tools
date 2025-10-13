@@ -110,7 +110,10 @@ then
         if [[ $addr != $set_addr ]]
         then
             upload_ip6 $SSH_HOST $addr $PORT
-            set_addr=$addr
+            if [[ $? == 0 ]]
+            then
+                set_addr=$addr
+            fi
         fi
 
         echo "sleeping, waiting for ip address change"
