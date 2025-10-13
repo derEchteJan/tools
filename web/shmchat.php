@@ -15,7 +15,8 @@ elseif($method == "POST")
 {
     $cmd = "shmchat send bedrock_server0";
     $body = file_get_contents('php://input');
-    $args = $body;
+    $args = str_replace("'", "", $body);
+    $cmd = "$cmd '$args'";
 }
 else
 {
@@ -24,12 +25,10 @@ else
     return;
 }
 
-$cmd = "$cmd \"$args\""; // TODO: proper input cleanup or hack
-
 if($DEBUG)
 {
     echo "<pre>\n";
-    echo "running '$cmd'\n";
+    echo "running $cmd\n";
     $output = shell_exec("($cmd) 2>&1; echo exited with $?");
     echo "$output";
     echo "</pre>";

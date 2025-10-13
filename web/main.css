@@ -1,0 +1,17 @@
+
+div#main-content
+{
+    width: 95%;
+    margin: auto;
+    background: #EEEEEE;
+    padding: 5%;
+    height: 850pt;
+}
+
+@media screen and (min-width: 1000px) { 
+    div#main-content
+    {
+        width: 60%;
+        margin: auto;
+    }
+}

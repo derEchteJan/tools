@@ -2,46 +2,59 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
-    <title>Web</title>
+    <title>fvsion.de</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="shmchat.css">
     <style type="text/css" media="screen">
-    #textOut {
-        height: 300px;
-    }
-    textarea
-    {
-      width: 80%;
-      resize: none;
-      border: 1px solid transparent;
-      background-color: #DDDDDD;
-      border-radius: 5px;
-    }
-    textarea:focus {
-      outline: none !important;
-      border:1px solid #00FF80;
-    }
+    /* inline style */
     </style>
   </head>
   <body>
-    <h3>ShmChat API Test</h3>
-    <pre>
-Console
--------
-
-<textarea id="textOut" spellcheck="false" readonly></textarea>
-<textarea id="textIn" rows="1" spellcheck="false" placeholder="Enter command..""></textarea>
 
 
-Settings
---------
+<!--<textarea id="textOut" spellcheck="false" readonly></textarea>-->
+
+<!-- whoever reads this has ligma -->
+
+<div id="main-content">
+
+<h3>ShmChat API Test</h3>
+<pre>
+Server Console:
+---------------
+</pre>
+<div id="console">
+  <div id="out">
+    <pre style="margin: 0;"><div id="outWrap"><span id="textOut"><!-- output text --></span></div></pre>
+    <button id="scrollDown" onclick="scrollDownPressed()">follow</button>
+    <button id="clearOutput" onclick="clearPressed()">clear</button>
+  </div>
+  <div id="in">
+    <pre style="margin: 0;"><textarea id="textIn" rows="1" spellcheck="false" placeholder="Enter command.."><!-- input text --></textarea></pre>
+    <div id="inButtons"><button id="up" onclick="upArrowPressed()"><img class="btnimg" src="up.svg"/></button><button id="down" onclick="downArrowPressed()"><img class="btnimg" src="down.svg"/></button><button id="cancel" onclick="cancelPressed()"><img class="btnimg" src="cancel.svg"/></button></div>
+  </div>
+</div>
+
+<pre>
+
+Debug Stuff:
+------------
 
 <input type="checkbox" id="debug_checkbox" name="debug_checkbox"/><label for="debug">Debug API</label>
 
-<button onclick="sendPressed()">Send</button>  <button onclick="getPressed()">Get</button>
+<button id="debug_send" onclick="sendPressed()">Send</button>  <button id="debug_get" onclick="getPressed()">Get</button>
 
-<button onclick="clearPressed()">Clear output</button>
+<button id="debug_clear" onclick="clearPressed()">Clear output</button>
 
-    </pre>
-    <script src="shmchat.js"></script>
-  </body>
+<button id="debug_set_text" onclick="debugFillRandomText()">Generate output</button>
+
+<button id="restart_server" onclick="sendRestartReq()">Restart server</button>
+</pre>
+
+</div>
+
+<script src="shmchat.js"></script>
+</body>
 </html>

@@ -13,6 +13,8 @@ copy_files()
 
 rm $web_dir/* -rf
 copy_files "html"
-copy_files "php"
+copy_files "css"
 copy_files "js"
+copy_files "php"
 copy_files "png"
+copy_files "svg"
