@@ -1,0 +1,14 @@
+# Contents of /etc/systemd/system/bedrock.service
+[Unit]
+Description=bedrock server with piper service
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/piper bedrock_server
+WorkingDirectory=/home/kowalski/bedrock-server-1.21.112.1/
+User=kowalski
+
+[Install]
+WantedBy=multi-user.target

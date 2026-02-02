@@ -1,0 +1,80 @@
+
+#textOut {
+    height: 300px;
+    outline: none;
+    /*white-space: wrap; -> find crossplatform solution */
+}
+div#outWrap
+{
+    height: 300pt;
+    overflow-y: scroll;
+    position: relative;
+    margin-left: 2pt;
+    margin-right: 2pt;
+    padding-bottom: 4pt;
+}
+textarea
+{
+    height: 12pt;
+    resize: none;
+    border: 2px solid transparent;
+    background-color: #DDDDDD;
+    border-radius: 5px;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+textarea:focus {
+    outline: none !important;
+    border: 2px solid #00FF80;
+}
+div#console {
+    position: relative;
+    border: 2px solid gray;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0px;
+    background-color: #DDDDDD;
+}
+div#inButtons {
+    position: absolute;
+    right: 1pt;
+    top: 9;
+    height: 12pt;
+    overflow-y: hidden;
+}
+button#up,#down,#cancel
+{
+    border: 0px solid red;
+    background: transparent;
+    margin: 0;
+    margin-right: 5px;
+    padding: 0;
+    aspect-ratio: 1;
+    height: 100%;
+}
+.btnimg {
+    height: 100%;
+}
+div#in,#out {
+    position: relative;
+}
+div#in
+{
+    height: 16pt;
+}
+button#scrollDown
+{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    display: none;
+}
+button#clearOutput
+{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}

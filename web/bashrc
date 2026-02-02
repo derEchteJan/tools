@@ -1,0 +1,5 @@
+#!/bin/bash
+# configures shell for build commands
+chmod 777 *.sh
+alias setup="./setup.sh"
+alias install="./install.sh"

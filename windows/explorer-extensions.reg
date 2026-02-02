@@ -24,7 +24,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast]
 "Icon"="\"%systemroot%\\system32\\shell32.dll\",32"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast\command]
-@="cmd /c \"echo deleting \"%0\" && del /f /s /q \"%0\" > nul && rmdir /s /q \"%0\" && exit 0\""
+@="cmd /v:on /c \"echo deleting \"%0\" && SET /P CHOICE=Are you sure (y/[n])? && IF /I \"!CHOICE!\" EQU \"y\" echo deleting \"%0\" && del /f /s /q \"%0\" > nul && rmdir /s /q \"%0\" && exit 0\""
 
 ; 'TortoiseGit log' command
 ;  - directory

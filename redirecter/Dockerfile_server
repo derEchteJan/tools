@@ -1,0 +1,7 @@
+# syntax=docker/dockerfile:1
+
+FROM debian:stable
+WORKDIR /app
+COPY . .
+CMD ["bash", "main.sh", "server"]
+EXPOSE 19132/udp
