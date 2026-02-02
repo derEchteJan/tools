@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+; Uninstalls custom explorer context menu entries
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast]
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\JanTortoise]
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\JanTortoise]

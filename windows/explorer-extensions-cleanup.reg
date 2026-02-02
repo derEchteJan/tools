@@ -1,0 +1,31 @@
+Windows Registry Editor Version 5.00
+
+; Removes other garbage from explorere context menu
+
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\AnyCode]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\TsepBuild]
+[-HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\TortoiseGit]
+[-HKEY_CLASSES_ROOT\Directory\Background\shellex\ContextMenuHandlers\TortoiseSVN]
+
+[-HKEY_CLASSES_ROOT\Directory\shell\AnyCode]
+[-HKEY_CLASSES_ROOT\Directory\shell\MobaDiff]
+[-HKEY_CLASSES_ROOT\Directory\shell\OpenWithMobaXterm]
+[-HKEY_CLASSES_ROOT\Directory\shell\TsepBuild]
+[-HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\TortoiseGit]
+[-HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\TortoiseSVN]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shellex\ContextMenuHandlers\TortoiseGit]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shellex\ContextMenuHandlers\TortoiseSVN]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shellex\ContextMenuHandlers\TortoiseGit]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shellex\ContextMenuHandlers\TortoiseSVN]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Drive\shellex\ContextMenuHandlers\TortoiseGit]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Drive\shellex\ContextMenuHandlers\TortoiseSVN]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\ShellEx\ContextMenuHandlers\TortoiseGit]
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\ShellEx\ContextMenuHandlers\TortoiseSVN]
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
+[-HKEY_CURRENT_USER\Software\Classes\*\shell\MobaDiff]
+[-HKEY_CURRENT_USER\Software\Classes\*\shell\MobaTextEditor]
+[-HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\OpenWithMobaXterm]
+[-HKEY_CURRENT_USER\Software\Classes\Directory\shell\MobaDiff]
+[-HKEY_CURRENT_USER\Software\Classes\Directory\shell\OpenWithMobaXterm]

@@ -1,15 +1,43 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
-@="checksum"
-[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
-"Icon"="\"%systemroot%\\system32\\shell32.dll\",72"
-[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum\command]
-@="powershell -NoProfile -Command \"$host.UI.RawUI.WindowTitle = \\\"checksum of %0 \\\"; [console]::WindowWidth=80; [console]::WindowHeight=2; [console]::BufferWidth=[console]::WindowWidth; $(Get-FileHash -Path \\\"%0\\\" -Algorithm MD5).Hash; pause\""
+; Installs custom explorer context menu entries
 
+; Paths:
+; HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell  -> click in folder background
+;  - params: %V is the directory inside of wich the background was clicked in
+; HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell             -> click on folder (excluding files)
+;  - params: %1 is the directory path that was clicked
+; HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell                     -> click on file (excluding directory)
+;  - params: %1 is the file path that was clicked
+
+; checksum command for files
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
+@="checksum" ; display name in list
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum]
+"Icon"="\"%systemroot%\\system32\\shell32.dll\",72" ; display icon from system standard icons
+[HKEY_CURRENT_USER\SOFTWARE\Classes\*\shell\Checksum\command]
+@="powershell -NoProfile -Command \"$host.UI.RawUI.WindowTitle = \\\"checksum of %0 \\\"; $(Get-FileHash -Path \\\"%0\\\" -Algorithm MD5).Hash; $null = Read-Host\""
+
+; 'delete fast' command for directories
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast]
 @="delete folder fast"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast]
 "Icon"="\"%systemroot%\\system32\\shell32.dll\",32"
 [HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\DeleteFast\command]
-@="cmd /c \"echo deleting \"%0\" && del /f /s /q \"%0\" > nul && rmdir /s /q \"%0\"\""
+@="cmd /c \"echo deleting \"%0\" && del /f /s /q \"%0\" > nul && rmdir /s /q \"%0\" && exit 0\""
+
+; 'TortoiseGit log' command
+;  - directory
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\JanTortoise]
+@="TortoiseGit log"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\JanTortoise]
+"Icon"="\"TortoiseGitProc.exe\""
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\JanTortoise\command]
+@="TortoiseGitProc /command:log /path:\"%0\""
+;  - background
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\JanTortoise]
+@="TortoiseGit log"
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\JanTortoise]
+"Icon"="\"TortoiseGitProc.exe\""
+[HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\JanTortoise\command]
+@="TortoiseGitProc /command:log /path:\"%V\""
