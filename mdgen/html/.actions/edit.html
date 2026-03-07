@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+<style>
+#ta_text_input
+{
+    height: 400pt;
+    resize: none;
+}
+#ta_text_input, #ta_file_path
+{
+    width: 100%;
+    color: var(--text1);
+    background-color: var(--surface2);
+    border: 1px solid transparent;
+    border-radius: 5pt;
+    outline: none;
+}
+#ta_text_input:focus, #ta_file_path:focus
+{
+    border: 1px solid var(--text3);
+    outline: none;
+}
+button
+{
+    color: var(--text1);
+    background-color: var(--surface3);
+    border-radius: 5pt;
+    border: none;
+    height: 20pt;
+    width: 60pt;
+}
+#btn-save
+{
+    color: var(--surface1);
+    background-color: var(--accent1);
+}
+div#main
+{
+    margin-left: 0;
+    width: 100%;
+}
+</style>
+</head>
+<body onload="onLoad()">
+<div id="sidebar" style="display:none;">
+</div>
+<div id="main">
+    <div id="content">
+
+        <h2>Edit File</h2>
+
+        <pre>File:</pre>
+        <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="path to save"></textarea><br>
+        <button id="btn-reload" onclick="reloadPressed();">Reload</button>
+        <pre>Contents:</pre>
+        <textarea id="ta_text_input" name="contents" placeholder="loading file..."></textarea><br>
+
+        <br>
+
+        <button id="btn-save" onclick="savePressed();">Save</button>
+        <button id="btn-cancel" onclick="cancelPressed();">Cancel</button>
+        
+        <br><br><br><br><br><br><br><br>
+
+        <button id="fetch" onclick="onFetchPressed();">fetch</button>
+        <button id="post" onclick="onPostPressed();">post</button><br>
+        <pre><a href="/" id="link_result">result</a></pre>
+        <pre><a href="/" id="link_original">original</a></pre>
+    </div>
+</div>
+<script src="edit.js"></script>
+</body>
+</html>
