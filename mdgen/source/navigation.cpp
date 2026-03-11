@@ -53,11 +53,6 @@ void Navigation::iterateDir(const char *path, const char *name, int indent, int 
             char next_path[1024];
             if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0 || entry->d_name[0] == '.')
                 continue;
-            
-            //file->serialize_write("<span class=\"navdir\"><i>");
-            //file->serialize_write(entry->d_name);
-            //file->serialize_write("</i></span>");
-            //file->serialize_writeln("<br>");
 
             snprintf(next_path, sizeof(next_path), "%s/%s", path, entry->d_name);
             iterateDir(next_path, entry->d_name, indent + 1, oddEvenCount++);

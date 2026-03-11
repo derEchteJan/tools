@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+__TITLE__
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+<style>
+</style>
+</head>
+<body onload="onLoad()">
+<div id="sidebar">
+    <div id="nav">
+    </div>
+</div>
+<div id="main">
+    <div id="content">
+    <h1>
+__TITLE__
+    </h1>
+    <hr class="separator">
+    <div class="search">
+        <input type="text" id="searchbar" placeholder="Suche..."></input>
+    </div>
+    <div id="searchresults" style="display:none">
+        <h2>Results</h2>
+        <ul id="resultlist">
+        </ul>
+        <p id="resultcount"></p>
+    </div>
+    <div id="overview">
+        <h2>Pages</h2>
+__OVERVIEW__
+    </div>
+    </div>
+    <hr class="separator">
+    <div id="footer">
+        <button id="btn-edit" onclick="onEditPressed()">Edit</button><br>
+    </div>
+</div>
+<script src="/main.js"></script>
+<script src="/search.js"></script>
+</body>
+</html>

@@ -5,34 +5,76 @@
 
 class MarkdownElement;
 
-class MarkdownFile
+class TemplateFile
 {
+protected:
+    std::string m_rootPath;
+    std::string m_templatePath;
+    std::string m_outPath;
+    std::string m_pageTitle;
+
+    FILE *m_templateFile;
+    FILE *m_outFile;
+    int m_fdOut;
+
+    bool m_parsed;
+
+public:
+    TemplateFile(const std::string &rootPath = "/var/www/html");
+    ~TemplateFile();
+
+    void serialize();
+    virtual bool parse() = 0;
+
+protected:
+    virtual void serializeSection(const std::string &section) = 0;
+
+public:
+    std::string getRootPath() { return m_rootPath; };
+    void serialize_write(const std::string &str = "", int indent = 0);
+    void serialize_writeln(const std::string &line = "", int indent = 0);
+};
+
+class MarkdownFile : public TemplateFile
+{
+    std::vector<MarkdownElement*> m_elements;
     std::vector<MarkdownElement*> m_prototypeElements;
     MarkdownElement *m_currentElement = nullptr;
 
-    std::string m_srcPath, m_outPath, m_templatePath, m_rootPath;
-    std::string m_pageTitle;
-    bool m_parsed;
-    FILE *m_inFile, *m_outFile, *m_templateFile;
+    std::string m_scriptPath;
+
+    FILE *m_inFile;
     int m_fdSrc;
-    int m_fdOut;
-    std::vector<MarkdownElement*> m_elements;
 
 public:
     MarkdownFile(const std::string &filePath/*, const std::string &rootPath*/);
 
     ~MarkdownFile();
 
-    bool parse();
-    void serialize();
+    virtual bool parse() override;
 
-    std::string getRootPath();
-
-    // global way to write data
-
-    void serialize_write(const std::string &str);
-    void serialize_writeln(const std::string &line);
+protected:
+    virtual void serializeSection(const std::string &section) override;
 
 private:
     void parseLine(const std::string &line);
+};
+
+class OverviewFile : public TemplateFile
+{
+public:
+    OverviewFile(const std::string &filePath);
+    ~OverviewFile();
+    
+    OverviewFile(const OverviewFile &) = delete;
+    OverviewFile(const OverviewFile &&) = delete;
+
+    virtual bool parse() override;
+
+protected:
+    virtual void serializeSection(const std::string &section) override;
+
+private:
+    void serializeOverview();
+    void formatFileName(/*in-out*/ std::string &fileName);
 };

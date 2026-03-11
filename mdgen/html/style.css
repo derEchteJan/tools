@@ -211,6 +211,37 @@ hr.separator
     color: var(--text3);
     fill: var(--text3);
     background: var(--text3);
+    border: 0;
+    outline: 0;
+}
+
+/* Overview Page */
+a.overview-pagelink
+{
+    color: var(--accent1);
+    text-decoration: none;
+}
+div.search
+{
+    width: 400px;
+    max-width: 85vw;
+    position: relative;
+    margin: 0.5rem auto 1.2rem;
+    display: flex;
+}
+ul.overviewlist
+{
+    columns: 3;
+}
+#searchbar
+{
+    border: 0;
+    outline: none;
+    background: var(--surface2);
+    color: var(--text1);
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    width: 100%;
 }
 
 /* responsiveness */
@@ -238,5 +269,9 @@ img.large
 {
     width: 90%;
     margin-left: 5%;
+}
+ul.overviewlist
+{
+    columns: 1;
 }
 }

@@ -1,69 +1,31 @@
-#include <stdlib.h>
-#include <fstream>
+
 #include <string>
-#include <vector>
 #include <iostream> 
 
-#include <unistd.h>
-#include <sys/types.h>
-#include <dirent.h>
-#include <stdio.h>
-#include <string.h>
-#include <fcntl.h>
+#include "markdownfile.h"
+#include "search.h"
 
-//static const char *s_rootDir = "/var/www/html";
-
-#if 0
-void iterateDir(const char *name, int indent = 0)
-{
-    DIR *dir;
-    struct dirent *entry;
-
-    if (!(dir = opendir(name)))
-        return;
-
-    while ((entry = readdir(dir)) != NULL) {
-        if (entry->d_type == DT_DIR)
-        {
-            // directory
-            char path[1024];
-            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
-                continue;
-            snprintf(path, sizeof(path), "%s/%s", name, entry->d_name);
-            printf("%*s[%s]\n", indent, "", entry->d_name);
-            iterateDir(path, indent + 2);
-        } else {
-            // file
-            printf("%*s- %s\n", indent, "", entry->d_name);
-            
-        }
-    }
-    closedir(dir);
-}
-#endif
 
 // string utils
-bool startsWith(const std::string &str, const char* prefix)
+namespace std
 {
-    return prefix != nullptr && str.rfind(prefix, 0) == 0;
+bool starts_with(const std::string &string, const char* prefix)
+{
+    return prefix != nullptr && string.rfind(prefix, 0) == 0;
 }
 
-bool endsWith(std::string const &str, std::string const &suffix)
+bool starts_with(const std::string &string, const std::string &prefix)
 {
-    if (suffix.size() > str.size()) return false;
-    return std::equal(suffix.rbegin(), suffix.rend(), str.rbegin());
+    return string.length() >= prefix.length() && string.rfind(prefix, 0) == 0;
 }
 
-class MarkdownInlineElement
+bool ends_with(const std::string &string, const std::string &suffix)
 {
-public:
-    int m_startIdx;
-    int m_endIdx;
+    if (suffix.size() > string.size()) return false;
+    return std::equal(suffix.rbegin(), suffix.rend(), string.rbegin());
+}
+}
 
-    virtual void serialize() = 0;
-};
-
-#include "markdownfile.h"
 
 int main(int argc, char **argv)
 {
@@ -75,10 +37,10 @@ int main(int argc, char **argv)
     for(int argi = 0; argi < argc; argi++)
     {
         std::string arg(argv[argi]);
-        auto mdFileArg = "file=";
-        if(startsWith(arg, mdFileArg) && strlen(mdFileArg) < arg.length())
+        std::string mdFileArg = "file=";
+        if(std::starts_with(arg, mdFileArg) && mdFileArg.length() < arg.length())
         {
-            inFilePath = arg.substr(strlen(mdFileArg));
+            inFilePath = arg.substr(mdFileArg.length());
         };
     }
     if(inFilePath.length() <= 0)
@@ -86,7 +48,7 @@ int main(int argc, char **argv)
         std::cout << "no input file specified" << std::endl;
         exit(1);
     }
-    if(!endsWith(inFilePath, ".md") || inFilePath.length() <= 3)
+    if(!std::ends_with(inFilePath, ".md") || inFilePath.length() <= 3)
     {
         std::cout << "invalid file name: '" << inFilePath << "'" << std::endl;
         exit(1);
@@ -100,7 +62,14 @@ int main(int argc, char **argv)
         mdFile.serialize();
     }
 
-    //iterateDir("/home/rico");
+    OverviewFile overview("index.html");
+    if(overview.parse())
+    {
+        overview.serialize();
+    }
+
+    Search search(mdFile.getRootPath());
+    search.createIndex();
 
     return 0;
 }

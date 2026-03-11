@@ -11,7 +11,7 @@ alias test='sudo cp ./html/style.css / && ./source/generator file=html/format/fo
 alias container-build='echo building container && sudo docker build -t mdgen .'
 
 # start container
-alias start='echo running container && sudo docker run -p 8080:80 mdgen'
+alias start='echo running container && sudo docker run -p 8080:80 --restart unless-stopped --name md-generator mdgen'
 
 # stop container
 alias stop='sudo docker kill $(sudo docker ps -q -l)'
