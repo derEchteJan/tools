@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Edit File</title>
+<title>Upload File</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/style.css">
 <style>
@@ -24,7 +24,7 @@
     border: 1px solid var(--text3);
     outline: none;
 }
-button
+button, input
 {
     color: var(--text1);
     background-color: var(--surface3);
@@ -51,27 +51,18 @@ div#main
 <div id="main">
     <div id="content">
 
-        <h2>Edit File</h2>
+        <h2>Upload File</h2>
+
+        <pre>Path:</pre>
+        <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="path to save"></textarea><br>
 
         <pre>File:</pre>
-        <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="path to save"></textarea><br>
-        <button id="btn-reload" onclick="reloadPressed();">Reload</button>
-        <pre>Contents:</pre>
-        <textarea id="ta_text_input" name="contents" placeholder="loading file..."></textarea><br>
-
-        <br>
-
-        <button id="btn-save" onclick="savePressed();">Save</button>
-        <button id="btn-cancel" onclick="cancelPressed();">Cancel</button>
-        
-        <br><br><br><br><br><br><br><br>
-
-        <button id="fetch" onclick="onFetchPressed();">fetch</button>
-        <button id="post" onclick="onPostPressed();">post</button><br>
-        <pre><a href="/" id="link_result">result</a></pre>
-        <pre><a href="/" id="link_original">original</a></pre>
+        <form action='/.actions/upload.php' method='post' enctype='multipart/form-data'>
+        Select file to upload:
+        <input type='file' name="fileToUpload" id="fileToUpload"><br>
+        <input type='submit' value='submit'></form>
     </div>
 </div>
-<script src="edit.js"></script>
+<script src="upload.js"></script>
 </body>
 </html>

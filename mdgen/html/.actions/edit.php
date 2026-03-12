@@ -3,6 +3,7 @@
     $response = "";
     $result = "";
 
+    $mdgenBin = '/usr/bin/generator';
     $docRoot = '/var/www/html';
     $fileSuffix = '.md';
 
@@ -56,7 +57,7 @@
             $output = null;
             $retval = null;
             $response .= "running generator command:\n/var/mdgen/generator file=$outputFilePath\n";
-            exec("/var/mdgen/generator file=$outputFilePath", $output, $retval);
+            exec("$mdgenBin file=$outputFilePath", $output, $retval);
 
             $logfile = fopen("$docRoot/log.txt", "w");
             foreach ($output as $line)

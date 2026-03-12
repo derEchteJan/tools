@@ -2,10 +2,22 @@
 # Bash config for build commands
 
 # compile generator
-alias build='echo compiling sources && g++ ./source/*.cpp -o ./source/generator && ls -algh ./source/generator'
+alias build='
+if [ ! -d ./build ]; then
+    mkdir ./build
+fi
+echo compiling generator sources &&\
+$(
+    cd ./build &&
+    g++ -c ../source/*.cpp &&
+    g++ *.o --static -o generator
+)
+echo "compiled binary:" &&\
+ls -algh --color ./build/generator &&\
+bincopy'
 
 # test generator
-alias test='sudo cp ./html/style.css / && ./source/generator file=html/format/format.md'
+alias test='sudo cp ./html/style.css / && ./build/generator file=html/format/format.md'
 
 # build container image
 alias container-build='echo building container && sudo docker build -t mdgen .'
@@ -27,3 +39,6 @@ alias compose='build && container-build && start'
 
 # copy current webfiles into running container
 alias webcopy='sudo docker cp ./html/ $(container-id):/var/www && sudo docker exec -it $(container-id) chown -R www-data:www-data /var/www/html'
+
+# copy generator binary into running container
+alias bincopy='sudo docker cp ./build/generator $(container-id):/usr/bin'
