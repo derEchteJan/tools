@@ -11,7 +11,7 @@ alias test='sudo cp ./html/style.css / && ./source/generator file=html/format/fo
 alias container-build='echo building container && sudo docker build -t mdgen .'
 
 # start container
-alias start='echo running container && sudo docker run -p 8080:80 --restart unless-stopped --name md-generator mdgen'
+alias start='echo running container && sudo docker run -p 8080:80 -p 8081:81 mdgen'
 
 # stop container
 alias stop='sudo docker kill $(sudo docker ps -q -l)'
@@ -26,4 +26,5 @@ alias shell='sudo docker exec -it $(container-id) bash'
 alias compose='build && container-build && start'
 
 # copy current webfiles into running container
-alias webcopy='sudo docker cp ./html/ $(container-id):/var/www && sudo docker exec -it $(container-id) chown -R www-data:www-data /var/www/html'
+alias webcopy='sudo docker cp ./html/. $(container-id):/usr/local/apache2/htdocs &&\
+sudo docker exec -it $(container-id) chown -R www-data:www-data /usr/local/apache2/htdocs'
