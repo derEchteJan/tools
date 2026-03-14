@@ -4,72 +4,84 @@
 
 #include "markdownfile.h"
 #include "search.h"
-
-
-// string utils
-namespace std
-{
-bool starts_with(const std::string &string, const char* prefix)
-{
-    return prefix != nullptr && string.rfind(prefix, 0) == 0;
-}
-
-bool starts_with(const std::string &string, const std::string &prefix)
-{
-    return string.length() >= prefix.length() && string.rfind(prefix, 0) == 0;
-}
-
-bool ends_with(const std::string &string, const std::string &suffix)
-{
-    if (suffix.size() > string.size()) return false;
-    return std::equal(suffix.rbegin(), suffix.rend(), string.rbegin());
-}
-}
+#include "settings.h"
+#include "filesys.h"
+#include "benchmark.h"
+#include "stdx.h"
 
 
 int main(int argc, char **argv)
 {
-    (void)argc; (void)argv;
+    benchmark_start();
 
-    // open input file (markdown)
+    Settings::init(argc, argv);
+    Settings::print();
 
-    std::string inFilePath;
-    for(int argi = 0; argi < argc; argi++)
+    // validate settings / arguments
+
+#if 1
+    bool fileSpecified = !Settings::fileParam.empty();
+    bool dirSpecified = !Settings::dirParam.empty();
+    if(!fileSpecified && !dirSpecified)
     {
-        std::string arg(argv[argi]);
-        std::string mdFileArg = "file=";
-        if(std::starts_with(arg, mdFileArg) && mdFileArg.length() < arg.length())
-        {
-            inFilePath = arg.substr(mdFileArg.length());
-        };
-    }
-    if(inFilePath.length() <= 0)
-    {
-        std::cout << "no input file specified" << std::endl;
+        std::cout << "no input file/dir specified" << std::endl;
         exit(1);
     }
-    if(!std::ends_with(inFilePath, ".md") || inFilePath.length() <= 3)
+    if(fileSpecified && dirSpecified)
     {
-        std::cout << "invalid file name: '" << inFilePath << "'" << std::endl;
+        std::cout << "specify either file or dir" << std::endl;
         exit(1);
     }
-    
+    if(fileSpecified && !std::ends_with(Settings::fileParam, ".md"))
+    {
+        std::cout << "invalid file name: '" << Settings::fileParam << "', must end with .md" << std::endl;
+        exit(1);
+    }
+    if(dirSpecified && Settings::dirParam[0] == '/')
+    {
+        std::cout << "invalid dir path, leading '/' not allowed" << std::endl;
+        exit(1);
+    }
+#endif
+
     // parse file
 
-    MarkdownFile mdFile(inFilePath);
-    if(mdFile.parse())
+    if(fileSpecified)
     {
-        mdFile.serialize();
+        MarkdownFile mdFile(Settings::fileParam);
+        if(mdFile.parse())
+        {
+            mdFile.serialize();
+        }
+    }
+    else // dirSpecified
+    {
+        Filesys::handlers_t handlers;
+        handlers.maxDepth = -1;
+        handlers.onFile = [](const std::string &name, const std::string &abs, int depth)
+        {
+            //std::cout << "iterating: " << abs << std::endl;
+            if(std::ends_with(name, ".md"))
+            {
+                MarkdownFile mdFile(abs);
+                if(mdFile.parse())
+                {
+                    mdFile.serialize();
+                }
+            }
+        };
+        Filesys::iterateDir(Settings::dirParam.c_str(), handlers);
     }
 
-    OverviewFile overview("index.html");
+    OverviewFile overview("index.html" /* <- might be put into settings */);
     if(overview.parse())
     {
         overview.serialize();
     }
 
-    Search search(mdFile.getRootPath());
+    Search search(Settings::documentRoot);
     search.createIndex();
 
+    benchmark_end();
     return 0;
 }

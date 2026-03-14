@@ -5,13 +5,13 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/source/generator",
+            "program": "${workspaceFolder}/build/generator",
             "args": [
                 "file=${workspaceFolder}/html/format/format.md"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [ {"name": "document_root", "value": "${workspaceFolder}/html"} ],
             "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": []
@@ -20,13 +20,14 @@
             "name": "C/C++: g++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/source/generator",
+            "program": "${workspaceFolder}/build/generator",
             "args": [
-                "file=${workspaceFolder}/html/format/format.md"
+                //"file=${workspaceFolder}/html/format/format.md"
+                "dir=./html"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [ {"name": "document_root", "value": "${workspaceFolder}/html"} ],
             "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [

@@ -62,7 +62,17 @@ void Filesys::iterateDir(const char *path, handlers_t handlers, int depth)
 int Filesys::open(const std::string &file, Flags flags)
 {
     int fd = -1;
-    int oflags = (O_RDONLY | flags & Flags::R ) | (O_CREAT | flags & Flags::CREATE) | (O_RDWR | flags & Flags::RW);
+
+    #define JAN_MAP_FLAG(_flags, _fromFlag, _toFlag) (_toFlag & -( ((_flags & _fromFlag) == _fromFlag) ) )
+    int oflags =
+        JAN_MAP_FLAG(flags, Flags::R,         O_RDONLY) |
+        JAN_MAP_FLAG(flags, Flags::RW,        O_RDWR  ) |
+        JAN_MAP_FLAG(flags, Flags::CREATE,    O_CREAT );
+        //JAN_MAP_FLAG(flags, Flags::TRUNCATE,  O_TRUNC );
+    #undef JAN_MAP_FLAG
+
+    oflags |= (flags & Flags::APPEND) != 0 ? O_APPEND : O_TRUNC;
+
     mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
     fd = ::open(file.c_str(), oflags, mode);
     return fd;

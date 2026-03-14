@@ -10,7 +10,8 @@ public:
     {
         R = 1, 
         RW = 2, 
-        CREATE = 4
+        CREATE = 4,
+        APPEND = 8
     };
 
     typedef std::function<void(const std::string &name, const std::string &abs, int depth)> dir_handler_t;
@@ -21,7 +22,7 @@ public:
         dir_handler_t onDirEnter = nullptr;
         dir_handler_t onDirExit = nullptr;
         file_handler_t onFile = nullptr;
-        int maxDepth = 1;
+        int maxDepth = -1; // -1 = recursive
         bool includeDirLeaves = false;
     } handlers_t;
 

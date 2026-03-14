@@ -1,8 +1,11 @@
 #include "markdownfile.h"
 
+#include "stdx.h"
+
 #include "markdownelement.h"
 #include "navigation.h"
 #include "filesys.h"
+#include "settings.h"
 
 #include <iostream>
 #include <string>
@@ -17,14 +20,12 @@
 
 // class TemplateFile
 
-TemplateFile::TemplateFile(const std::string &rootPath)
-#if LIVE_PATHS
-    : m_rootPath("/var/www/html");
-#else
-    : m_rootPath("/home/kowalski/tools/mdgen/html")
-#endif
+TemplateFile::TemplateFile()
+    : m_rootPath()
+    , m_indentNext(false)
 {
     m_pageTitle = "Rezepte"; // TODO: settings
+    m_rootPath = Settings::documentRoot;
 }
 
 TemplateFile::~TemplateFile()
@@ -102,9 +103,18 @@ void TemplateFile::serialize_write(const std::string &str, int indent)
     auto tabLen = 2;
     auto baseIndent = 2; // TODO: set property via method
 
-    indent += baseIndent;
+    if(m_indentNext)
+    {
+        if(indent != -1)
+            indent += baseIndent;
+        m_indentNext = false;
+    }
+    else
+    {
+        indent = 0;
+    }
 
-#define USE_STDOUT 1
+#define USE_STDOUT 0
 #if USE_STDOUT
     for(int n = 0; n < indent; n++)
         std::cout << tab;
@@ -122,6 +132,7 @@ void TemplateFile::serialize_writeln(const std::string &line, int indent)
 {
     serialize_write(line, indent);
     serialize_write("\n");
+    m_indentNext = true;
 }
 
 // class MarkdownFile
@@ -162,6 +173,8 @@ bool MarkdownFile::parse()
         std::cout << "unable to open input file '" << m_scriptPath << "'" << std::endl;
         exit(1);
     }
+
+    std::cout << "parsing file: " << m_scriptPath << std::endl << std::endl;
 
     char *line_cstr = nullptr;
     size_t len = 0;
@@ -215,6 +228,7 @@ void MarkdownFile::parseLine(const std::string &line)
         m_prototypeElements.emplace_back(new Headline(this, 2));
         m_prototypeElements.emplace_back(new Headline(this, 1));
         m_prototypeElements.emplace_back(new Blockquote(this));
+        m_prototypeElements.emplace_back(new Table(this));
         m_prototypeElements.emplace_back(new Paragraph(this)); // paragraph always hits true so needs to be last
     }
 
@@ -338,6 +352,12 @@ void OverviewFile::serializeOverview()
     {   
         if(depth != 0 && section >= nSections) return;
 
+        if(!std::ends_with(fileName, ".html")) return;
+
+        if(fileName == m_outPath) return;
+
+        std::cout << " - " << fileName << std::endl;
+
         std::string formattedName = fileName;
         formatFileName(formattedName);
 
@@ -345,6 +365,8 @@ void OverviewFile::serializeOverview()
 
         serialize_writeln("<li><a class=\"overview-pagelink\" href=\"" + url + "\">" + formattedName + "</a></li>", depth);
     };
+
+    std::cout << "Overview: collecting files" << std::endl;
 
     Filesys::iterateDir(m_rootPath.c_str(), handlers);
 

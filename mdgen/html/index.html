@@ -1,66 +1,58 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>
-    Rezepte    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+<title>
+Rezepte
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style.css">
-    <style>
-    </style>
-    </head>
-    <body onload="onLoad()">
-    <div id="sidebar">
-        <div id="nav">
-        </div>
+<style>
+</style>
+</head>
+<body onload="onLoad()">
+<div id="sidebar">
+    <div id="nav">
     </div>
-    <div id="main">
-        <div id="content">
-        <h1>
-    Rezepte    
+</div>
+<div id="main">
+    <div id="content">
+    <h1>
+Rezepte
         </h1>
-        <hr class="separator">
-        <div class="search">
-            <input type="text" id="searchbar" placeholder="Suche..."></input>
-        </div>
-        <div id="searchresults" style="display:none">
-            <h2>Results</h2>
-            <ul id="resultlist">
-            </ul>
-            <p id="resultcount"></p>
-        </div>
-        <div id="overview">
-            <h2>Pages</h2>
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
-    <h3>format</h3>    
-    <ul class="overviewlist">    
-      <li><a class="overview-pagelink" href="/format/format.html">format</a></li>    
-      <li><a class="overview-pagelink" href="/format/format.md">format.md</a></li>    
-    </ul>    
-    <h3>Salate</h3>    
-    <ul class="overviewlist">    
-      <li><a class="overview-pagelink" href="/Salate/Cesar_Bowl.html">Cesar Bowl</a></li>    
-      <li><a class="overview-pagelink" href="/Salate/Gemischter_Vorspeisensalat.html">Gemischter Vorspeisensalat</a></li>    
-      <li><a class="overview-pagelink" href="/Salate/Pulled_Pork_Bowl.html">Pulled Pork Bowl</a></li>    
-    </ul>    
-    <li><a class="overview-pagelink" href="/search.index">search.index</a></li>    
-    <li><a class="overview-pagelink" href="/favicon.ico">favicon.ico</a></li>    
-    <li><a class="overview-pagelink" href="/example.html">example</a></li>    
-    <li><a class="overview-pagelink" href="/search.js">search.js</a></li>    
-    <li><a class="overview-pagelink" href="/test.md">test.md</a></li>    
-    <li><a class="overview-pagelink" href="/main.js">main.js</a></li>    
-    <li><a class="overview-pagelink" href="/info.php">info.php</a></li>    
-    <li><a class="overview-pagelink" href="/style.css">style.css</a></li>    
-    <li><a class="overview-pagelink" href="/index.html">index</a></li>    
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->    
-        </div>
-        </div>
-        <hr class="separator">
-        <div id="footer">
-            <button id="btn-edit" onclick="onEditPressed()">Edit</button><br>
+    <hr class="separator">
+    <div class="search">
+        <input type="text" id="searchbar" placeholder="Suche..."></input>
+    </div>
+    <div id="searchresults" style="display:none">
+        <h2>Results</h2>
+        <ul id="resultlist">
+        </ul>
+        <p id="resultcount"></p>
+    </div>
+    <div id="overview">
+        <h2>Seiten</h2>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <h3>Bowls</h3>
+    <ul class="overviewlist">
+      <li><a class="overview-pagelink" href="/Bowls/Smoothie_Bowl.html">Smoothie Bowl</a></li>
+    </ul>
+    <h3>Sosen</h3>
+    <ul class="overviewlist">
+      <li><a class="overview-pagelink" href="/Sosen/Vegane_Aioli.html">Vegane Aioli</a></li>
+    </ul>
+    <li><a class="overview-pagelink" href="/test.html">test</a></li>
+    <li><a class="overview-pagelink" href="/example.html">example</a></li>
+    <li><a class="overview-pagelink" href="/index.html">index</a></li>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         </div>
     </div>
-    <script src="/main.js"></script>
-    <script src="/search.js"></script>
-    </body>
-    </html>
+    <hr class="separator">
+    <div id="footer">
+        <button id="btn-create" onclick="onCreatePressed()">Neue Seite</button><button id="btn-writemode" onclick="onWriteModePressed()">Bearbeiten Modus</button><br>
+    </div>
+</div>
+<script src="/main.js"></script>
+<script src="/search.js"></script>
+</body>
+</html>

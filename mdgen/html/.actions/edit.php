@@ -4,7 +4,7 @@
     $result = "";
 
     $mdgenBin = '/usr/bin/generator';
-    $docRoot = '/var/www/html';
+    $docRoot = '/usr/local/apache2/htdocs';
     $fileSuffix = '.md';
 
     $requestBody = file_get_contents('php://input');
@@ -23,25 +23,7 @@
 
         $response .= "upload file path: $outputFilePath\n";
 
-        //$testFile = fopen($outputFilePath, "w");
-        //echo("testfile: $testFile\n");
-
-        $generate = false;
         // TODO: input cleanup
-        // resource files into different subdirectory
-        // create directory if not exist
-        // validate input
-        // start generator
-        /*echo("tyring to upload '$outputFilePath'");
-        if(str_ends_with($fileParam, '.md'))
-        {
-            $outputFilePath = $docRoot . '/' . $fileParam;
-            $generate = true;
-        }
-        else
-        {
-            $outputFilePath = $docRoot . '/' . $fileParam;
-        }*/
 
         // upload body into markdown file
         $result = file_put_contents(
@@ -56,8 +38,9 @@
 
             $output = null;
             $retval = null;
-            $response .= "running generator command:\n/var/mdgen/generator file=$outputFilePath\n";
-            exec("$mdgenBin file=$outputFilePath", $output, $retval);
+            $command = "document_root=$docRoot $mdgenBin file=$outputFilePath";
+            $response .= "running generator command:\n$command\n";
+            exec($command, $output, $retval);
 
             $logfile = fopen("$docRoot/log.txt", "w");
             foreach ($output as $line)

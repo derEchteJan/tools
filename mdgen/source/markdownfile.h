@@ -18,9 +18,10 @@ protected:
     int m_fdOut;
 
     bool m_parsed;
+    bool m_indentNext;
 
 public:
-    TemplateFile(const std::string &rootPath = "/var/www/html");
+    TemplateFile();
     ~TemplateFile();
 
     void serialize();

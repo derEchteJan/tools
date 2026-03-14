@@ -31,7 +31,7 @@ protected:
 public:
     MarkdownElement(MarkdownFile *parentFile, const char *typenName);
 
-    ~MarkdownElement();
+    virtual ~MarkdownElement();
 
     bool isBlock();
     const char* typeName();
@@ -173,12 +173,14 @@ public:
     virtual void serialize() override
     {
         if(!m_parentFile) return;
-        m_parentFile->serialize_writeln("<div class=\"code\">\n<pre>");
+        m_parentFile->serialize_writeln("<div class=\"code\">");
+        m_parentFile->serialize_writeln("<pre>", 1);
         for(auto line : m_lineData)
         {
-            m_parentFile->serialize_writeln(line.m_lineText); // code blocks dont use serializeLine(), no inline elements are required
+            m_parentFile->serialize_writeln(line.m_lineText, -1); // code blocks dont use serializeLine(), no inline elements are required
         }
-        m_parentFile->serialize_writeln("</pre>\n</div>");
+        m_parentFile->serialize_writeln("</pre>", 1);
+        m_parentFile->serialize_writeln("</div>");
     }
 
     virtual MarkdownElement* clone() override
@@ -257,5 +259,99 @@ public:
             truncatedLine = line;
         }
         MarkdownElement::parseLine(truncatedLine, isFirstLine, true);
+    }
+};
+
+class Table : public MarkdownElement
+{
+    std::vector<std::vector<size_t>> m_indices;
+    int m_columns;
+    bool m_hasHeaders;
+
+public:
+    Table(MarkdownFile *parentFile)
+        : MarkdownElement(parentFile, "Table")
+        , m_columns(1)
+        , m_hasHeaders(false)
+    {
+        m_isBlock = true;
+    }
+
+    virtual void serialize() override
+    {
+        if(!m_parentFile) return;
+        m_parentFile->serialize_writeln("<table class=\"maintable\">");
+        bool isFirstRow = true;
+        for(auto &rowIndices : m_indices)
+        {
+            bool isHeader = isFirstRow && m_hasHeaders;
+            m_parentFile->serialize_writeln("<tr>", 1);
+            for(int col = 0; col < m_columns; col++)
+            {
+                if(col < rowIndices.size())
+                {
+                    m_parentFile->serialize_write(isHeader ? "<th>" : "<td>", 2);
+                    auto lineDataIdx = rowIndices[col];
+                    MarkdownElement::serializeLine(m_lineData[lineDataIdx]);
+                    m_parentFile->serialize_writeln(isHeader ? "</th>" : "</td>", 2);
+                }
+                else
+                {
+                    m_parentFile->serialize_writeln(isHeader ? "<th></th>" : "<td></td>", 2);
+                }
+            }
+            m_parentFile->serialize_writeln("</tr>", 1);
+            isFirstRow = false;
+        }
+        m_parentFile->serialize_writeln("</table>");
+    }
+
+    virtual MarkdownElement* clone() override
+    {
+        return new Table(m_parentFile);
+    }
+
+    virtual bool startsWith(const std::string &line) override
+    {
+        return !line.empty() && line.find("|") == 0;
+    }
+
+    virtual bool endsWith(const std::string &line) override
+    {
+        return !startsWith(line);
+    }
+
+    virtual void parseLine(const std::string &line, bool isFirstLine, bool raw) override
+    {
+        m_indices.resize(m_indices.size() + 1);
+        auto &rowIndices = m_indices[m_indices.size() - 1];
+
+        int column = 0;
+
+        int cellBegin = 1;
+        for(int cellEnd = cellBegin; cellEnd < line.length(); cellEnd++)
+        {
+            if(line.at(cellEnd) == '|')
+            {
+                auto cellLen = cellEnd - cellBegin;
+                std::string cellContent;
+                if(cellLen > 0)
+                {
+                    cellContent = line.substr(cellBegin, cellLen);
+                }
+                MarkdownElement::parseLine(cellContent, isFirstLine, false);
+
+                int lineDataIdx = m_lineData.size() - 1;
+                rowIndices.push_back(lineDataIdx);
+
+                column++;
+                cellEnd++;
+                cellBegin = cellEnd;
+
+                if(m_columns < column) m_columns = column;
+            }
+        }
+
+        auto done = 0; (void)done;
     }
 };

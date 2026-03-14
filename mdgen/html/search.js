@@ -108,6 +108,7 @@ function searchFor(query)
                 {
                     addResult(displayName, url);
                     matches += 1;
+                    break;
                 }
             }
         })

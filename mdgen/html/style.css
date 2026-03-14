@@ -79,6 +79,7 @@ div#content, div#footer
 {
     margin-left: 4%;
     margin-right: 4%;
+    margin-bottom: 50pt;
     background-color: var(--surface1);
 }
 div#footer
@@ -168,7 +169,9 @@ button
     border-radius: 5pt;
     border: none;
     height: 20pt;
-    width: 60pt;
+    min-width: 60pt;
+    margin-right: 10pt;
+    margin-bottom: 6pt;
 }
 #btn-save
 {
@@ -202,6 +205,17 @@ code.inline-code
     border-radius: 2.5pt;
     padding-left: 2.5pt;
     padding-right: 2.5pt
+}
+
+/* Tables */
+table.maintable
+{
+    border: 1px solid var(--text3);
+}
+table.maintable td
+{
+    border: 1px solid var(--text3);;
+    padding: 10pt 6pt 10pt 6pt;
 }
 
 /* Lines */
@@ -247,7 +261,7 @@ ul.overviewlist
 /* responsiveness */
 @media only screen and ((orientation: portrait) or (max-width: 1230px))
 {
-/* landscape or too small in widht: hide navbar */
+/* landscape or too small in width for sidebar: hide navbar */
 div#sidebar
 {
     display: none;
@@ -265,6 +279,7 @@ div#main
 
 @media (pointer:none) or (pointer:coarse)
 {
+/* general mobile settings: */
 img.large
 {
     width: 90%;
@@ -274,4 +289,10 @@ ul.overviewlist
 {
     columns: 1;
 }
+button
+{
+    font-size: 110%;
+    height: 30pt;
+}
+
 }

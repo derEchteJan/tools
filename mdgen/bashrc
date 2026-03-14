@@ -1,8 +1,12 @@
 #!/bin/bash
 # Bash config for build commands
+# usage: '. bashrc' or 'source bashrc'
 
 DOC_ROOT='/usr/local/apache2/htdocs'
 CONTAINER_NAME='md-generator'
+
+echo ''
+echo 'Build commands:'
 
 # compile generator
 alias build='
@@ -11,41 +15,56 @@ if [ ! -d ./build ]; then
 fi
 echo compiling generator sources &&\
 $(
-    cd ./build &&
-    g++ -c ../source/*.cpp &&
+    cd ./build &&\
+    g++ -c ../source/*.cpp &&\
     g++ *.o --static -o generator
 )
 echo "compiled binary:" &&\
 ls -algh --color ./build/generator &&\
 bincopy'
+echo ' - build:             combiles generator binary'
 
 # test generator
-alias test='sudo cp ./html/style.css / && ./build/generator file=html/format/format.md'
+alias test='sudo cp ./html/style.css / && document_root="$(pwd)/html" ./build/generator file=html/format/format.md'
+alias test-all='sudo cp ./html/style.css / && document_root="$(pwd)/html" ./build/generator dir=html'
+echo ' - test:              runs generator locally on a single file (format.md)'
+echo ' - test-all:          runs generator locally recursive on ./html'
 
 # build container image
 alias container-build='echo building container image "mdgen" && sudo docker build -t mdgen .'
+echo ' - container-build:   builds container image'
 
 # remove container image
 alias container-clean='echo removing container image "mdgen" && sudo docker rm -f $(container-id -a)'
+echo ' - container-clean:   removes container image'
 
 # get id of running container (add '-a' to include stopped)
 alias container-id='sudo docker ps -q --filter name=$CONTAINER_NAME'
+echo ' - container-id:      prints running container id, used by other commands. (add "-a" to include stopped)'
 
 # start container
 alias start='echo running container && sudo docker run -p 8080:80 -p 8081:81 --name $CONTAINER_NAME mdgen'
+echo ' - start:             starts container'
 
 # stop container
 alias stop='sudo docker kill $(container-id)'
+echo ' - stop:              stops container'
 
 # start shell inside running container
 alias shell='sudo docker exec -it $(container-id) bash'
+echo ' - shell:             start bash shell inside running container'
 
 # build everything and start container
 alias compose='build && container-build && start'
+echo ' - compose:           build everything and start container'
 
 # copy current webfiles into running container
 alias webcopy='sudo docker cp ./html/. $(container-id):/usr/local/apache2/htdocs &&\
 sudo docker exec -it $(container-id) chown -R www-data:www-data /usr/local/apache2/htdocs'
+echo ' - webcopy:           copy current webfiles into running container'
 
 # copy generator binary into running container
 alias bincopy='sudo docker cp ./build/generator $(container-id):/usr/bin'
+echo ' - bincopy:           copy generator binary into running container'
+
+echo ''

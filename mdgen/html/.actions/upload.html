@@ -57,10 +57,12 @@ div#main
         <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="path to save"></textarea><br>
 
         <pre>File:</pre>
-        <form action='/.actions/upload.php' method='post' enctype='multipart/form-data'>
+        <form action='/.actions/upload.php' id="upload-form" method='post' enctype='multipart/form-data'>
         Select file to upload:
         <input type='file' name="fileToUpload" id="fileToUpload"><br>
         <input type='submit' value='submit'></form>
+        <br>
+        <button onclick="submitForm()">Upload via JavaScript</button>
     </div>
 </div>
 <script src="upload.js"></script>
