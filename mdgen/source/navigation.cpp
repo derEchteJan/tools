@@ -1,6 +1,10 @@
 #include "navigation.h"
 
+#include "stdx.h"
 #include "markdownfile.h"
+#include "filesys.h"
+
+#include <algorithm>
 
 #include <unistd.h>
 #include <sys/types.h>
@@ -17,7 +21,48 @@ void Navigation::serialize()
     auto file = m_parentFile;
     if(!file) return;
 
-    iterateDir(m_parentFile->getRootPath().c_str());
+    //iterateDir(m_parentFile->getRootPath().c_str());
+    int rootPathLen = file->getRootPath().length();
+
+    Filesys::handlers_t handlers;
+    handlers.onDirEnter = [&](const std::string &name, const std::string &path, int depth) {
+        file->serialize_writeln("<div>");
+
+        file->serialize_write("<span class=\"navdir\"><i>");
+        file->serialize_write(name);
+        file->serialize_writeln("</i></span><br>");
+
+        file->serialize_writeln("<div style=\"margin-left: 10pt\">");
+    };
+    handlers.onDirExit = [&](const std::string &name, const std::string &path, int depth) {
+        file->serialize_writeln("</div>");
+        file->serialize_writeln("</div>");
+    };
+    handlers.onFile = [&](const std::string &name, const std::string &path, int depth) {
+        if(!std::ends_with(name, ".html")) return;
+        
+        std::string url = path.substr(rootPathLen);
+        std::string displayName = name.substr(0, name.length() - strlen(".html"));
+        std::replace(displayName.begin(), displayName.end(), '_', ' ');
+        
+        file->serialize_write("<a class=\"navitem\" href=\"");
+        file->serialize_write(url);
+        file->serialize_write("\">- ");
+        file->serialize_write(displayName);
+        file->serialize_writeln("</a><br>");
+    };
+
+    file->serialize_write("<span class=\"navdir\"><i>");
+    file->serialize_write("<a href=\"/\">");
+    file->serialize_write("HOME");
+    file->serialize_write("</a>");
+    file->serialize_writeln("</i></span><br>");
+
+    file->serialize_writeln("<div style=\"margin-left: 10pt\">");
+
+    Filesys::iterateDir(file->getRootPath().c_str(), handlers);
+
+    file->serialize_writeln("</div>");
 }
 
 void Navigation::iterateDir(const char *path, const char *name, int indent, int oddEvenCount)
@@ -38,7 +83,14 @@ void Navigation::iterateDir(const char *path, const char *name, int indent, int 
     file->serialize_writeln("<div class=\"" + divType + "\">");
     
     file->serialize_write("<span class=\"navdir\"><i>");
-    file->serialize_write(name);
+    if(name)
+        file->serialize_write(name);
+    else
+    {
+        file->serialize_write("<a href=\"/\">");
+        file->serialize_write("HOME");
+        file->serialize_write("</a>");
+    }
     file->serialize_write("</i></span>");
     file->serialize_writeln("<br>");
 

@@ -65,35 +65,6 @@ void TemplateFile::serialize()
         {
             serialize_write(line);
         }
-#if 0
-        if(line == "__TITLE__\n")
-        {
-            serialize_writeln(m_pageTitle);
-        }
-        else if(line == "__NAV__\n")
-        {
-            Navigation nav(this);
-            nav.serialize();
-        }
-        else if(line == "__CONTENT__\n")
-        {
-            if(!m_elements.empty())
-            {
-                for(auto element : m_elements)
-                {
-                    element->serialize();
-                }
-            }
-            else
-            {
-                serialize_writeln("<p><span id=\"empty-placeholder\">Empty Page</span></p>");
-            }
-        }
-        else
-        {
-            serialize_write(line);
-        }
-#endif
     }
 }
 
@@ -166,32 +137,22 @@ MarkdownFile::~MarkdownFile()
 
 bool MarkdownFile::parse()
 {
-#if 1
-    m_inFile = fopen(m_scriptPath.c_str(), "r");
-    if(!m_inFile)
+    int scriptFile = Filesys::open(m_scriptPath, Filesys::R);
+    if(scriptFile == -1)
     {
         std::cout << "unable to open input file '" << m_scriptPath << "'" << std::endl;
-        exit(1);
+        return false;
     }
 
-    std::cout << "parsing file: " << m_scriptPath << std::endl << std::endl;
+    bool done = false;
 
-    char *line_cstr = nullptr;
-    size_t len = 0;
-    ssize_t read = -1;
-
-    while ((read = getline(&line_cstr, &len, m_inFile)) != -1)
-    {
-        if(line_cstr[read - 1] == '\n')
-            line_cstr[read - 1] = 0; // trunc off lb
-        
-        std::string line(line_cstr);
-        if(line == "END") break;
+    Filesys::readLines(scriptFile, [&](const std::string &line){
+        if(done) return;
+        if(line == "END") { done = true; return; }
         parseLine(line);
-    }
-    parseLine(""); // finish up open blocks
-#endif
+    });
 
+    Filesys::close(scriptFile);
     return true;
 }
 
@@ -231,6 +192,11 @@ void MarkdownFile::parseLine(const std::string &line)
         m_prototypeElements.emplace_back(new Table(this));
         m_prototypeElements.emplace_back(new Paragraph(this)); // paragraph always hits true so needs to be last
     }
+    
+    auto titleTag = "_TITLE_";
+    auto titleTagLen = strlen(titleTag);
+    auto tagsTag = "_TAG_";
+    auto tagsTagLen = strlen(tagsTag);
 
     // actual method:
 
@@ -257,6 +223,17 @@ void MarkdownFile::parseLine(const std::string &line)
             std::cout << "-- skip" << std::endl;
             return;
         }
+        if(std::starts_with(line, titleTag) && line.length() > titleTagLen + 1 && line.at(titleTagLen) == ' ')
+        {
+            m_pageTitle = line.substr(titleTagLen + 1, line.length() - titleTagLen - 1);
+            return;
+        }
+        if(std::starts_with(line, tagsTag) && line.length() > tagsTagLen + 1 && line.at(tagsTagLen) == ' ')
+        {
+            std::string tagValue = line.substr(tagsTagLen + 1, line.length() - tagsTagLen - 1);
+            m_tags.emplace_back(tagValue);
+            return;
+        }
         for(auto prototype : m_prototypeElements)
         {
             if(prototype->startsWith(line))
@@ -280,7 +257,6 @@ void MarkdownFile::parseLine(const std::string &line)
         }
         // TODO: parse start line attributes if implemented later
     }
-    
 }
 
 // class Overview
@@ -290,6 +266,7 @@ OverviewFile::OverviewFile(const std::string &filePath)
 {
     m_templatePath = m_rootPath + "/.templates/overview.html";
     m_outPath = m_rootPath + "/" + filePath;
+    m_pageTitle = Settings::siteName;
 }
 
 OverviewFile::~OverviewFile() = default;
@@ -321,7 +298,7 @@ void OverviewFile::serializeOverview()
     Filesys::handlers_t handlers;
 
     int section = 0;
-    const int nSections = 2; // number of sections of subdirs to include
+    const int nSections = 4; // number of sections of subdirs to include
     const int nListCols = 3; // TODO: settings
 
     handlers.maxDepth = 1;

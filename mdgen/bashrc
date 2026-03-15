@@ -42,8 +42,23 @@ echo ' - container-clean:   removes container image'
 alias container-id='sudo docker ps -q --filter name=$CONTAINER_NAME'
 echo ' - container-id:      prints running container id, used by other commands. (add "-a" to include stopped)'
 
+# run (aka create) container
+alias run='echo running container && sudo docker run --detach -p 8080:80 -p 8081:81 --name $CONTAINER_NAME mdgen'
+echo ' - run:               creates container and starts it'
+
 # start container
-alias start='echo running container && sudo docker run -p 8080:80 -p 8081:81 --name $CONTAINER_NAME mdgen'
+alias start='
+if [[ "$(container-id -a)" == "" ]];
+then
+    echo "creating and starting container"
+    run
+elif [[ "$(container-id)" == "" ]];
+then
+    echo "starting container"
+    sudo docker start $(container-id -a)
+else
+    echo "already running -> $(container-id)"
+fi'
 echo ' - start:             starts container'
 
 # stop container

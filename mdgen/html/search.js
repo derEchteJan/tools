@@ -18,6 +18,7 @@ else
 function search_onLoad()
 {
     console.log("search onLoad");
+    searchBar.value = "";
     searchBar.addEventListener('input', function(event) {
         console.log("query changed");
         var query = searchBar.value;

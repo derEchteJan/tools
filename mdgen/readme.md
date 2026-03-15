@@ -17,7 +17,6 @@ compose         # composes docker container image and starts it
 **TODOs:**
 
  - logging function and verbosity level
- - hide edit buttons and handle js php responses for php disabled mode
  - tables: parse header separator line
  - add docker volume to keep persistent data
  - add functionality to export user created data as downloadable / uploadable tar archive

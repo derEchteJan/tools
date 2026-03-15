@@ -16,6 +16,7 @@ public:
 
     typedef std::function<void(const std::string &name, const std::string &abs, int depth)> dir_handler_t;
     typedef std::function<void(const std::string &name, const std::string &abs, int depth)> file_handler_t;
+    typedef std::function<void(const std::string &line)> line_handler_t;
 
     typedef struct handlers_t
     {
@@ -27,9 +28,11 @@ public:
     } handlers_t;
 
     static void iterateDir(const char *path, handlers_t handlers, int depth = 0);
+    static void readLines(int fd, line_handler_t forEachLine);
 
     static int open(const std::string &file, Flags flags);
     static int open(const std::string &file, int flags);
+    static void close(int fd);
 
     static void write(int fd, const char *cstr);
     static void write(int fd, const std::string &file);

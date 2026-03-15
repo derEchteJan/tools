@@ -67,6 +67,7 @@ int main(int argc, char **argv)
                 if(mdFile.parse())
                 {
                     mdFile.serialize();
+                    Search::createIndexFor(mdFile);
                 }
             }
         };
@@ -79,8 +80,7 @@ int main(int argc, char **argv)
         overview.serialize();
     }
 
-    Search search(Settings::documentRoot);
-    search.createIndex();
+    Search::createRootIndex(Settings::documentRoot);
 
     benchmark_end();
     return 0;

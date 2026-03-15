@@ -1,15 +1,17 @@
 #pragma once
 
+#include "markdownfile.h"
+
 #include <string>
 
 class Search
 {
 private:
-    std::string m_rootPath;
-    std::string m_outFilePath;
 
 public:
-    Search(const std::string &rootPath);
+    //Search(const std::string &rootPath);
 
-    void createIndex();
+    static void createRootIndex(const std::string &rootPath);
+
+    static void createIndexFor(const MarkdownFile &file);
 };

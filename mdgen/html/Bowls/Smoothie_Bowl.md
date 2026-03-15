@@ -1,5 +1,3 @@
-> Metadaten parsing noch in arbeit
-
 _TITLE_ Vegane Aioli
 _TAG_ vegan
 _TAG_ kochkurs

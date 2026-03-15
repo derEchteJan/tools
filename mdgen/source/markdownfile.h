@@ -31,7 +31,7 @@ protected:
     virtual void serializeSection(const std::string &section) = 0;
 
 public:
-    std::string getRootPath() { return m_rootPath; };
+    std::string getRootPath() const { return m_rootPath; };
     void serialize_write(const std::string &str = "", int indent = 0);
     void serialize_writeln(const std::string &line = "", int indent = 0);
 };
@@ -41,18 +41,22 @@ class MarkdownFile : public TemplateFile
     std::vector<MarkdownElement*> m_elements;
     std::vector<MarkdownElement*> m_prototypeElements;
     MarkdownElement *m_currentElement = nullptr;
-
+    
     std::string m_scriptPath;
-
+    std::vector<std::string> m_tags;
+    
     FILE *m_inFile;
     int m_fdSrc;
-
-public:
+    
+    public:
     MarkdownFile(const std::string &filePath/*, const std::string &rootPath*/);
-
+    
     ~MarkdownFile();
-
+    
     virtual bool parse() override;
+    
+    std::string getScriptPath() const { return m_scriptPath; };
+    const std::vector<std::string>& getTags() const { return m_tags; }
 
 protected:
     virtual void serializeSection(const std::string &section) override;

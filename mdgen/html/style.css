@@ -86,6 +86,15 @@ div#footer
 {
     padding-bottom: 40pt;
 }
+#edit-on
+{
+    display: none;
+    color: var(--accent1);
+}
+#edit-off
+{
+    color: var(--text2);
+}
 span#empty-placeholder
 {
     font-size: 400%;
@@ -166,12 +175,18 @@ button
 {
     color: var(--text1);
     background-color: var(--surface3);
+    font-size: 100%;
     border-radius: 5pt;
     border: none;
-    height: 20pt;
+    min-height: 20pt;
     min-width: 60pt;
     margin-right: 10pt;
     margin-bottom: 6pt;
+    padding: 4pt 4pt 4pt 4pt;
+}
+button:disabled
+{
+    opacity: 0.5;
 }
 #btn-save
 {
@@ -212,10 +227,15 @@ table.maintable
 {
     border: 1px solid var(--text3);
 }
-table.maintable td
+table.maintable td, table.maintable th
 {
-    border: 1px solid var(--text3);;
-    padding: 10pt 6pt 10pt 6pt;
+    border: 1px solid var(--text3);
+    padding: 6pt 6pt 6pt 6pt;
+}
+table.maintable th
+{
+    background-color: var(--text3);
+    color: var(--surface1);
 }
 
 /* Lines */

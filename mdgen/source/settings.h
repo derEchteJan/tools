@@ -12,6 +12,7 @@ public:
     static std::string documentRoot;    /** arg 'document_root=...' */
     static std::string fileParam;       /** arg 'file=...' */
     static std::string dirParam;        /** arg 'dir=...' */
+    static std::string siteName;
 
     // Methods
     static void init(int argc, char **argv);

@@ -10,4 +10,5 @@ namespace std
 bool starts_with(const std::string &string, const char* prefix);
 bool starts_with(const std::string &string, const std::string &prefix);
 bool ends_with(const std::string &string, const std::string &suffix);
+std::string replace_suffix(const std::string &str, const char *repl, const char *with); 
 }

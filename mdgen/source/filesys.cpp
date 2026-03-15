@@ -1,5 +1,7 @@
 #include "filesys.h"
 
+#include <iostream>
+
 #include <unistd.h>
 #include <sys/types.h>
 #include <dirent.h>
@@ -71,7 +73,10 @@ int Filesys::open(const std::string &file, Flags flags)
         //JAN_MAP_FLAG(flags, Flags::TRUNCATE,  O_TRUNC );
     #undef JAN_MAP_FLAG
 
-    oflags |= (flags & Flags::APPEND) != 0 ? O_APPEND : O_TRUNC;
+    if((flags & Flags::RW) != 0)
+    {
+        oflags |= O_TRUNC;
+    }
 
     mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
     fd = ::open(file.c_str(), oflags, mode);
@@ -81,6 +86,11 @@ int Filesys::open(const std::string &file, Flags flags)
 int Filesys::open(const std::string &file, int flags)
 {
     return Filesys::open(file, (Flags)flags);
+}
+
+void Filesys::close(int fd)
+{
+    ::close(fd);
 }
 
 void Filesys::write(int fd, const char *cstr)
@@ -93,4 +103,28 @@ void Filesys::write(int fd, const std::string &file)
 {
     if(fd == -1) return;
     ::write(fd, file.c_str(), file.length());
+}
+
+void Filesys::readLines(int fileFd, line_handler_t forEachLine)
+{
+    FILE *file = fdopen(fileFd, "r");
+    if(!file)
+    {
+        std::cout << "unable to open file" << std::endl;
+        exit(1);
+    }
+
+    char *line_cstr = nullptr;
+    size_t len = 0;
+    ssize_t read = -1;
+    while ((read = getline(&line_cstr, &len, file)) != -1)
+    {
+        if(line_cstr[read - 1] == '\n')
+            line_cstr[read - 1] = 0; // trunc off lb
+
+        std::string line(line_cstr);
+        forEachLine(line);
+    }
+
+    fclose(file);
 }

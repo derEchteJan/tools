@@ -3,51 +3,40 @@
 #include <algorithm>
 #include <iostream>
 
+#include <string.h>
 #include "search.h"
 #include "filesys.h"
 #include "stdx.h"
 
-Search::Search(const std::string &rootPath)
-    : m_rootPath(rootPath)
+static auto sep = ", ";
+
+static std::string getTagFilePath(const MarkdownFile &file)
 {
-    m_outFilePath = m_rootPath + "/search.index";
+    std::string indexPath = std::replace_suffix(file.getScriptPath(), ".md", ".index");
+    return indexPath;
 }
 
-static const char* getDummyTag1()
+
+
+static void serializeTags(int outFd, const std::string &tagFileName)
 {
-    static int s_dummyTagIdx1 = 0;
-    static std::vector<const char*> s_dummyTags1 = {
-        "vorspeisen",
-        "nachspeisen",
-        "hautpspeisen",
-        "beilagen",
-        "soßen"
-    };
-    auto result = s_dummyTags1.at(s_dummyTagIdx1++);
-    s_dummyTagIdx1 %= s_dummyTags1.size();
-    return result;
+    auto tagsFile = Filesys::open(tagFileName, Filesys::R);
+    if(tagsFile == -1) return;
+    
+    Filesys::readLines(tagsFile, [&](const std::string &line){
+        Filesys::write(outFd, sep);
+        Filesys::write(outFd, line);
+    });
+        
+    Filesys::close(tagsFile);
 }
 
-static const char* getDummyTag2()
-{
-    static int s_dummyTagIdx2 = 0;
-    static std::vector<const char*> s_dummyTags2 = {
-        "deutsch",
-        "italienisch",
-        "mexikanisch",
-        "thailändisch",
-        "indisch",
-        "griechisch"
-    };
-    auto result = s_dummyTags2.at(s_dummyTagIdx2++);
-    s_dummyTagIdx2 %= s_dummyTags2.size();
-    return result;
-}
-
-void Search::createIndex()
+void Search::createRootIndex(const std::string &rootPath)
 {
     // TODO: need truncate / ftruncate option to work
-    int outFd = Filesys::open(m_outFilePath, Filesys::RW | Filesys::CREATE);
+    std::string outFilePath = rootPath + "/search.index"; // TODO: move to global constants
+
+    int outFd = Filesys::open(outFilePath, Filesys::RW | Filesys::CREATE);
 
     if(outFd == -1) { std::cout << "error opening search index file" << std::endl; return; }
 
@@ -57,23 +46,50 @@ void Search::createIndex()
     };
 
     Filesys::handlers_t handler;
-    auto sep = ", ";
 
     handler.onFile = [&](const std::string &fileName, const std::string &filePath, int depth)
     {
         if(!std::ends_with(fileName, ".html")) return;
 
-        // TODO: Tags and other search meta data must be generated and retrieved on a per file basis and included to the lines
-        std::string dummyTag1(getDummyTag1());
-        std::string dummyTag2(getDummyTag2());
-        std::string url = filePath.substr(m_rootPath.length());
+        std::string url = filePath.substr(rootPath.length());
         std::string displayName = fileName.substr(0, fileName.find("."));
         std::replace(displayName.begin(), displayName.end(), '_', ' ');
+        std::string tagFileName = std::replace_suffix(filePath, ".html", ".index");
 
-        auto line = url + sep + displayName + sep + dummyTag1 + sep + dummyTag2 + "\n";
-
+        std::string line = url + sep + displayName;
         Filesys::write(outFd, line);
+
+        // serialize tags from tag file
+        serializeTags(outFd, tagFileName);
+
+        Filesys::write(outFd, "\n");
     };
 
-    Filesys::iterateDir(m_rootPath.c_str(), handler);
+    Filesys::iterateDir(rootPath.c_str(), handler);
+}
+
+void Search::createIndexFor(const MarkdownFile &file)
+{
+    auto tags = file.getTags();
+
+    if(tags.size() == 0) return;
+
+    std::string tagFilePath = getTagFilePath(file);
+
+    auto tagFile = Filesys::open(tagFilePath, Filesys::RW | Filesys::CREATE);
+    if(tagFile == -1)
+    {
+        std::cout << "Search: unable to open index tag file '" << tagFilePath << "'" << std::endl;
+        return;
+    }
+
+    for(auto tag : tags)
+    {
+        Filesys::write(tagFile, tag);
+        Filesys::write(tagFile, "\n");
+    }
+
+    Filesys::close(tagFile);
+
+    std::cout << "Created index tag file: '" << tagFilePath << "'" << std::endl;
 }

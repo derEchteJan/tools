@@ -15,9 +15,9 @@ RUN chown -R www-data:www-data /usr/local/apache2/htdocs
 
 # Install apache php module
 
-run apt-get update
-run apt-get install -y php libapache2-mod-php
+RUN apt-get update
+RUN apt-get install -y php libapache2-mod-php
 
 # Copy custom apache config
 
-copy ./config/httpd.conf /usr/local/apache2/conf/
+COPY ./config/httpd.conf /usr/local/apache2/conf/

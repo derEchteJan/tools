@@ -15,7 +15,7 @@ public:
     void serialize();
 
     private:
-    void iterateDir(const char *path, const char *name = "ROOT", int indent = 0, int oddEvenCount = 0);
+    void iterateDir(const char *path, const char *name = nullptr, int indent = 0, int oddEvenCount = 0);
 };
 
 class OverviewNavigation

@@ -24,15 +24,6 @@
     border: 1px solid var(--text3);
     outline: none;
 }
-button
-{
-    color: var(--text1);
-    background-color: var(--surface3);
-    border-radius: 5pt;
-    border: none;
-    height: 20pt;
-    width: 60pt;
-}
 #btn-save
 {
     color: var(--surface1);
@@ -55,6 +46,7 @@ div#main
 
         <pre>File:</pre>
         <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="path to save"></textarea><br>
+        <br>
         <button id="btn-reload" onclick="reloadPressed();">Reload</button>
         <pre>Contents:</pre>
         <textarea id="ta_text_input" name="contents" placeholder="loading file..."></textarea><br>
@@ -64,12 +56,13 @@ div#main
         <button id="btn-save" onclick="savePressed();">Save</button>
         <button id="btn-cancel" onclick="cancelPressed();">Cancel</button>
         
+        <div id="debug-features" style="display: none">
         <br><br><br><br><br><br><br><br>
-
         <button id="fetch" onclick="onFetchPressed();">fetch</button>
         <button id="post" onclick="onPostPressed();">post</button><br>
         <pre><a href="/" id="link_result">result</a></pre>
         <pre><a href="/" id="link_original">original</a></pre>
+        </div>
     </div>
 </div>
 <script src="edit.js"></script>

@@ -12,6 +12,7 @@ const char * const Settings::DISABLED = "false";
 std::string Settings::documentRoot = "/usr/local/apache2/htdocs";
 std::string Settings::fileParam;
 std::string Settings::dirParam;
+std::string Settings::siteName = "Rezepte";
 
 
 static std::string getEnvVar(const char *key)
@@ -30,6 +31,7 @@ void Settings::init(int argc, char ** argv)
     Settings::readValue("document_root", Settings::documentRoot);
     Settings::readValue("file", Settings::fileParam);
     Settings::readValue("dir", Settings::dirParam);
+    Settings::readValue("site_name", Settings::siteName);
 }
 
 void Settings::print()
@@ -39,6 +41,7 @@ void Settings::print()
     JAN_LOG(documentRoot);
     JAN_LOG(fileParam);
     JAN_LOG(dirParam);
+    JAN_LOG(siteName);
 #undef JAN_LOG
     std::cout << "}" << std::endl;
 }

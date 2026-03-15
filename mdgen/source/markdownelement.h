@@ -275,6 +275,8 @@ public:
         , m_hasHeaders(false)
     {
         m_isBlock = true;
+
+        m_hasHeaders = true; // TEST
     }
 
     virtual void serialize() override
