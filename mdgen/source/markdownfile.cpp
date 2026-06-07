@@ -209,11 +209,12 @@ void MarkdownFile::parseLine(const std::string &line)
             std::cout << "-- end: " << m_currentElement->typeName() << std::endl << std::endl;
             m_elements.push_back(m_currentElement);
             m_currentElement = nullptr;
+            m_currentElementLineIdx = 0;
         }
         else
         {
             std::cout << "-- " << m_currentElement->typeName() << "::parseLine($line)" << std::endl;
-            m_currentElement->parseLine(line); // TODO: needs isLastLine so blocks may decide what to do with it
+            m_currentElement->parseLine(line, m_currentElementLineIdx++); // TODO: needs isLastLine so blocks may decide what to do with it
         }
     }
     else // no current element
@@ -246,13 +247,14 @@ void MarkdownFile::parseLine(const std::string &line)
         if(m_currentElement)
         {
             std::cout << "-- " << m_currentElement->typeName() << "::parseLine($line, true)" << std::endl;
-            m_currentElement->parseLine(line, /*isFirstLine:*/true);
+            m_currentElement->parseLine(line, m_currentElementLineIdx++);
 
             if(!m_currentElement->isBlock())
             {
                 std::cout << "-- end: " << m_currentElement->typeName() << std::endl << std::endl;
                 m_elements.push_back(m_currentElement);
                 m_currentElement = nullptr;
+                m_currentElementLineIdx = 0;
             }
         }
         // TODO: parse start line attributes if implemented later

@@ -48,7 +48,7 @@ void MarkdownElement::serializeLine(const LineData &line)
 
 static std::vector<MarkdownInlineElement*> m_inlinePrototypes;
 
-void MarkdownElement::parseLine(const std::string &line, bool isFirstLine, bool raw)
+void MarkdownElement::parseLine(const std::string &line, int lineIndex, bool raw)
 {   
     m_lineData.push_back(LineData(line));
 

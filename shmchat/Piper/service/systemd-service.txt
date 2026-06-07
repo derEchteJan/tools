@@ -7,7 +7,7 @@ After=network.target
 Type=simple
 Restart=always
 ExecStart=/usr/bin/piper bedrock_server
-WorkingDirectory=/home/kowalski/bedrock-server-1.21.112.1/
+WorkingDirectory=/home/kowalski/bedrock-server-1.26.23.1/
 User=kowalski
 
 [Install]

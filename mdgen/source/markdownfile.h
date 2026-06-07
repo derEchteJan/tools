@@ -41,6 +41,7 @@ class MarkdownFile : public TemplateFile
     std::vector<MarkdownElement*> m_elements;
     std::vector<MarkdownElement*> m_prototypeElements;
     MarkdownElement *m_currentElement = nullptr;
+    int m_currentElementLineIdx = 0;
     
     std::string m_scriptPath;
     std::vector<std::string> m_tags;
