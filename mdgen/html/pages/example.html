@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>page title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+<style>
+</style>
+</head>
+<body>
+<div id="sidebar">
+    <div id="nav">
+        <pre>
+ <a href="/index.html">home</a>
+ - one
+ - two
+ - three
+ - <a class="navitem" href="/index.html">index.html</a>
+ - <a class="navitem" href="/example.html">example.html</a>
+ - <a class="navitem" href="/nav.html">nav.html</a>
+ - <a class="navitem" href="/info.php?">info.php</a>
+ - two
+ - three
+ - one
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ - two
+ - three
+ - one
+ - two
+ - three
+ - one
+ - two
+ - three
+        </pre>
+    </div>
+</div>
+
+<div id="main">
+    <div id="content">
+        <h1>page title</h1>
+        <h3 id="section-section-title"><a class="section" href="#section-page-title">1. Section Title</a></h3>
+        <p>A headline / section title automatically generates with a fragment link and number</p>
+        <p>It is specified by leading #, ## or ###</p>
+        <p>Regular paragraph with a lot of text in it</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p><a href="/info.php?">info.php</a></p>
+        
+        <h3 id="section-images"><a class="section" href="#section-images">2. Images</a></h3>
+        <img src="drawing.png"></img>
+        
+        <h3 id="section-embedded-code"><a class="section" href="#section-embedded-code">3. Embedded Code</a></h3>
+        <p>an example of embedded code snippets:</p>
+        <div class="code">
+            <pre>
+#include &#139;stdlib.h&#155; <!--special chars need escaping-->
+
+#include <span class="code-str">"some.h"</span>
+
+<span class="code-keyword">int</span> main(int argc, char **argv)
+{
+    (void)argc; (void)argv;
+
+    test();
+
+    <span class="code-comment">// create a file from cpp code</span>
+    system("touch out.html");
+
+    return 0;
+}</pre>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

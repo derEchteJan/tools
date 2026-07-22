@@ -109,16 +109,10 @@ void TemplateFile::serialize_writeln(const std::string &line, int indent)
 // class MarkdownFile
 
 MarkdownFile::MarkdownFile(const std::string &filePath)
-        : TemplateFile()
-        , m_scriptPath(filePath)
-        //, m_outPath()
-
-        //, m_pageTitle("Markdown Page")
-        //, m_parsed(false)
-        , m_inFile(nullptr)
-        //, m_outFile(nullptr)
-        , m_fdSrc(-1)
-        //, m_fdOut(-1)
+    : TemplateFile()
+    , m_scriptPath(filePath)
+    , m_inFile(nullptr)
+    , m_fdSrc(-1)
 {
     m_templatePath = m_rootPath + "/.templates/main.html";
 
@@ -151,6 +145,13 @@ bool MarkdownFile::parse()
         if(line == "END") { done = true; return; }
         parseLine(line);
     });
+
+    // cleanup unterminated elements
+    if(m_currentElement && m_currentElement->isBlock())
+    {
+        m_elements.push_back(m_currentElement);
+        m_currentElement = nullptr;
+    }
 
     Filesys::close(scriptFile);
     return true;
@@ -347,7 +348,9 @@ void OverviewFile::serializeOverview()
 
     std::cout << "Overview: collecting files" << std::endl;
 
-    Filesys::iterateDir(m_rootPath.c_str(), handlers);
+    std::string pagesDir = m_rootPath + "/" + Settings::pagesDir;
+
+    Filesys::iterateDir(pagesDir.c_str(), handlers);
 
     serialize_writeln("<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->");
 }
@@ -357,5 +360,6 @@ void OverviewFile::formatFileName(std::string &fileName)
     auto pos = fileName.find(".html");
     if(pos == fileName.length() - 5)
         fileName = fileName.substr(0, fileName.length() - 5);
+
     std::replace(fileName.begin(), fileName.end(), '_', ' ');
 }

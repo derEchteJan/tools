@@ -174,12 +174,22 @@ public:
     {
         if(!m_parentFile) return;
         m_parentFile->serialize_writeln("<div class=\"code\">");
-        m_parentFile->serialize_writeln("<pre>", 1);
-        for(auto line : m_lineData)
+        m_parentFile->serialize_writeln("<pre>", -1);
+        for(int i = 0; i < m_lineData.size(); i++)
         {
-            m_parentFile->serialize_writeln(line.m_lineText, -1); // code blocks dont use serializeLine(), no inline elements are required
+            auto &line = m_lineData[i];
+            if(i < m_lineData.size() - 1)
+                m_parentFile->serialize_writeln(line.m_lineText, -1); // code blocks dont use serializeLine(), no inline elements are required
+            else
+            {
+                if(line.m_lineText.empty())
+                    m_parentFile->serialize_writeln(line.m_lineText, -1);
+                else
+                    m_parentFile->serialize_write(line.m_lineText, -1);
+            }
+                
         }
-        m_parentFile->serialize_writeln("</pre>", 1);
+        m_parentFile->serialize_writeln("</pre>", -1);
         m_parentFile->serialize_writeln("</div>");
     }
 
