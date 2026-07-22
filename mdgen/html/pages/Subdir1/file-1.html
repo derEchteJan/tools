@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/style.css">
+<title>
+</title>
+<style>
+</style>
+</head>
+<body onload="onLoad()">
+<div id="sidebar">
+    <div id="nav">
+<span class="navdir"><i><a href="/">Rezepte</a></i></span><br>
+    <div style="margin-left: 10pt">
+    <div>
+    <span class="navdir"><i>Subdir1</i></span><br>
+    <div style="margin-left: 10pt">
+    <div>
+    <span class="navdir"><i>Subdir2</i></span><br>
+    <div style="margin-left: 10pt">
+    <a class="navitem" href="/pages/Subdir1/Subdir2/file-2.html">- file-2</a><br>
+    </div>
+    </div>
+    <a class="navitem" href="/pages/Subdir1/file-1.html">- file-1</a><br>
+    </div>
+    </div>
+    <a class="navitem" href="/pages/test.html">- test</a><br>
+    <a class="navitem" href="/pages/format.html">- format</a><br>
+    <a class="navitem" href="/pages/example.html">- example</a><br>
+    </div>
+        </div>
+</div>
+<div id="main">
+    <div id="content">
+<h1 id="hl-File-1"><a class="hlink" href="#hl-File-1"># </a>File 1</h1>
+        </div>
+    <div id="footer">
+        <hr class="separator">
+        <a href="/">&lt;&lt; Zurück zur Startseite</a><br>
+        <p style="text-align:center;"><i></i>Bearbeiten Modus:</i> <span id="edit-on">AN</span><span id="edit-off">AUS</span></p>
+        <button id="btn-edit" onclick="onEditPressed()">Bearbeiten</button><button id="btn-writemode" onclick="onWriteModePressed()">Bearbeiten Modus</button><br>
+        <p>Created with markdown generator<br>Source code: <a href="https://github.com/derEchteJan/tools/tree/main/mdgen">GitHub</a></p>
+    </div>
+</div>
+<script src="/main.js"></script>
+</body>
+</html>

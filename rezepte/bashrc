@@ -1,0 +1,30 @@
+#!/bin/bash
+
+IMAGE_NAME='mdgen'
+CONTAINER_NAME='rezepte'
+VOLUME_NAME=$CONTAINER_NAME
+RO_PORT='8080'
+RW_PORT='8081'
+DOC_ROOT='/usr/local/apache2/htdocs'
+
+#alias test='sudo docker volume create rezepte'
+
+#sudo docker volume create rezepte
+
+#sudo docker run --mount type=volume,src=rezepte,dst=/tmp/pages
+
+alias container-id='sudo docker ps -q --filter name=$CONTAINER_NAME'
+
+alias remove='echo removing container $CONTAINER_NAME && sudo docker rm -f $(container-id -a)'
+
+alias run='echo running container $CONTAINER_NAME && sudo docker run --detach -p $RO_PORT:80 -p $RW_PORT:81 --volume $VOLUME_NAME:$DOC_ROOT/pages --name $CONTAINER_NAME $IMAGE_NAME'
+
+#copy from host into volume (using helper container 'busybox'):
+
+alias volume-create='sudo docker volume create $VOLUME_NAME && copy-in'
+alias volume-remove='sudo docker volume rm $VOLUME_NAME'
+
+alias copy-in='
+sudo docker run -v $VOLUME_NAME:/data --name helper busybox true &&\
+sudo docker cp ./pages/. helper:/data;\
+sudo docker rm helper'
