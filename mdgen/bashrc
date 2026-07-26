@@ -29,7 +29,7 @@ echo ' - build:             compiles generator binary'
 
 # test generator binary
 alias  test-gen='sudo cp ./html/style.css / && document_root="$(pwd)/html" ./build/generator file=html/pages/format.md'
-alias test-genr='sudo cp ./html/style.css / && document_root="$(pwd)/html" ./build/generator dir=html/pages'
+alias test-genr='sudo cp ./html/style.css / && document_root="$(pwd)/html" ./build/generator dir=pages'
 echo ' - test-gen:          runs generator locally on a single file (format.md)'
 echo ' - test-genr:         runs generator locally recursive on ./html/pages'
 

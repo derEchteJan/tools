@@ -8,11 +8,6 @@ MarkdownElement::MarkdownElement(MarkdownFile *parentFile, const char *typenName
 {
 }
 
-MarkdownElement::~MarkdownElement()
-{
-    // TODO CLEANUP AFTER STRUCUTRE IS FINAL
-}
-
 bool MarkdownElement::isBlock() { return m_isBlock; }
 
 const char* MarkdownElement::typeName() { return m_typeName; }

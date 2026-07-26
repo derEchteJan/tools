@@ -1,22 +1,42 @@
 // edit.js
 
+var s_pathInput = document.getElementById("ta_file_path");
+var s_textArea = document.getElementById("ta_text_input")
+
 function onLoad()
 {
     var initialPath = getFilePathFromUlr();
-    var textarea = document.getElementById("ta_file_path");
-    textarea.value = initialPath;
-    
+    s_pathInput.value = initialPath;
     onFetchPressed();
 };
 
 function getFilePath()
 {
-    var filePathInput = document.getElementById("ta_file_path");
-    var filePath = filePathInput.value;
-    if(filePath.length === 0) 
-        return '/';
-    if(filePath.at(0) !== '/')
-        filePath = '/' + filePath;
+    var filePath = '';
+    var parts = s_pathInput.value.trim().split('/');
+    if(parts.length == 0)
+    {
+        filePath = '/';
+    }
+    else
+    {
+        for(var i in parts)
+        {   
+            var part = parts[i];
+            if(!part) continue;
+            part = part.trim();
+            part = part.replaceAll(" ", "_");
+            filePath += "/" + part;
+        }
+    }
+    console.log("pre filter: " + filePath);
+    var regex = /[A-Za-z0-9\.\/_-]+/g;
+    filePath = (filePath.match(regex) || []).join('');
+    console.log("post filter: " + filePath);
+    if(!filePath.endsWith('.md'))
+    {
+        filePath += '.md';
+    }
     return filePath;
 }
 
@@ -33,7 +53,7 @@ function getFilePathFromUlr()
 
 function savePressed()
 {
-    var content = document.getElementById("ta_text_input").value;
+    var content = s_textArea.value;
     var filePath = getFilePath();
     postDocument(filePath, content, true);
 }
@@ -50,7 +70,7 @@ function cancelPressed()
 
 function onPostPressed()
 {
-    var content = document.getElementById("ta_text_input").value;
+    var content = s_textArea.value;
     var filePath = getFilePath();
     postDocument(filePath, content);
 }
@@ -86,7 +106,7 @@ function postDocument(path, content, redirect)
 
 function fetchDocument(path, redirect)
 {
-    document.getElementById("ta_text_input").placeholder = "loading file..."
+    s_textArea.placeholder = "loading file..."
 
     var request = new XMLHttpRequest();
     request.onreadystatechange = function()
@@ -113,9 +133,8 @@ function fetchDocument(path, redirect)
  */
 function onDocumentReceived(content)
 {
-    var textarea = document.getElementById("ta_text_input");
-    textarea.value = content;
-    textarea.placeholder = "";
+    s_textArea.value = content;
+    s_textArea.placeholder = "";
 }
 
 /**
@@ -123,9 +142,8 @@ function onDocumentReceived(content)
  */
 function onDocumentFetchFailed(content)
 {
-    var textarea = document.getElementById("ta_text_input");
-    textarea.value = "";
-    textarea.placeholder = "empty file";
+    s_textArea.value = "";
+    s_textArea.placeholder = "empty file";
 }
 
 /**
@@ -133,18 +151,16 @@ function onDocumentFetchFailed(content)
  */
 function onDocumentUploaded(redirect)
 {
-    var filepath = document.getElementById("ta_file_path").value;
-
-    if(filepath.length > 0 && filepath.at(0) !== '/')
-        filepath = "/" + filepath;
+    var filepath = getFilePath().replace(".md", ".html");
+    //if(filepath.startsWith('/'))
+    //    filepath = filepath.substring(1);
 
     var resultLink = document.getElementById("link_result");
-    var originalLink = document.getElementById("link_original");
     resultLink.href = filepath;
     resultLink.textContent = filepath;
 
     if(redirect === true)
     {
-        window.location.href = filepath.replace(".md", ".html");
+        window.location = filepath.replace(".md", ".html");
     }
 }

@@ -8,6 +8,11 @@ public:
     static const char* const ENABLED; // "true"
     static const char* const DISABLED; // "false"
 
+    enum LogLevel
+    {
+      E_DEFAULT = 0, E_DETAILED = 1, E_VERBOSE = 2
+    };
+
     // Settings variables:
     static std::string documentRoot;    /** arg 'document_root=...' */
     static std::string pagesDir;

@@ -27,6 +27,7 @@ sudo docker rm volume_helper
 
 alias copy-out='
 sudo docker run -v $VOLUME_NAME:/data --name volume_helper busybox true &&
-sudo docker cp volume_helper:/data/. ./pages && echo copied files to volume $VOLUME_NAME
+sudo docker cp volume_helper:/data/. ./pages &&
+echo copied files to volume $VOLUME_NAME
 sudo docker rm volume_helper > /dev/null
 '

@@ -30,8 +30,8 @@ protected:
 
 public:
     MarkdownElement(MarkdownFile *parentFile, const char *typenName);
-
-    virtual ~MarkdownElement();
+    
+    virtual ~MarkdownElement() = default;
 
     bool isBlock();
     const char* typeName();

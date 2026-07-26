@@ -22,7 +22,7 @@ protected:
 
 public:
     TemplateFile();
-    ~TemplateFile();
+    virtual ~TemplateFile() = default;
 
     void serialize();
     virtual bool parse() = 0;

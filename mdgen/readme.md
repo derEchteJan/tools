@@ -7,20 +7,24 @@ In bash, load bashrc file for build commands like so:
 ```
 #!/bin/bash
 
-. bashrc        # or 'source bashrc'
+. bashrc          # or 'source bashrc'
 
-build && test   # compiles the generator binary and runs it on local test files
+build             # compiles the generator binary
 
-compose         # composes docker container image and starts it
+container-build   # builds container image
+
+run               # creates and runs container
 ```
 
 **TODOs:**
 
- - fix last line/element not being parsed when file doesnt end with double newline
- - logging function and verbosity level
+ - implement verbose url parameter in all php calls, input cleanup
+ - upload/create needs to resepect pages subdir
+ - anchor ro/rw port and/or ro/rw subdomain in javascript for redirects
+ - upload/create should not create files not ending with .md
+ - serialize page title
  - tables: parse header separator line
- - add docker volume to keep persistent data
-   - move recipes to separate project using volume and separate container instance
  - add functionality to export user created data as downloadable / uploadable tar archive
+   - partially implemented with alias 'copy-out'
  - split search string by space
  - git gud

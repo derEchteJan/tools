@@ -3,6 +3,8 @@
 #include <cstring>
 #include <iostream>
 
+#include "logging.h"
+
 static const char s_argSep = '=';
 
 const char * const Settings::ENABLED = "true";
@@ -52,15 +54,20 @@ void Settings::init(int argc, char ** argv)
 
 void Settings::print()
 {
-    std::cout << "Settings:" << std::endl << "{" << std::endl;
-#define JAN_LOG(member) std::cout << "  " << #member << ": '" << Settings::member << "'" << std::endl
-    JAN_LOG(documentRoot);
-    JAN_LOG(fileParam);
-    JAN_LOG(dirParam);
-    JAN_LOG(siteName);
-    JAN_LOG(verbose);
-#undef JAN_LOG
-    std::cout << "}" << std::endl;
+#define LOG_FUNC logd
+#define LOG_VAR(member) LOG_FUNC( "  " << #member << ": '" << Settings::member << "'" );
+
+    LOG_FUNC( "Settings:" );
+    LOG_FUNC( "{" );
+    LOG_VAR(documentRoot);
+    LOG_VAR(fileParam);
+    LOG_VAR(dirParam);
+    LOG_VAR(siteName);
+    LOG_VAR(verbose);
+    LOG_FUNC( "}" );
+
+#undef LOG_FUNC
+#undef LOG_VAR
 }
 
 void Settings::readValue(const char *key, std::string &targetVariable)

@@ -27,6 +27,8 @@ public:
     {
     }
 
+    virtual ~MarkdownInlineElement() = default;
+
     static bool rangeValid(const range_t &range, const std::string &str)
     {
         return range.first >= 0 && range.second > range.first && range.second <= str.length();
@@ -208,8 +210,6 @@ public:
 
         m_url = line.substr(range2Start, range2Len);
         m_textValue = line.substr(range1Start, range1Len);
-
-        std::cout << "-- hyperlink parsed: url=" << m_url << ", title=" << m_textValue << std::endl; 
 
         return true;
     }
