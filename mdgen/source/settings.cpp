@@ -13,6 +13,7 @@ const char * const Settings::DISABLED = "false";
 // SETTING VARIABLES
 std::string Settings::documentRoot = "/usr/local/apache2/htdocs";
 std::string Settings::pagesDir = "pages";
+std::string Settings::attachmentsDir = ".attachments";
 std::string Settings::fileParam;
 std::string Settings::dirParam;
 std::string Settings::siteName = "Rezepte";
@@ -61,6 +62,7 @@ void Settings::print()
     LOG_FUNC( "{" );
     LOG_VAR(documentRoot);
     LOG_VAR(fileParam);
+    LOG_VAR(attachmentsDir);
     LOG_VAR(dirParam);
     LOG_VAR(siteName);
     LOG_VAR(verbose);

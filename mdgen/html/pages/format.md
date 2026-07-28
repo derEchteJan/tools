@@ -21,7 +21,6 @@ also emoji :smile: and an invalid emoji :schmarn:
 **bold** at the start
 *italic* at the start
 
-[title](https://www.example.com)
 Some [hyperlink](https://www.example.com) in text
 Some [](https://www.example.com) (empty hyperlink) in text
 Some [Hyperlink without url]() (empty hyperlink) in text
@@ -31,6 +30,8 @@ Some [Hyperlink without url]() (empty hyperlink) in text
 Some ![Image](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) in text
 Some ![](https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg) (empty hyperlink) in text
 Some ![Image without url]() (empty hyperlink) in text
+Image with relative link ![Alternate Text](firefox.png)
+Image with absolute link ![Alternate Text](/firefox.png)
 ![]()
 
 ** schmarn

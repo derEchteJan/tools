@@ -1,4 +1,6 @@
 <?php
+    // called by edit.html to upload a markdown file and parse it
+
     $status = 409;
     $response = "";
 
@@ -68,5 +70,8 @@
     }
 
     http_response_code($status);
+    header("Cache-Control: no-cache, must-revalidate"); // prevent response caching
+    echo("<pre>");
     echo("$response");
+    echo("</pre>");
 ?>

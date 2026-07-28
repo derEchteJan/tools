@@ -214,8 +214,8 @@ public:
         return true;
     }
 
-    virtual void serialize() override;
-    virtual MarkdownInlineElement* clone() override { return new Hyperlink(m_parentElement); };
+    void serialize() override;
+    MarkdownInlineElement* clone() override { return new Hyperlink(m_parentElement); };
 };
 
 class Image : public Hyperlink
@@ -228,6 +228,7 @@ public:
         m_delimStart = "![";
     }
 
+    bool parse(const std::string &line, const range_t &range) override;
     virtual void serialize() override;
     virtual MarkdownInlineElement* clone() override { return new Image(m_parentElement); };
 };

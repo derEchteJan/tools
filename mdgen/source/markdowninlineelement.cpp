@@ -1,5 +1,7 @@
 #include "markdowninlineelement.h"
 #include "markdownelement.h"
+#include "settings.h"
+#include "stdx.h"
 
 bool MarkdownInlineElement::parse(const std::string &line, const range_t &range)
 {
@@ -114,6 +116,44 @@ void Hyperlink::serialize()
     pf->serialize_write("</a>");
 }
 
+
+bool Image::parse(const std::string &line, const range_t &range)
+{
+    bool parsed = Hyperlink::parse(line, range);
+    if(parsed)
+    {
+        bool isRelativeLink = !std::starts_with(m_url, "https://") && !std::starts_with(m_url, "http://");
+        if(isRelativeLink)
+        {
+            // relative link (to resource on same site)
+            auto index = m_url.find_last_of("/");
+            if(index != std::string::npos)
+            {
+                if(index > m_url.length() - 2)
+                {
+                    m_url = "parsing error";
+                    return false;
+                }
+                std::string path = "";
+                path += m_url.substr(0, index) + "/";
+                if(!std::starts_with(m_url, "/"))
+                {
+                    path += Settings::attachmentsDir + "/";
+                }
+                path += m_url.substr(index + 1, m_url.length() - index - 1);
+                m_url = path;
+            }
+            else
+            {
+                std::string path = "";
+                path += Settings::attachmentsDir + "/" + m_url;
+                m_url = path;
+            }
+        }
+    }
+    return parsed;
+}
+
 void Image::serialize()
 {
     if(!m_parentElement) return;
@@ -121,5 +161,5 @@ void Image::serialize()
 
     auto pf = m_parentElement->parentFile();
 
-    pf->serialize_write("<img class=\"large\" src=\"" + m_url + "\" alt=\"" + m_textValue + "\"></img>");
+    pf->serialize_write("<img class=\"large\" src=\"" + m_url + "\" alt=\"" + m_textValue + " (Image not found)" + "\"></img>");
 }

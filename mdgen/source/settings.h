@@ -16,6 +16,7 @@ public:
     // Settings variables:
     static std::string documentRoot;    /** arg 'document_root=...' */
     static std::string pagesDir;
+    static std::string attachmentsDir;
     static std::string fileParam;       /** arg 'file=...' */
     static std::string dirParam;        /** arg 'dir=...' */
     static std::string siteName;

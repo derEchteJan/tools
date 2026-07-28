@@ -3,16 +3,16 @@
 @media (prefers-color-scheme: light) {
 	/* Light mode color pallete */
 	:root {
-		--surface1: #eeeeee;
-		--surface2: #dddddd;
-		--surface3: #cccccc;
-		--text1: #404040;
-		--text2: #606060;
-		--text3: #808080;
-		--accent1:   #3399ff;
-        --highlight: #25ddea;
-        --error1:    #ff335f;
-		--comment:   #777777;
+		--surface1:     #eeeeee;
+		--surface2:     #dddddd;
+		--surface3:     #cccccc;
+		--text1:        #404040;
+		--text2:        #606060;
+		--text3:        #808080;
+		--accent1:      #3399ff;
+        --highlight:    #25ddea;
+        --error1:       #ff335f;
+		--comment:      #777777;
 		--code_keyword: #6000df;
 		--code_string:  #c0a323;
         --code_comment: #808080;
@@ -22,16 +22,16 @@
 @media (prefers-color-scheme: dark) {
 	/* Dark mode color pallete */
 	:root {
-		--surface1: #222222;
-		--surface2: #444444;
-		--surface3: #666666;
-		--text1: #dddddd;
-		--text2: #bbbbbb;
-		--text3: #999999;
-		--accent1:   #cc3399;
-        --highlight: #3ef2ff;
-        --error1:    #c02748;
-		--comment:   #777777;
+		--surface1:     #222222;
+		--surface2:     #444444;
+		--surface3:     #666666;
+		--text1:        #dddddd;
+		--text2:        #bbbbbb;
+		--text3:        #999999;
+		--accent1:      #cc3399;
+        --highlight:    #3ef2ff;
+        --error1:       #c02748;
+		--comment:      #777777;
         --code_keyword: #FF00FF;
 		--code_string:  #c07c23;
         --code_comment: #808080;
@@ -65,7 +65,7 @@ div#nav
     overflow-y: scroll;
     overflow-x: hidden;
 }
-div#main
+div#main, div#overlay-main
 {
     margin: auto;
     max-width: 1000px;
@@ -75,12 +75,17 @@ div#main
     left: 230px;
     right: 0;
 }
-div#content, div#footer
+div#content, div#footer, div#overlay-content
 {
     margin-left: 4%;
     margin-right: 4%;
     margin-bottom: 50pt;
     background-color: var(--surface1);
+}
+div#overlay
+{
+    position: fixed; top: 0; bottom: 0; width: 100%; display: none;
+    background-color: rgba(255,255,255,0.5);
 }
 div#footer
 {
@@ -171,7 +176,7 @@ p.quote
 }
 
 /* Buttons */
-button
+button, input[type=file]
 {
     color: var(--text1);
     background-color: var(--surface3);
@@ -181,8 +186,16 @@ button
     min-height: 20pt;
     min-width: 60pt;
     margin-right: 10pt;
-    margin-bottom: 6pt;
     padding: 4pt 4pt 4pt 4pt;
+}
+input[type=file]
+{
+    background-color: var(--surface2);
+}
+button.accent
+{
+    color: var(--surface1);
+    background-color: var(--accent1);
 }
 button:disabled
 {
@@ -286,7 +299,7 @@ div#sidebar
 {
     display: none;
 }
-div#main
+div#main, div#overlay-main
 {
     margin: auto;
     width: 100%;
