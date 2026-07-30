@@ -29,10 +29,26 @@
     color: var(--surface1);
     background-color: var(--accent1);
 }
-div#main
+table.filetable
 {
-    margin-left: 0;
     width: 100%;
+    border-collapse: separate;
+}
+table.filetable tr
+{
+    background: var(--surface1);
+}
+table.filetable tr:nth-child(even)
+{
+    background: var(--surface2);
+}
+table.filetable td
+{
+    padding: 6pt 6pt 6pt 6pt;
+}
+h2#no-attachments
+{
+    color: var(--surface2);
 }
 </style>
 </head>
@@ -41,27 +57,69 @@ div#main
 </div>
 <div id="main">
     <div id="content">
+        <!-- Main Page Content -->
 
         <h2>Edit File</h2>
 
         <pre>File:</pre>
-        <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="path to save"></textarea><br>
+        <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="path to save" spellcheck="false"></textarea><br>
         <br>
         <button id="btn-reload" onclick="reloadPressed();">Reload</button>
         <pre>Contents:</pre>
-        <textarea id="ta_text_input" name="contents" placeholder="loading file..."></textarea><br>
-
+        <textarea id="ta_text_input" name="contents" placeholder="loading file..." spellcheck="false"></textarea><br>
         <br>
-
+        <button id="btn-overlay" onclick="setOverlayVisible(true);">Attach File</button>
+        <br><br>
         <button id="btn-save" onclick="savePressed();">Save</button>
         <button id="btn-cancel" onclick="cancelPressed();">Cancel</button>
         
-        <div id="debug-features" style="display: none">
-        <br><br><br><br><br><br><br><br>
-        <button id="fetch" onclick="onFetchPressed();">fetch</button>
-        <button id="post" onclick="onPostPressed();">post</button><br>
-        <pre><a href="/" id="link_result">result</a></pre>
-        <pre><a href="/" id="link_original">original</a></pre>
+        <!-- Debug Features -->
+        <div id="debug-features" style="display: none;">
+            <br><br><br><br><br><br><br><br>
+            <button id="fetch" onclick="onFetchPressed();">fetch</button>
+            <button id="post" onclick="onPostPressed();">post</button><br>
+            <button id="load-attachments" onclick="loadAttachments();">load attachments</button><br>
+            <pre><a href="/" id="link_result">result</a></pre>
+            <pre><a href="/" id="link_original">original</a></pre>
+        </div>
+        <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> test spacing / scrolling -->
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <hr class="separator">
+        <a href="/">&lt;&lt; Zurück zur Startseite</a><br>
+        <p>Created with markdown generator<br>Source code: <a href="https://github.com/derEchteJan/tools/tree/main/mdgen">GitHub</a></p>
+    </div>
+</div>
+<!-- Overlay -->
+<div id="overlay">
+    <div id="overlay-main">
+        <div id="overlay-content">
+            <!-- Overlay Contents -->
+            <div style="background: var(--surface3); border-radius: 4pt; padding: 5pt 5pt 5pt 5pt; margin-top: 20%">
+            <h2>Attach File</h2>
+            <pre>Uploaded Files:</pre>
+            <div style="width: 100%; border-radius: 4pt;">
+            <table class="filetable" id="attachment-table" display="none;">
+                <tr style="display: none;">
+                    <td>test-file-dummy.txt</td>
+                    <td><a href="/"><button>View</button></a> <button>Copy</button></td>
+                </tr>
+            </table>
+            </div>
+            <h2 id="no-attachments" display="inline;">No Attachments Yet</h2>
+            <pre>Upload New File</pre>
+            <pre>File Name:</pre>
+            <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="name to save as.."></textarea><br>
+            <pre>File:</pre>
+            <form action='/.actions/upload.php' id="upload-form" method='post' enctype='multipart/form-data'>
+                Select file to upload:
+                <input type='file' name="fileToUpload" id="fileToUpload"><br>
+            </form>
+            <br>
+            <button class="accent" onclick="submitForm()">Upload</button>
+            </div>
         </div>
     </div>
 </div>

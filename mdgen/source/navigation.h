@@ -10,14 +10,16 @@ public:
         : m_parentFile(parentFile)
     {
     }
+
+    virtual ~Navigation() = default;
     
-    /*void parse();*/
     void serialize();
 
-    private:
+private:
     void iterateDir(const char *path, const char *name = nullptr, int indent = 0, int oddEvenCount = 0);
 };
 
+#if 0 /// NOTE JAN: unimplemented
 class OverviewNavigation
 {
     TemplateFile *m_parentFile;
@@ -27,9 +29,12 @@ public:
         : m_parentFile(parentFile)
     {
     }
+
+    virtual ~OverviewNavigation() = default;
     
     void serialize();
 
-    private:
+private:
     void iterateDir(const char *rootPath, int depth = 0);
 };
+#endif

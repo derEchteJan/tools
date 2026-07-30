@@ -10,8 +10,7 @@ RUN chown -R www-data:www-data /usr/local/apache2/htdocs
 
 # Compile and copy generator
 
-#COPY ./source /var/mdgen/source
-#RUN g++ /var/mdgen/source/*.cpp -D LIVE_PATHS -o /var/mdgen/generator
+COPY ./build/generator /usr/bin/
 
 # Install apache php module
 
@@ -21,3 +20,6 @@ RUN apt-get install -y php libapache2-mod-php
 # Copy custom apache config
 
 COPY ./config/httpd.conf /usr/local/apache2/conf/
+
+COPY ./config/set-dir-visible.sh /opt/
+RUN chmod 777 /opt/set-dir-visible.sh

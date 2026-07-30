@@ -24,24 +24,25 @@
     border: 1px solid var(--text3);
     outline: none;
 }
-button, input
-{
-    color: var(--text1);
-    background-color: var(--surface3);
-    border-radius: 5pt;
-    border: none;
-    height: 20pt;
-    width: 60pt;
-}
 #btn-save
 {
     color: var(--surface1);
     background-color: var(--accent1);
 }
-div#main
+input[type=file]::file-selector-button
 {
-    margin-left: 0;
-    width: 100%;
+    display: none;
+}
+input[type=file]::-webkit-file-upload-button
+{
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: -100%;
+}
+input[type=file]::-ms-browse
+{
+    display: none;
 }
 </style>
 </head>
@@ -60,9 +61,14 @@ div#main
         <form action='/.actions/upload.php' id="upload-form" method='post' enctype='multipart/form-data'>
         Select file to upload:
         <input type='file' name="fileToUpload" id="fileToUpload"><br>
-        <input type='submit' value='submit'></form>
+        <!--<input type='submit' value='submit'>--></form>
         <br>
-        <button onclick="submitForm()">Upload via JavaScript</button>
+        <button onclick="submitForm()">Upload</button>
+    </div>
+    <div id="footer">
+        <hr class="separator">
+        <a href="/">&lt;&lt; Zurück zur Startseite</a><br>
+        <p>Created with markdown generator<br>Source code: <a href="https://github.com/derEchteJan/tools/tree/main/mdgen">GitHub</a></p>
     </div>
 </div>
 <script src="upload.js"></script>

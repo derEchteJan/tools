@@ -30,8 +30,8 @@ protected:
 
 public:
     MarkdownElement(MarkdownFile *parentFile, const char *typenName);
-
-    virtual ~MarkdownElement();
+    
+    virtual ~MarkdownElement() = default;
 
     bool isBlock();
     const char* typeName();
@@ -53,7 +53,7 @@ public:
     // can be implemented by subclass
     // parses given line with, raw=true means also parse inline elements automatically within
     // subclasses overriding ususally want to call the baseclass method
-    virtual void parseLine(const std::string &line, bool isFirstLine = false, bool raw = false);
+    virtual void parseLine(const std::string &line, int lineIdx, bool raw = false);
 };
 
 // DERIVED CLASSES
@@ -97,9 +97,9 @@ public:
         return true;
     }
 
-    virtual void parseLine(const std::string &line, bool isFirstLine, bool /*raw*/) override
+    virtual void parseLine(const std::string &line, int lineIndex, bool /*raw*/) override
     {
-        MarkdownElement::parseLine(line, isFirstLine, /*raw:*/ false);
+        MarkdownElement::parseLine(line, lineIndex, /*raw:*/ false);
     }
 };
 
@@ -144,7 +144,7 @@ public:
         return line.find(m_delim) == 0;
     }
 
-    virtual void parseLine(const std::string &line, bool isFirstLine, bool /*raw*/) override
+    virtual void parseLine(const std::string &line, int lineIndex, bool /*raw*/) override
     {
         const char *excluedChars = " ";
         auto startPos = line.find_first_not_of(excluedChars, m_size);
@@ -157,7 +157,7 @@ public:
         m_fragmentUrl = "hl-" + textContent;
         std::replace(m_fragmentUrl.begin(), m_fragmentUrl.end(), ' ', '-');
         
-        MarkdownElement::parseLine(textContent, isFirstLine, /*raw:*/ true);
+        MarkdownElement::parseLine(textContent, lineIndex, /*raw:*/ true);
     }
 };
 
@@ -174,12 +174,22 @@ public:
     {
         if(!m_parentFile) return;
         m_parentFile->serialize_writeln("<div class=\"code\">");
-        m_parentFile->serialize_writeln("<pre>", 1);
-        for(auto line : m_lineData)
+        m_parentFile->serialize_writeln("<pre>", -1);
+        for(int i = 0; i < m_lineData.size(); i++)
         {
-            m_parentFile->serialize_writeln(line.m_lineText, -1); // code blocks dont use serializeLine(), no inline elements are required
+            auto &line = m_lineData[i];
+            if(i < m_lineData.size() - 1)
+                m_parentFile->serialize_writeln(line.m_lineText, -1); // code blocks dont use serializeLine(), no inline elements are required
+            else
+            {
+                if(line.m_lineText.empty())
+                    m_parentFile->serialize_writeln(line.m_lineText, -1);
+                else
+                    m_parentFile->serialize_write(line.m_lineText, -1);
+            }
+                
         }
-        m_parentFile->serialize_writeln("</pre>", 1);
+        m_parentFile->serialize_writeln("</pre>", -1);
         m_parentFile->serialize_writeln("</div>");
     }
 
@@ -200,10 +210,10 @@ public:
         return startsWith(line);
     }
 
-    virtual void parseLine(const std::string &line, bool isFirstLine, bool /*raw*/) override
+    virtual void parseLine(const std::string &line, int lineIndex, bool /*raw*/) override
     {
-        if(!isFirstLine)
-            MarkdownElement::parseLine(line, isFirstLine, /*raw:*/ true);
+        if(lineIndex != 0)
+            MarkdownElement::parseLine(line, lineIndex, /*raw:*/ true);
     }
 };
 
@@ -243,7 +253,7 @@ public:
         return !startsWith(line);
     }
 
-    virtual void parseLine(const std::string &line, bool isFirstLine, bool raw) override
+    virtual void parseLine(const std::string &line, int lineIndex, bool raw) override
     {
         std::string truncatedLine;
         if(line.find("> ") == 0)
@@ -258,7 +268,7 @@ public:
         {
             truncatedLine = line;
         }
-        MarkdownElement::parseLine(truncatedLine, isFirstLine, true);
+        MarkdownElement::parseLine(truncatedLine, lineIndex, true);
     }
 };
 
@@ -275,8 +285,6 @@ public:
         , m_hasHeaders(false)
     {
         m_isBlock = true;
-
-        m_hasHeaders = true; // TEST
     }
 
     virtual void serialize() override
@@ -323,25 +331,40 @@ public:
         return !startsWith(line);
     }
 
-    virtual void parseLine(const std::string &line, bool isFirstLine, bool raw) override
+    virtual void parseLine(const std::string &line, int lineIndex, bool raw) override
     {
+        int column = 0;
+
         m_indices.resize(m_indices.size() + 1);
         auto &rowIndices = m_indices[m_indices.size() - 1];
-
-        int column = 0;
 
         int cellBegin = 1;
         for(int cellEnd = cellBegin; cellEnd < line.length(); cellEnd++)
         {
             if(line.at(cellEnd) == '|')
             {
-                auto cellLen = cellEnd - cellBegin;
                 std::string cellContent;
+                auto cellLen = cellEnd - cellBegin + 1;
                 if(cellLen > 0)
                 {
-                    cellContent = line.substr(cellBegin, cellLen);
+                    // truncate whitespaces
+                    int cellBeginAdjust, cellEndAdjust;
+                    for(cellBeginAdjust = cellBegin; cellBeginAdjust < cellEnd && line.at(cellBeginAdjust - 1) != ' '; cellBeginAdjust++);
+                    for(cellEndAdjust = cellEnd - 1; cellEndAdjust > cellBegin && line.at(cellEndAdjust + 1) != ' '; cellEndAdjust--);
+                    cellLen = cellEndAdjust - cellBeginAdjust + 1;
+                    cellContent = line.substr(cellBeginAdjust, cellLen);
                 }
-                MarkdownElement::parseLine(cellContent, isFirstLine, false);
+
+                if(lineIndex == 1 && column == 0 && cellContent == "--")
+                {
+                    // if second row, first column == "--" its the header separator
+                    // -> set hasHeaders = true and skip line
+                    m_hasHeaders = true;
+                    m_indices.pop_back();
+                    return;
+                }
+
+                MarkdownElement::parseLine(cellContent, lineIndex, false);
 
                 int lineDataIdx = m_lineData.size() - 1;
                 rowIndices.push_back(lineDataIdx);

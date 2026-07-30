@@ -3,6 +3,7 @@
 #include "stdx.h"
 #include "markdownfile.h"
 #include "filesys.h"
+#include "settings.h"
 
 #include <algorithm>
 
@@ -54,13 +55,16 @@ void Navigation::serialize()
 
     file->serialize_write("<span class=\"navdir\"><i>");
     file->serialize_write("<a href=\"/\">");
-    file->serialize_write("HOME");
+    //file->serialize_write("HOME");
+    file->serialize_write(Settings::siteName);
     file->serialize_write("</a>");
     file->serialize_writeln("</i></span><br>");
 
     file->serialize_writeln("<div style=\"margin-left: 10pt\">");
 
-    Filesys::iterateDir(file->getRootPath().c_str(), handlers);
+    std::string userDir = file->getRootPath() + "/" + Settings::pagesDir;
+
+    Filesys::iterateDir(userDir.c_str(), handlers);
 
     file->serialize_writeln("</div>");
 }

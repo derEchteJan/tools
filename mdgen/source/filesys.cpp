@@ -9,15 +9,14 @@
 #include <string.h>
 #include <fcntl.h>
 
-//typedef std::function<void(const std::string &name, const std::string &abs, int depth)> dir_handler_t;
-//typedef std::function<void(const std::string &name, const std::string &abs, int depth)> file_handler_t;
+#include "logging.h"
 
 void Filesys::iterateDir(const char *path, handlers_t handlers, int depth)
 {
     DIR *dir;
     struct dirent *entry;
 
-    if (!(dir = opendir(path))) return;
+    if (!(dir = opendir(path))) { log_err( "unable to open directory '" << path << "'" ); return; }
 
     while ((entry = readdir(dir)) != NULL)
     {
@@ -46,7 +45,7 @@ void Filesys::iterateDir(const char *path, handlers_t handlers, int depth)
         }
     }
 
-    if (!(dir = opendir(path))) return;
+    if (!(dir = opendir(path))) { log_err( "unable to open directory '" << path << "'" ); return; }
 
     while ((entry = readdir(dir)) != NULL) {
         if (entry->d_type == DT_REG)
@@ -110,7 +109,7 @@ void Filesys::readLines(int fileFd, line_handler_t forEachLine)
     FILE *file = fdopen(fileFd, "r");
     if(!file)
     {
-        std::cout << "unable to open file" << std::endl;
+        log_err( "unable to open file" );
         exit(1);
     }
 

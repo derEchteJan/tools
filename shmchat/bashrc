@@ -1,0 +1,4 @@
+#!/bin/sh
+# build command aliases for shmchat / piper
+
+alias build="./scripts/build.sh"

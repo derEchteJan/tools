@@ -8,11 +8,6 @@ MarkdownElement::MarkdownElement(MarkdownFile *parentFile, const char *typenName
 {
 }
 
-MarkdownElement::~MarkdownElement()
-{
-    // TODO CLEANUP AFTER STRUCUTRE IS FINAL
-}
-
 bool MarkdownElement::isBlock() { return m_isBlock; }
 
 const char* MarkdownElement::typeName() { return m_typeName; }
@@ -48,7 +43,7 @@ void MarkdownElement::serializeLine(const LineData &line)
 
 static std::vector<MarkdownInlineElement*> m_inlinePrototypes;
 
-void MarkdownElement::parseLine(const std::string &line, bool isFirstLine, bool raw)
+void MarkdownElement::parseLine(const std::string &line, int lineIndex, bool raw)
 {   
     m_lineData.push_back(LineData(line));
 

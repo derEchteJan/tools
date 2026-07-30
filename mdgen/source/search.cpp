@@ -4,6 +4,8 @@
 #include <iostream>
 
 #include <string.h>
+
+#include "logging.h"
 #include "search.h"
 #include "filesys.h"
 #include "stdx.h"
@@ -15,8 +17,6 @@ static std::string getTagFilePath(const MarkdownFile &file)
     std::string indexPath = std::replace_suffix(file.getScriptPath(), ".md", ".index");
     return indexPath;
 }
-
-
 
 static void serializeTags(int outFd, const std::string &tagFileName)
 {
@@ -34,16 +34,11 @@ static void serializeTags(int outFd, const std::string &tagFileName)
 void Search::createRootIndex(const std::string &rootPath)
 {
     // TODO: need truncate / ftruncate option to work
-    std::string outFilePath = rootPath + "/search.index"; // TODO: move to global constants
+    std::string outFilePath = rootPath + "/search.index"; // TODO: move to global constants / settings
 
     int outFd = Filesys::open(outFilePath, Filesys::RW | Filesys::CREATE);
 
-    if(outFd == -1) { std::cout << "error opening search index file" << std::endl; return; }
-
-    static std::vector<const char*> s_dummyTags = {
-        "",
-        ""
-    };
+    if(outFd == -1) { log_err( "error opening search index file" ); return; }
 
     Filesys::handlers_t handler;
 
@@ -66,6 +61,8 @@ void Search::createRootIndex(const std::string &rootPath)
     };
 
     Filesys::iterateDir(rootPath.c_str(), handler);
+
+    logd( "created root index file: '" << outFilePath << "'" );
 }
 
 void Search::createIndexFor(const MarkdownFile &file)
@@ -79,7 +76,7 @@ void Search::createIndexFor(const MarkdownFile &file)
     auto tagFile = Filesys::open(tagFilePath, Filesys::RW | Filesys::CREATE);
     if(tagFile == -1)
     {
-        std::cout << "Search: unable to open index tag file '" << tagFilePath << "'" << std::endl;
+        log_err( "unable to open index tag file '" << tagFilePath << "'" );
         return;
     }
 
@@ -91,5 +88,5 @@ void Search::createIndexFor(const MarkdownFile &file)
 
     Filesys::close(tagFile);
 
-    std::cout << "Created index tag file: '" << tagFilePath << "'" << std::endl;
+    logd( "created index file: '" << tagFilePath << "'" );
 }

@@ -1,7 +1,7 @@
 #include "markdownfile.h"
 
 #include "stdx.h"
-
+#include "logging.h"
 #include "markdownelement.h"
 #include "navigation.h"
 #include "filesys.h"
@@ -20,6 +20,8 @@
 
 // class TemplateFile
 
+#define SECTION_BOUND serialize_writeln("<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->", -1)
+
 TemplateFile::TemplateFile()
     : m_rootPath()
     , m_indentNext(false)
@@ -28,23 +30,19 @@ TemplateFile::TemplateFile()
     m_rootPath = Settings::documentRoot;
 }
 
-TemplateFile::~TemplateFile()
-{
-}
-
 void TemplateFile::serialize()
 {
     m_fdOut = open(m_outPath.c_str(), O_TRUNC | O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
     if(m_fdOut == -1)
     {
-        std::cout << "unable to open output file '" << m_outPath << "'" << std::endl;
+        log_err( "unable to open output file '" << m_outPath << "'" );
         exit(1);
     }
 
     m_templateFile = fopen(m_templatePath.c_str(), "r");
     if(!m_templateFile)
     {
-        std::cout << "unable to open template file '" << m_templatePath << "'" << std::endl;
+        log_err( "unable to open template file '" << m_templatePath << "'" );
         exit(1);
     }
 
@@ -66,6 +64,8 @@ void TemplateFile::serialize()
             serialize_write(line);
         }
     }
+
+    log( "output file: " << m_outPath );
 }
 
 void TemplateFile::serialize_write(const std::string &str, int indent)
@@ -109,16 +109,10 @@ void TemplateFile::serialize_writeln(const std::string &line, int indent)
 // class MarkdownFile
 
 MarkdownFile::MarkdownFile(const std::string &filePath)
-        : TemplateFile()
-        , m_scriptPath(filePath)
-        //, m_outPath()
-
-        //, m_pageTitle("Markdown Page")
-        //, m_parsed(false)
-        , m_inFile(nullptr)
-        //, m_outFile(nullptr)
-        , m_fdSrc(-1)
-        //, m_fdOut(-1)
+    : TemplateFile()
+    , m_scriptPath(filePath)
+    , m_inFile(nullptr)
+    , m_fdSrc(-1)
 {
     m_templatePath = m_rootPath + "/.templates/main.html";
 
@@ -126,8 +120,8 @@ MarkdownFile::MarkdownFile(const std::string &filePath)
     {
         m_outPath = m_scriptPath.substr(0, m_scriptPath.length() - 3).append(".html");
     }
-    std::cout << "input file: " << m_scriptPath << std::endl;
-    std::cout << "output file: " << m_outPath << std::endl;
+    
+    log( "input file: " << m_scriptPath );
 }
 
 MarkdownFile::~MarkdownFile()
@@ -140,7 +134,7 @@ bool MarkdownFile::parse()
     int scriptFile = Filesys::open(m_scriptPath, Filesys::R);
     if(scriptFile == -1)
     {
-        std::cout << "unable to open input file '" << m_scriptPath << "'" << std::endl;
+        log_err( "unable to open input file '" << m_scriptPath << "'" );
         return false;
     }
 
@@ -152,7 +146,17 @@ bool MarkdownFile::parse()
         parseLine(line);
     });
 
+    // cleanup unterminated elements
+    if(m_currentElement && m_currentElement->isBlock())
+    {
+        m_elements.push_back(m_currentElement);
+        m_currentElement = nullptr;
+    }
+
     Filesys::close(scriptFile);
+
+    log( "parsed file '" << m_scriptPath << "'" );
+
     return true;
 }
 
@@ -160,11 +164,15 @@ void MarkdownFile::serializeSection(const std::string &section)
 {
     if(section == "NAV")
     {
+        SECTION_BOUND;
         Navigation nav(this);
         nav.serialize();
+        SECTION_BOUND;
+        m_indentNext = false;
     }
     else if(section == "CONTENT")
     {
+        SECTION_BOUND;
         if(!m_elements.empty())
         {
             for(auto element : m_elements)
@@ -176,6 +184,13 @@ void MarkdownFile::serializeSection(const std::string &section)
         {
             serialize_writeln("<p><span id=\"empty-placeholder\">Empty Page</span></p>");
         }
+        SECTION_BOUND;
+        m_indentNext = false;
+    }
+    else if(section == "TITLE")
+    {
+        serialize_writeln(m_pageTitle, -1);
+        m_indentNext = false;
     }
 }
 
@@ -200,27 +215,28 @@ void MarkdownFile::parseLine(const std::string &line)
 
     // actual method:
 
-    std::cout << "-- >>> '" << line << "'" << std::endl;
+    logv( "-- >>> '" << line << "'" );
 
     if(m_currentElement)
     {
         if(m_currentElement->endsWith(line))
         {
-            std::cout << "-- end: " << m_currentElement->typeName() << std::endl << std::endl;
+            logv( "-- end: " << m_currentElement->typeName() << std::endl );
             m_elements.push_back(m_currentElement);
             m_currentElement = nullptr;
+            m_currentElementLineIdx = 0;
         }
         else
         {
-            std::cout << "-- " << m_currentElement->typeName() << "::parseLine($line)" << std::endl;
-            m_currentElement->parseLine(line); // TODO: needs isLastLine so blocks may decide what to do with it
+            logv( "-- " << m_currentElement->typeName() << "::parseLine($line)" );
+            m_currentElement->parseLine(line, m_currentElementLineIdx++); // TODO: needs isLastLine so blocks may decide what to do with it
         }
     }
     else // no current element
     {
         if(line.empty())
         {
-            std::cout << "-- skip" << std::endl;
+            logv( "-- skip" );
             return;
         }
         if(std::starts_with(line, titleTag) && line.length() > titleTagLen + 1 && line.at(titleTagLen) == ' ')
@@ -242,17 +258,18 @@ void MarkdownFile::parseLine(const std::string &line)
                 break;
             }
         }
-        std::cout << "-- begin: " << m_currentElement->typeName() << std::endl;
+        logv( "-- begin: " << m_currentElement->typeName() );
         if(m_currentElement)
         {
-            std::cout << "-- " << m_currentElement->typeName() << "::parseLine($line, true)" << std::endl;
-            m_currentElement->parseLine(line, /*isFirstLine:*/true);
+            logv( "-- " << m_currentElement->typeName() << "::parseLine($line, true)" );
+            m_currentElement->parseLine(line, m_currentElementLineIdx++);
 
             if(!m_currentElement->isBlock())
             {
-                std::cout << "-- end: " << m_currentElement->typeName() << std::endl << std::endl;
+                logv( "-- end: " << m_currentElement->typeName() << std::endl );
                 m_elements.push_back(m_currentElement);
                 m_currentElement = nullptr;
+                m_currentElementLineIdx = 0;
             }
         }
         // TODO: parse start line attributes if implemented later
@@ -275,31 +292,31 @@ void OverviewFile::serializeSection(const std::string &section)
 {
     if(section == "OVERVIEW")
     {
+        SECTION_BOUND;
         serializeOverview();
+        SECTION_BOUND;
+        m_indentNext = false;
     }
     if(section == "TITLE")
     {
         serialize_writeln(m_pageTitle);
+        m_indentNext = false;
     }
 }
 
 bool OverviewFile::parse()
 {
-    // TODO
+    // does no parsing for now
     return true;
 }
 
 void OverviewFile::serializeOverview()
 {
-    // TODO
-    serialize_writeln("<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->");
-    //serialize_writeln("<h2>Pages</h2>"); 
-
     Filesys::handlers_t handlers;
 
     int section = 0;
     const int nSections = 4; // number of sections of subdirs to include
-    const int nListCols = 3; // TODO: settings
+    const int nListCols = 3; // TODO: move to settings
 
     handlers.maxDepth = 1;
     
@@ -333,7 +350,7 @@ void OverviewFile::serializeOverview()
 
         if(fileName == m_outPath) return;
 
-        std::cout << " - " << fileName << std::endl;
+        logd( " - " << fileName );
 
         std::string formattedName = fileName;
         formatFileName(formattedName);
@@ -343,11 +360,11 @@ void OverviewFile::serializeOverview()
         serialize_writeln("<li><a class=\"overview-pagelink\" href=\"" + url + "\">" + formattedName + "</a></li>", depth);
     };
 
-    std::cout << "Overview: collecting files" << std::endl;
+    logd( "Overview: collecting files" );
 
-    Filesys::iterateDir(m_rootPath.c_str(), handlers);
+    std::string pagesDir = m_rootPath + "/" + Settings::pagesDir;
 
-    serialize_writeln("<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->");
+    Filesys::iterateDir(pagesDir.c_str(), handlers);
 }
 
 void OverviewFile::formatFileName(std::string &fileName)
@@ -355,5 +372,6 @@ void OverviewFile::formatFileName(std::string &fileName)
     auto pos = fileName.find(".html");
     if(pos == fileName.length() - 5)
         fileName = fileName.substr(0, fileName.length() - 5);
+
     std::replace(fileName.begin(), fileName.end(), '_', ' ');
 }

@@ -27,6 +27,8 @@ public:
     {
     }
 
+    virtual ~MarkdownInlineElement() = default;
+
     static bool rangeValid(const range_t &range, const std::string &str)
     {
         return range.first >= 0 && range.second > range.first && range.second <= str.length();
@@ -209,13 +211,11 @@ public:
         m_url = line.substr(range2Start, range2Len);
         m_textValue = line.substr(range1Start, range1Len);
 
-        std::cout << "-- hyperlink parsed: url=" << m_url << ", title=" << m_textValue << std::endl; 
-
         return true;
     }
 
-    virtual void serialize() override;
-    virtual MarkdownInlineElement* clone() override { return new Hyperlink(m_parentElement); };
+    void serialize() override;
+    MarkdownInlineElement* clone() override { return new Hyperlink(m_parentElement); };
 };
 
 class Image : public Hyperlink
@@ -228,6 +228,7 @@ public:
         m_delimStart = "![";
     }
 
+    bool parse(const std::string &line, const range_t &range) override;
     virtual void serialize() override;
     virtual MarkdownInlineElement* clone() override { return new Image(m_parentElement); };
 };
