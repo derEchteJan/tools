@@ -6,7 +6,7 @@
 
 #include "ShmChat.h"
 
-#if WINDOWS_BUILD
+#ifdef PLATFORM_WINDOWS
 #include <windows.h>
 #include <stdio.h>
 #include <conio.h>
@@ -84,7 +84,7 @@ void shmc_print(ShmChat* shmc, const std::string &line)
     }
 
     // update indices
-    shmc->wIdx += writeLength;
+    shmc->wIdx += static_cast<int32_t>(writeLength);
     shmc->wIdx %= shmc->size;
     if (writeLength >= cap)
     {
@@ -142,7 +142,7 @@ ShmChat* shmc_open(const std::string &name, bool create) // MARK JAN: TODO - 'cr
     ShmChat* result = nullptr;
     int32_t fileSize = sizeof(ShmChat) - sizeof(ShmChat::buffer) + BUFFER_SIZE;
 
-#if WINDOWS_BUILD
+#ifdef PLATFORM_WINDOWS
 
     HANDLE hMapFile;
     LPCTSTR pBuf;
@@ -228,7 +228,7 @@ ShmChat* shmc_open(const std::string &name, bool create) // MARK JAN: TODO - 'cr
 void shmc_sleep()
 {
     // brief delay to avoid cpu usage while polling etc
-#if WINDOWS_BUILD
+#ifdef PLATFORM_WINDOWS
     Sleep(1);
 #else // LINUX_BUILD
     usleep(1000);

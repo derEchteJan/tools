@@ -12,6 +12,8 @@
 static_assert(false, "ERROR: Please define either 'PLATFORM_WINDOWS' or 'PLATFORM_LINUX' before including ShmChat.h depending on your target platform")
 #endif
 
+#define SHMC_INCLUDED 1
+
 #include <string>
 
 #pragma pack(push, 1)
@@ -29,6 +31,3 @@ ShmChat* shmc_open(const std::string &name, bool create = true);
 void shmc_print(ShmChat* shmc, const std::string &line);
 void shmc_println(ShmChat* shmc, const std::string &line);
 std::string shmc_read(ShmChat* shmc);
-
-
-
