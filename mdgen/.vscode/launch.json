@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/generator",
             "args": [
-                "file=${workspaceFolder}/html/format/format.md"
+                "file=${workspaceFolder}/html/pages/format.md"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -22,8 +22,9 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/generator",
             "args": [
-                //"file=${workspaceFolder}/html/format/format.md"
-                "dir=./html"
+                "document_root=${workspaceFolder}/html",
+                //"file=${workspaceFolder}/html/pages/format.md"
+                "dir=pages"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

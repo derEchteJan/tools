@@ -20,6 +20,7 @@ public:
     static std::string fileParam;       /** arg 'file=...' */
     static std::string dirParam;        /** arg 'dir=...' */
     static std::string siteName;
+    static std::string theme;
     static int         verbose;         /** arg 'verbose=...' */
 
     // Methods

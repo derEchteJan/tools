@@ -26,7 +26,7 @@ TemplateFile::TemplateFile()
     : m_rootPath()
     , m_indentNext(false)
 {
-    m_pageTitle = "Rezepte"; // TODO: settings
+    m_pageTitle = Settings::siteName;
     m_rootPath = Settings::documentRoot;
 }
 
@@ -192,6 +192,12 @@ void MarkdownFile::serializeSection(const std::string &section)
         serialize_writeln(m_pageTitle, -1);
         m_indentNext = false;
     }
+    else if(section == "STYLESHEET")
+    {
+        std::string themeCss = std::string("<link rel=\"stylesheet\" href=\"/themes/") + Settings::theme + "/" + Settings::theme + ".css\">";
+        serialize_writeln(themeCss);
+        m_indentNext = false;
+    }
 }
 
 void MarkdownFile::parseLine(const std::string &line)
@@ -300,6 +306,12 @@ void OverviewFile::serializeSection(const std::string &section)
     if(section == "TITLE")
     {
         serialize_writeln(m_pageTitle);
+        m_indentNext = false;
+    }
+    if(section == "STYLESHEET")
+    {
+        std::string themeCss = std::string("<link rel=\"stylesheet\" href=\"/themes/") + Settings::theme + "/" + Settings::theme + ".css\">";
+        serialize_writeln(themeCss);
         m_indentNext = false;
     }
 }

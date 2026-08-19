@@ -3,7 +3,9 @@
 <head>
 <title>Edit File</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/main.css">
+<link rel="stylesheet" href="/themes/default/default.css">
+<link rel="stylesheet" href="/custom.css">
 <style>
 #ta_text_input
 {
@@ -29,6 +31,13 @@
     color: var(--surface1);
     background-color: var(--accent1);
 }
+#btn-delete
+{
+    color: var(--surface1);
+    background-color: var(--error1);
+    float: right;
+    margin-right: 0;
+}
 table.filetable
 {
     width: 100%;
@@ -52,26 +61,26 @@ h2#no-attachments
 }
 </style>
 </head>
-<body onload="onLoad()">
+<body>
 <div id="sidebar" style="display:none;">
 </div>
-<div id="main">
-    <div id="content">
+<div id="main" class="main-div">
+    <div id="content" class="content-div">
         <!-- Main Page Content -->
 
         <h2>Edit File</h2>
-
         <pre>File:</pre>
         <textarea id="ta_file_path" name="path" cols="256" rows="1" placeholder="path to save" spellcheck="false"></textarea><br>
         <br>
-        <button id="btn-reload" onclick="reloadPressed();">Reload</button>
+        <button id="btn-reload">Reload</button>
         <pre>Contents:</pre>
         <textarea id="ta_text_input" name="contents" placeholder="loading file..." spellcheck="false"></textarea><br>
         <br>
-        <button id="btn-overlay" onclick="setOverlayVisible(true);">Attach File</button>
+        <button id="btn-overlay">Attach File</button>
         <br><br>
-        <button id="btn-save" onclick="savePressed();">Save</button>
-        <button id="btn-cancel" onclick="cancelPressed();">Cancel</button>
+        <button id="btn-save">Save</button>
+        <button id="btn-cancel">Cancel</button>
+        <button id="btn-delete">Delete</button>
         
         <!-- Debug Features -->
         <div id="debug-features" style="display: none;">
@@ -82,21 +91,21 @@ h2#no-attachments
             <pre><a href="/" id="link_result">result</a></pre>
             <pre><a href="/" id="link_original">original</a></pre>
         </div>
-        <!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> test spacing / scrolling -->
     </div>
 
     <!-- Footer -->
-    <div id="footer">
+    <div id="footer" class="content-div">
         <hr class="separator">
-        <a href="/">&lt;&lt; Zurück zur Startseite</a><br>
+        <a href="/">&lt;&lt; Zur&uuml;ck zur Startseite</a><br>
         <p>Created with markdown generator<br>Source code: <a href="https://github.com/derEchteJan/tools/tree/main/mdgen">GitHub</a></p>
     </div>
 </div>
 <!-- Overlay -->
-<div id="overlay">
-    <div id="overlay-main">
-        <div id="overlay-content">
-            <!-- Overlay Contents -->
+<div id="overlay" class="overlay-div">
+    <div id="overlay-main" class="main-div">
+        <div id="overlay-content" class="content-div">
+        <!-- Overlay Contents -->
+
             <div style="background: var(--surface3); border-radius: 4pt; padding: 5pt 5pt 5pt 5pt; margin-top: 20%">
             <h2>Attach File</h2>
             <pre>Uploaded Files:</pre>
@@ -118,11 +127,22 @@ h2#no-attachments
                 <input type='file' name="fileToUpload" id="fileToUpload"><br>
             </form>
             <br>
-            <button class="accent" onclick="submitForm()">Upload</button>
+            <button id="btn-submit-att" class="accent">Upload</button>
             </div>
+
         </div>
     </div>
 </div>
-<script src="edit.js"></script>
+<!-- Modal Overlay -->
+<div id="modal" class="modal-div">
+    <div id="modal-main" class="modal-main-div">
+        <div id="modal-content" class="content-div">
+        <!-- Modal Overlay Contents -->
+
+        </div>
+    </div>
+</div>
+<script src="/main.js" type="module"></script>
+<script src="edit.js" type="module"></script>
 </body>
 </html>

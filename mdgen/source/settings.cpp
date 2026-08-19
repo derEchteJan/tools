@@ -17,6 +17,7 @@ std::string Settings::attachmentsDir = ".attachments";
 std::string Settings::fileParam;
 std::string Settings::dirParam;
 std::string Settings::siteName = "Rezepte";
+std::string Settings::theme = "default";
 int         Settings::verbose = 0; // 0 / false = quiet, 1 = simple, 2 = detailed
 
 
@@ -50,6 +51,7 @@ void Settings::init(int argc, char ** argv)
     Settings::readValue("file", Settings::fileParam);
     Settings::readValue("dir", Settings::dirParam);
     Settings::readValue("site_name", Settings::siteName);
+    Settings::readValue("theme", Settings::theme);
     Settings::readValueInt("verbose", Settings::verbose);
 }
 
@@ -65,6 +67,7 @@ void Settings::print()
     LOG_VAR(attachmentsDir);
     LOG_VAR(dirParam);
     LOG_VAR(siteName);
+    LOG_VAR(theme);
     LOG_VAR(verbose);
     LOG_FUNC( "}" );
 

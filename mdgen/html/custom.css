@@ -1,0 +1,5 @@
+/* global css overrides for derived sites */
+:root {
+   --accent1:      #33FF33;
+   --error1:       #FF3333;
+}

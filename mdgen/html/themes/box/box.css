@@ -1,42 +1,46 @@
 
 /* Color Scheme */
 @media (prefers-color-scheme: light) {
-	/* Light mode color pallete */
-	:root {
-		--surface1:     #eeeeee;
-		--surface2:     #dddddd;
-		--surface3:     #cccccc;
-		--text1:        #404040;
-		--text2:        #606060;
-		--text3:        #808080;
-		--accent1:      #3399ff;
+    /* Light mode color pallete */
+    :root {
+        --surface1:     #eeeeee;
+        --surface2:     #dddddd;
+        --surface3:     #cccccc;
+        --text1:        #404040;
+        --text2:        #606060;
+        --text3:        #808080;
+        --accent1:      #3399ff;
         --highlight:    #25ddea;
         --error1:       #ff335f;
-		--comment:      #777777;
-		--code_keyword: #6000df;
-		--code_string:  #c0a323;
+        --warning1:     #ffeb33;
+        --success1:     #33ff4e;
+        --comment:      #777777;
+        --code_keyword: #6000df;
+        --code_string:  #c0a323;
         --code_comment: #808080;
-		--code_macro:   #20A0F0;
-	}
+        --code_macro:   #20A0F0;
+    }
 }
 @media (prefers-color-scheme: dark) {
-	/* Dark mode color pallete */
-	:root {
-		--surface1:     #222222;
-		--surface2:     #444444;
-		--surface3:     #666666;
-		--text1:        #dddddd;
-		--text2:        #bbbbbb;
-		--text3:        #999999;
-		--accent1:      #cc3399;
+    /* Dark mode color pallete */
+    :root {
+        --surface1:     #222222;
+        --surface2:     #444444;
+        --surface3:     #666666;
+        --text1:        #dddddd;
+        --text2:        #bbbbbb;
+        --text3:        #999999;
+        --accent1:      #cc8f33;
         --highlight:    #3ef2ff;
         --error1:       #c02748;
-		--comment:      #777777;
+        --warning1:     #ffeb33;
+        --success1:     #33ff4e;
+        --comment:      #777777;
         --code_keyword: #FF00FF;
-		--code_string:  #c07c23;
+        --code_string:  #c07c23;
         --code_comment: #808080;
-		--code_macro:   #20A0F0;
-	}
+        --code_macro:   #20A0F0;
+    }
 }
 
 /* Main Page Structure */
@@ -45,6 +49,82 @@ body
     background-color: var(--surface1);
     color: var(--text1);
     font-family: Arial, sans-serif;
+}
+div.overlay-div
+{
+    display: none;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.5);
+}
+div.modal-div
+{
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.5);
+}
+div.main-div
+{
+    margin: auto;
+    max-width: 850pt;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 220pt;
+    right: 0;
+}
+div.modal-main-div
+{
+    margin: auto;
+    max-width: 850pt;
+    position: absolute;
+    bottom: 0;
+    left: 220pt;
+    right: 0;
+}
+div.content-div
+{
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 50pt;
+    background-color: var(--surface1);
+}
+div.toast-div
+{
+    text-align: center;
+    padding: 5pt 5pt 5pt 5pt;
+    border-radius: 4pt;
+    background: var(--text2);
+    color: var(--surface1);
+}
+div.toast-div.success
+{
+    background: var(--success1);
+}
+div.toast-div.warning
+{
+    background: var(--warning1);
+}
+div.toast-div.error
+{
+    background: var(--error1);
+}
+div#main
+{
+    z-index: 0;
+}
+div#modal
+{
+    z-index: 2;
+    display: inline;
+    background-color: transparent;
+}
+div#modal-main
+{
+    max-width: 400pt;
 }
 div#sidebar
 {
@@ -64,28 +144,6 @@ div#nav
     width: 230px;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-div#main, div#overlay-main
-{
-    margin: auto;
-    max-width: 1000px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 230px;
-    right: 0;
-}
-div#content, div#footer, div#overlay-content
-{
-    margin-left: 4%;
-    margin-right: 4%;
-    margin-bottom: 50pt;
-    background-color: var(--surface1);
-}
-div#overlay
-{
-    position: fixed; top: 0; bottom: 0; width: 100%; display: none;
-    background-color: rgba(255,255,255,0.5);
 }
 div#footer
 {
@@ -201,16 +259,7 @@ button:disabled
 {
     opacity: 0.5;
 }
-#btn-save
-{
-    color: var(--surface1);
-    background-color: var(--accent1);
-}
-#btn-cancel
-{
-    color: var(--surface1);
-    background-color: var(--error1);
-}
+
 
 /* == Inline Elements == */ 
 
@@ -299,7 +348,7 @@ div#sidebar
 {
     display: none;
 }
-div#main, div#overlay-main
+div.main-div
 {
     margin: auto;
     width: 100%;

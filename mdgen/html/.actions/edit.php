@@ -1,77 +1,151 @@
 <?php
-    // called by edit.html to upload a markdown file and parse it
+   // called by edit.html to upload a markdown file and parse it
 
-    $status = 409;
-    $response = "";
+   $status = 409;
+   $response = "";
 
-    $mdgenBin = '/usr/bin/generator';
-    $docRoot = '/usr/local/apache2/htdocs';
-    $fileSuffix = '.md';
+   $mdgenBin = '/usr/bin/generator';
+   $docRoot = '/usr/local/apache2/htdocs';
+   $configFile = "$docRoot/site.conf";
+   $logFile = "$docRoot/log.txt";
+   $pagesDir = 'pages';
+   $fileSuffix = '.md';
 
-    $requestBody = file_get_contents('php://input');
-    $fileParam = $_GET['file'];
+   $requestBody = file_get_contents('php://input');
+   $fileParam = $_GET['file'];
+   $outputFile = "$docRoot/$pagesDir/$fileParam";
+   $targetDir = null;
 
-    function isValid($str)
-    {
-        return $str && strlen($str) !== 0 && !preg_match('/[^A-Za-z0-9\.\/_-]/', $str);
-    }
+   function GetSiteConfig($file)
+   {
+     $result = [];
+     // Read key-value pairs from config file
+     $fd = fopen($file, "r");
+     if ($fd) {
+       while (($line = fgets($fd)) !== false) {
+         $split = strpos($line, '=');
+         if($split !== false)
+         {
+            $key = substr($line, 0, $split);
+            $value = substr($line, $split + 2, strlen($line) - 4 - $split);
+            $result[$key] = $value;
+         }
+       }
+       fclose($fd);
+     }
+     // Read key-value pairs from url parameters
+     foreach ($_GET as $key => $value)
+     {
+       $result[strtoupper($key)] = $value;
+     }
+     return $result;
+   }
 
-    if(is_null($fileParam))
-    {
-        $status = 409;
-        $response = "url parameter 'file' missing\n";
-    }
-    else if(!isValid($fileParam))
-    {
-        $response = "invalid file name: '$fileParam'\n";
-        $status = 403;
-    }
-    else
-    {
-        if(substr($fileParam, 0, 1) === "/")
-        {
-            $fileParam = substr($fileParam, 1);
-        }
-        $outputFilePath = $docRoot . '/' . $fileParam;
-        $outputFilePath = str_replace('//', '/', $outputFilePath);
-        $outputFilePath = str_replace('/..', '/', $outputFilePath);
-        $outputFilePath = str_replace('/.', '/', $outputFilePath);
+   function validFileName($str)
+   {
+     return $str && strlen($str) !== 0 && !preg_match('/[^a-z0-9\.\/_-]|\.\.|\/\//i', $str);
+   }
 
-        $response .= "upload file path: $outputFilePath\n";
+   function validDirName($str)
+   {
+     return $str && strlen($str) !== 0 && !preg_match('/[^a-z0-9\/_-]|\.\.|\/\//i', $str);
+   }
 
-        // upload body into markdown file
-        $result = file_put_contents($outputFilePath, $requestBody);
+   if(is_null($fileParam))
+   {
+     $status = 409;
+     $response = "url parameter 'file' missing\n";
+     goto end;
+   }
+   
+   if(!validFileName($outputFile))
+   {
+     $status = 403;
+     $response .= "invalid file name: '$outputFile'\n";
+     goto end;
+   }
 
-        if($result !== false)
-        {
-            $response .= "ok\n\nuploaded file: $outputFilePath\nhttp://localhost:8080/$fileParam\n";
+   $response .= "upload file path: '$outputFile'\n";
 
-            $output = null;
-            $retval = null;
-            $command = "document_root=$docRoot $mdgenBin 'file=$outputFilePath'";
-            $response .= "running generator command:\n$command\n";
-            exec($command, $output, $retval);
+   $lastPos = strrpos($outputFile, "/", strlen($docRoot) + 1);
+   if($lastPos != false)
+   {
+     $targetDir = substr($outputFile, 0, $lastPos);
+     echo "targetDir: '$targetDir'\n";
+   }
+   else
+   {
+     echo("no targetdir");
+   }
 
-            $logfile = fopen("$docRoot/log.txt", "w");
-            foreach ($output as $line)
-            {
-                fwrite($logfile, $line);
-                fwrite($logfile, "\n");
-            }
+   if($targetDir && !is_dir($targetDir))
+   {
+     $created = mkdir(
+       $targetDir,
+       0777,
+       true
+     );
+     if($created)
+     {
+       $response .= "created directory '" . $targetDir . "'\n";
+     }
+     else
+     {
+       $status = 403;
+       $response .= "unable to create directory '" . $targetDir . "'";
+       goto end;
+     }
+   }
 
-            $status = $retval == 0 ? 200 : 503;
-            $response .= "generator exited with $retval\n";
-        }
-        else
-        {
-            $status = 409;
-            $response .= "file_put_contents error\n";
-        }
-    }
+   // upload body into markdown file
+   $result = file_put_contents($outputFile, $requestBody);
 
-    http_response_code($status);
-    header("Cache-Control: no-cache, must-revalidate"); // prevent response caching
-    echo("<pre>");
-    echo("$response");
-    echo("</pre>");
+   if(!$result)
+   {
+      $status = 409;
+      $response .= "file_put_contents error\n";
+      goto end;
+   }
+
+   $response .= "ok\n\nuploaded file: $outputFile\nhttp://localhost:8080/$fileParam\n";
+
+   // Run generator on single file
+   // Load site.conf values
+   $conf = GetSiteConfig($configFile);
+
+   // Run generator command
+   $command = "";
+   $output = null;
+   $retval = null;
+
+   $command = "document_root='$docRoot' ";
+   if($conf["SITE_NAME"]) $command .= "site_name='".$conf["SITE_NAME"]."' ";
+   if($conf["THEME"])    $command .= "theme='".   $conf["THEME"]."' ";
+   if($conf["VERBOSE"])   $command .= "verbose=".   $conf["VERBOSE"]." ";
+   $command .= "$mdgenBin 'file=$outputFile'";
+   
+   $response .= "running generator command:\n$command\n";
+   exec($command, $output, $retval);
+
+   // Write stdout of command to logfile
+   $fd = fopen($logFile, "w");
+   if($fd)
+   {
+      foreach ($output as $line)
+      {
+         fwrite($fd, $line);
+         fwrite($fd, "\n");
+      }
+      fclose($fd);
+   }
+
+   $status = $retval == 0 ? 200 : 503;
+   $response .= "generator exited with $retval\n";
+
+end:
+   http_response_code($status);
+   header("Cache-Control: no-cache, must-revalidate"); // prevent response caching
+   echo("<pre>");
+   echo("$response");
+   echo("</pre>");
 ?>

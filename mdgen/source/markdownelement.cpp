@@ -25,7 +25,7 @@ void MarkdownElement::serializeLine(const LineData &line)
     if(!file) return;
 
     int textStart = 0;
-    for(auto inlineElement : line.m_inlineElements)
+    for(auto &inlineElement : line.m_inlineElements)
     {
         int textEnd = inlineElement->m_startIdx;
         int textLen = textEnd - textStart;
@@ -41,8 +41,6 @@ void MarkdownElement::serializeLine(const LineData &line)
     }
 }
 
-static std::vector<MarkdownInlineElement*> m_inlinePrototypes;
-
 void MarkdownElement::parseLine(const std::string &line, int lineIndex, bool raw)
 {   
     m_lineData.push_back(LineData(line));
@@ -51,30 +49,30 @@ void MarkdownElement::parseLine(const std::string &line, int lineIndex, bool raw
     
     // test setup once
     // TODO: MOVE TO PROPER SCOPE
-    if(m_inlinePrototypes.empty())
+    if(m_prototypeInlineElements.empty())
     {
-        m_inlinePrototypes.emplace_back(new BoldText(this));
-        m_inlinePrototypes.emplace_back(new ItalicText(this));
-        m_inlinePrototypes.emplace_back(new StrikethroughText(this));
-        m_inlinePrototypes.emplace_back(new HighlightText(this));
-        m_inlinePrototypes.emplace_back(new InlineCode(this));
-        m_inlinePrototypes.emplace_back(new Emoji(this));
-        m_inlinePrototypes.emplace_back(new Image(this));
-        m_inlinePrototypes.emplace_back(new Hyperlink(this));
+        m_prototypeInlineElements.emplace_back(new BoldText(this));
+        m_prototypeInlineElements.emplace_back(new ItalicText(this));
+        m_prototypeInlineElements.emplace_back(new StrikethroughText(this));
+        m_prototypeInlineElements.emplace_back(new HighlightText(this));
+        m_prototypeInlineElements.emplace_back(new InlineCode(this));
+        m_prototypeInlineElements.emplace_back(new Emoji(this));
+        m_prototypeInlineElements.emplace_back(new Image(this));
+        m_prototypeInlineElements.emplace_back(new Hyperlink(this));
     }
     
     // parse inline elements
 
     int begin = 0;
     MarkdownInlineElement *inlineElement = nullptr;
-    do
+    do // certified do-while loop user
     {
         inlineElement = nullptr;
         MarkdownInlineElement::range_t elementRange;
     
         // find closest registered type
     
-        for(auto registeredType : m_inlinePrototypes)
+        for(auto &registeredType : m_prototypeInlineElements)
         {
             auto range = registeredType->findIn(line, begin);
             if(range.first != -1 && (!inlineElement || (range.first < elementRange.first)))
@@ -83,7 +81,7 @@ void MarkdownElement::parseLine(const std::string &line, int lineIndex, bool raw
                 elementRange = range;
             }
         }
-    
+
         begin = elementRange.second;
     
         // if found

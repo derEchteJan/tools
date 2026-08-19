@@ -1,5 +1,6 @@
 <?php
-  // uploads file to .attachments supdirectory
+  // uploads files like images to .attachments subdir in given directory
+  // used by standalone page upload.html and also by the attachments overlay in edit.html
 
   $response = "";
   $status = 409;
@@ -7,6 +8,7 @@
   /// functionality requires file_uploads = On in active php.ini
 
   $docRoot = "/usr/local/apache2/htdocs";
+  $pagesDir = "pages";
   $attachmentSubdir = ".attachments";
 
   if(ini_get('file_uploads') != 1)
@@ -17,7 +19,7 @@
   }
 
   $dirParam = $_GET["dir"];
-  $targetDir = $docRoot;
+  $targetDir = $docRoot . '/' . $pagesDir;
   $targetName = basename($_FILES["fileToUpload"]["name"]);
   if($dirParam) $targetDir .= $dirParam;
   $targetDir .= "/" . $attachmentSubdir;

@@ -1,0 +1,13 @@
+/* Color Scheme */
+@media (prefers-color-scheme: light) {
+    /* Light mode color pallete */
+    :root {
+        --accent1:      #009e79;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    /* Dark mode color pallete */
+    :root {
+        --accent1:      #33cc7a;
+    }
+}

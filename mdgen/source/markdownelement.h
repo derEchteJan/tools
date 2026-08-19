@@ -15,8 +15,9 @@ protected:
     {
         std::string m_lineText;
         std::vector<MarkdownInlineElement*> m_inlineElements;
-        
+
         LineData(const std::string &lineText)
+           : m_inlineElements{ }
         {
             m_lineText = lineText;
         }
@@ -27,6 +28,7 @@ protected:
     MarkdownFile *m_parentFile; // ref to parent file
 
     std::vector<LineData> m_lineData;
+    std::vector<MarkdownInlineElement*> m_prototypeInlineElements;
 
 public:
     MarkdownElement(MarkdownFile *parentFile, const char *typenName);
@@ -75,7 +77,7 @@ public:
         m_parentFile->serialize_write("<p>");
         for(int li = 0; li < m_lineData.size(); li++)
         {
-            auto line = m_lineData[li];
+            auto &line = m_lineData[li];
             // todo: call base class to write lines instead
             // baseclass then handles inline elements automatically
             //m_parentFile->serialize_write(line.m_lineText);

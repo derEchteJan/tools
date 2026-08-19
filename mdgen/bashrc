@@ -2,12 +2,7 @@
 # Bash config for build commands
 # usage: '. bashrc' or 'source bashrc'
 
-IMAGE_NAME='mdgen'
-CONTAINER_NAME='mdgen-test'
-VOLUME_NAME='mdgen-test'
-DOC_ROOT='/usr/local/apache2/htdocs'
-RO_PORT='8080'
-RW_PORT='8081'
+source ./site.conf
 
 echo ''
 echo 'Build commands:'
@@ -28,8 +23,8 @@ ls -algh --color ./build/generator'
 echo ' - build:             compiles generator binary'
 
 # test generator binary
-alias  test-gen='sudo cp ./html/style.css / && document_root="$(pwd)/html" ./build/generator file=html/pages/format.md'
-alias test-genr='sudo cp ./html/style.css / && document_root="$(pwd)/html" ./build/generator dir=pages'
+alias  test-gen='document_root="$(pwd)/html" ./build/generator file=html/pages/format.md'
+alias test-genr='document_root="$(pwd)/html" ./build/generator dir=pages'
 echo ' - test-gen:          runs generator locally on a single file (format.md)'
 echo ' - test-genr:         runs generator locally recursive on ./html/pages'
 
@@ -53,7 +48,9 @@ alias container-build='echo building container image "$IMAGE_NAME" && sudo docke
 echo ' - container-build:   builds container image'
 
 # create and run container
-alias run='echo running container && sudo docker run --detach -p $RO_PORT:80 -p $RW_PORT:81 --name $CONTAINER_NAME $IMAGE_NAME'
+alias run='echo running container && sudo docker run --detach -p $RO_PORT:80 -p $RW_PORT:81 --name $CONTAINER_NAME $IMAGE_NAME && 
+sudo docker cp ./site.conf $(container-id):$DOC_ROOT &&
+generate-all'
 echo ' - run:               creates container and starts it'
 
 # stop and remove container
@@ -88,10 +85,14 @@ alias shell='sudo docker exec -it $(container-id) bash'
 echo ' - shell:             start bash shell inside running container'
 
 # copy current webfiles into running container
-alias webcopy='sudo docker cp ./html/. $(container-id):/usr/local/apache2/htdocs &&\
-sudo docker exec -it $(container-id) chown -R www-data:www-data /usr/local/apache2/htdocs'
+alias webcopy='sudo docker cp ./html/. $(container-id):$DOC_ROOT &&\
+sudo docker cp ./site.conf $(container-id):$DOC_ROOT &&\
+sudo docker exec -it $(container-id) chown -R www-data:www-data $DOC_ROOT'
 echo ' - webcopy:           copy current webfiles into running container'
 
 # copy generator binary into running container
 alias bincopy='sudo docker cp ./build/generator $(container-id):/usr/bin'
 echo ' - bincopy:           copy generator binary into running container'
+
+alias generate-all='echo "generating pages" && curl localhost:$RW_PORT/.actions/generate.php? && echo ""'
+echo ' - generate-all:      calls api to generate run generator on all pages inside container'

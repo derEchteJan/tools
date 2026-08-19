@@ -3,46 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
+<link rel="stylesheet" href="/main.css">
+__STYLESHEET__
+<link rel="stylesheet" href="/custom.css">
 <title>
 __TITLE__
 </title>
 <style>
 </style>
 </head>
-<body onload="onLoad()">
+<body>
 <div id="sidebar">
-    <div id="nav">
-    </div>
+   <div id="nav">
+   </div>
 </div>
-<div id="main">
-    <div id="content">
-    <h1>
+<div id="main" class="main-div">
+   <div id="content" class="content-div">
+   <!-- Main Page Content -->
+   <h1>
 __TITLE__
-    </h1>
-    <hr class="separator">
-    <div class="search">
-        <input type="text" id="searchbar" placeholder="Suche..."></input>
-    </div>
-    <div id="searchresults" style="display:none">
-        <h2>Results</h2>
-        <ul id="resultlist">
-        </ul>
-        <p id="resultcount"></p>
-    </div>
-    <div id="overview">
-        <h2>Seiten</h2>
+   </h1>
+   <hr class="separator">
+   <div class="search">
+      <input type="text" id="searchbar" placeholder="Suche..."></input>
+   </div>
+   <div id="searchresults" style="display:none">
+      <h2>Results</h2>
+      <ul id="resultlist">
+      </ul>
+      <p id="resultcount"></p>
+   </div>
+   <div id="overview">
+      <h2>Seiten</h2>
 __OVERVIEW__
-    </div>
-    </div>
-    <div id="footer">
-        <hr class="separator">
-        <p style="text-align:center;"><i></i>Bearbeiten Modus:</i> <span id="edit-on">AN</span><span id="edit-off">AUS</span></p>
-        <button id="btn-create" onclick="onCreatePressed()">Neue Seite</button><button id="btn-writemode" onclick="onWriteModePressed()">Bearbeiten Modus</button><br>
-        <p>Created with markdown generator<br>Source code: <a href="https://github.com/derEchteJan/tools/tree/main/mdgen">GitHub</a></p>
-    </div>
+   </div>
+   </div>
+   <!-- Footer -->
+   <div id="footer" class="content-div">
+      <hr class="separator">
+      <p style="text-align:center;"><i></i>Bearbeiten Modus:</i> <span id="edit-on">AN</span><span id="edit-off">AUS</span></p>
+      <button id="btn-create">Neue Seite</button><button id="btn-writemode">Bearbeiten Modus</button><br>
+      <p>Created with markdown generator<br>Source code: <a href="https://github.com/derEchteJan/tools/tree/main/mdgen">GitHub</a></p>
+   </div>
 </div>
-<script src="/main.js"></script>
-<script src="/search.js"></script>
+<!-- Overlay -->
+<div id="overlay" class="overlay-div" style="display:none;">
+   <div id="overlay-main" class="main-div">
+      <div id="overlay-content" class="content-div">
+      <!-- Overlay Contents -->
+      <!-- unused in main.html -->
+      </div>
+   </div>
+</div>
+<!-- Modal Overlay -->
+<div id="modal" class="modal-div">
+   <div id="modal-main" class="modal-main-div">
+      <div id="modal-content" class="content-div">
+      <!-- Modal Overlay Contents -->
+      <!-- created dynamically -->
+      </div>
+   </div>
+</div>
+<script src="/main.js" type="module"></script>
+<script src="/search.js" type="module"></script>
 </body>
 </html>

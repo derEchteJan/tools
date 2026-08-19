@@ -1,146 +1,117 @@
+// search.js
+import * as Utils from '/utils.js';
 
+const s_searchBar = document.getElementById("searchbar");
+const s_resultSection = document.getElementById("searchresults");
+const s_resultList = document.getElementById("resultlist");
+const s_overviewSection = document.getElementById("overview");
+const s_resultCount = document.getElementById("resultcount");
 
-let searchBar = document.getElementById("searchbar");
-let resultSection = document.getElementById("searchresults");
-let resultList = document.getElementById("resultlist");
-let overviewSection = document.getElementById("overview");
-let resultCount = document.getElementById("resultcount");
+var s_indexLoaded = false;
+var s_indexContent = null;
+var s_resultSectionShown = false;
 
-var indexLoaded = false;
-var indexContent = null;
-var resultSectionShown = false;
+OnLoad();
 
-if(window.addEventListener)
-    window.addEventListener('load', search_onLoad, false); //W3C
-else
-    window.attachEvent('onload', search_onLoad); //IE
-
-function search_onLoad()
+function OnLoad()
 {
-    console.log("search onLoad");
-    searchBar.value = "";
-    searchBar.addEventListener('input', function(event) {
-        console.log("query changed");
-        var query = searchBar.value;
-        searchFor(query);
-    });
-    loadIndex();
+   console.log("search onLoad");
+   s_searchBar.value = "";
+   s_searchBar.addEventListener('input', function(event) {
+      console.log("query changed");
+      var query = s_searchBar.value;
+      SearchFor(query);
+   });
+   LoadIndex();
 }
 
-function loadIndex()
+function LoadIndex()
 {
-    fetchDocument("/search.index");
-}
-
-function fetchDocument(path)
-{
-    //document.getElementById("ta_text_input").placeholder = "loading file..."
-
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function()
-    { 
-        if (request.readyState == 4 )
-        {
-            if(request.status == 200)
-            {
-                onIndexReceived(true, request.responseText);
-            }
-            else
-            {
-                onIndexReceived(false, null);
-            }
-        }
-    }
-    request.open(/*method:*/ "GET", /*url:*/ path, /*async:*/ true);
-    request.setRequestHeader('Cache-Control', 'no-cache, no-store, max-age=0');
-    request.send(null);
+   Utils.Fetch("/search.index", { onReceived: OnIndexReceived });
 }
 
 /**
  * @param {boolean} success 
  * @param {string} content 
  */
-function onIndexReceived(success, content)
+function OnIndexReceived(success, content)
 {
-    console.log("received index");
-    console.log("success: " + success);
-    if(success === true)
-    {
-        console.log("content:");
-        console.log(content);
-        indexContent = content;
-        indexLoaded = true;
-    }
+   if(success == true)
+   {
+      s_indexContent = content;
+      s_indexLoaded = true;
+      console.log("search index loaded");
+   }
 }
 
-/**
- * @param {string} query 
+/** Starts search for given input text
+ * @param {string} query - search text
  */
-function searchFor(query)
+function SearchFor(query)
 {
-    if(query.length === 0)
-    {
-        showResultsSection(false);
-    }
-    else
-    {
-        showResultsSection(true);
-        clearResults();
+   if(query.length === 0)
+   {
+      showResultsSection(false);
+   }
+   else
+   {
+      showResultsSection(true);
+      ClearResults();
 
-        if(indexContent === null) return;
+      if(s_indexContent === null) return;
 
-        query = query.toLowerCase().trim(); // TODO: split by spaces
+      query = query.toLowerCase().trim(); // TODO: split by spaces
 
-        let lines = indexContent.split('\n');
-        var matches = 0;
+      let lines = s_indexContent.split('\n');
+      var matches = 0;
 
-        lines.forEach((line) => { 
-            let items = line.split(',');
+      lines.forEach((line) => { 
+         let items = line.split(',');
 
-            if(items.length < 2) return;
+         if(items.length < 2) return;
 
-            let url = items[0];
-            let displayName = items[1];
+         let url = items[0];
+         let displayName = items[1];
 
-            for(var i = 0; i < items.length; i++)
+         for(var i = 0; i < items.length; i++)
+         {
+            let item = items[i].toLowerCase().trim();
+            if(item.includes(query))
             {
-                let item = items[i].toLowerCase().trim();
-                if(item.includes(query))
-                {
-                    addResult(displayName, url);
-                    matches += 1;
-                    break;
-                }
+               AddResult(displayName, url);
+               matches += 1;
+               break;
             }
-        })
+         }
+      })
 
-        resultCount.innerText = "" + matches + " Results";
-    }
+      s_resultCount.innerText = "" + matches + " Results";
+   }
 }
 
 /**
  * @param {string} displayName 
  * @param {string} url 
  */
-function addResult(displayName, url)
+function AddResult(displayName, url)
 {
-  // create a new div element
-  const item = document.createElement("li");
+   // create a new div element
+   const item = document.createElement("li");
 
-  const link = document.createElement("a");
-  link.href = url;
-  link.innerText = displayName;
+   const link = document.createElement("a");
+   link.href = url;
+   link.innerText = displayName;
   
-  item.appendChild(link);
+   item.appendChild(link);
 
-  // add the newly created element and its content into the DOM
-  //const currentDiv = document.getElementById("searchresults");
-  resultList.appendChild(item);
+   // add the newly created element and its content into the DOM
+   //const currentDiv = document.getElementById("searchresults");
+   s_resultList.appendChild(item);
 }
 
-function clearResults()
+function ClearResults()
 {
-    resultList.innerHTML = '';
+   s_resultList.innerHTML = '';
 }
 
 /**
@@ -148,10 +119,10 @@ function clearResults()
  */
 function showResultsSection(show)
 {
-    if(show !== resultSectionShown)
-    {
-        resultSectionShown = show;
-        resultSection.style.display = show ? "inline" : "none";
-        overviewSection.style.display = !show ? "inline" : "none";
-    }
+   if(show !== s_resultSectionShown)
+   {
+      s_resultSectionShown = show;
+      s_resultSection.style.display = show ? "inline" : "none";
+      s_overviewSection.style.display = !show ? "inline" : "none";
+   }
 }

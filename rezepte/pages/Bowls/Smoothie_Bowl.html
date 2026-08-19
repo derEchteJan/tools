@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180×180 -->
 <link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/custom.css">
 <title>
+Vegane Aioli
 </title>
 <style>
 </style>
@@ -12,25 +16,32 @@
 <body onload="onLoad()">
 <div id="sidebar">
     <div id="nav">
-<span class="navdir"><i><a href="/">HOME</a></i></span><br>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <span class="navdir"><i><a href="/">Rezepte</a></i></span><br>
     <div style="margin-left: 10pt">
     <div>
     <span class="navdir"><i>Bowls</i></span><br>
     <div style="margin-left: 10pt">
-    <a class="navitem" href="/Bowls/Smoothie_Bowl.html">- Smoothie Bowl</a><br>
+    <a class="navitem" href="/pages/Bowls/Smoothie_Bowl.html">- Smoothie Bowl</a><br>
     </div>
     </div>
     <div>
     <span class="navdir"><i>Cocktails</i></span><br>
     <div style="margin-left: 10pt">
-    <a class="navitem" href="/Cocktails/Amaretto_Sauer.html">- Amaretto Sauer</a><br>
+    <a class="navitem" href="/pages/Cocktails/Amaretto_Sauer.html">- Amaretto Sauer</a><br>
+    </div>
+    </div>
+    <div>
+    <span class="navdir"><i>subdir1</i></span><br>
+    <div style="margin-left: 10pt">
+    <a class="navitem" href="/pages/subdir1/Rezept3.html">- Rezept3</a><br>
     </div>
     </div>
     <div>
     <span class="navdir"><i>Sosen</i></span><br>
     <div style="margin-left: 10pt">
-    <a class="navitem" href="/Sosen/Vegane_Aioli.html">- Vegane Aioli</a><br>
-    <a class="navitem" href="/Sosen/Erdnuss_Soja_Soße.html">- Erdnuss Soja Soße</a><br>
+    <a class="navitem" href="/pages/Sosen/Vegane_Aioli.html">- Vegane Aioli</a><br>
+    <a class="navitem" href="/pages/Sosen/Erdnuss_Soja_Soße.html">- Erdnuss Soja Soße</a><br>
     </div>
     </div>
     <div>
@@ -42,39 +53,51 @@
     <div>
     <span class="navdir"><i>TestDir3</i></span><br>
     <div style="margin-left: 10pt">
-    <a class="navitem" href="/TestDir1/TestDir2/TestDir3/Test_3_File_2.html">- Test 3 File 2</a><br>
-    <a class="navitem" href="/TestDir1/TestDir2/TestDir3/Test_3_File_1.html">- Test 3 File 1</a><br>
+    <a class="navitem" href="/pages/TestDir1/TestDir2/TestDir3/Test_3_File_2.html">- Test 3 File 2</a><br>
+    <a class="navitem" href="/pages/TestDir1/TestDir2/TestDir3/Test_3_File_1.html">- Test 3 File 1</a><br>
     </div>
     </div>
-    <a class="navitem" href="/TestDir1/TestDir2/subdir2-file2.html">- subdir2-file2</a><br>
-    <a class="navitem" href="/TestDir1/TestDir2/subdir2-file1.html">- subdir2-file1</a><br>
+    <a class="navitem" href="/pages/TestDir1/TestDir2/subdir2-file2.html">- subdir2-file2</a><br>
+    <a class="navitem" href="/pages/TestDir1/TestDir2/subdir2-file1.html">- subdir2-file1</a><br>
     </div>
     </div>
-    <a class="navitem" href="/TestDir1/Gemischter_Vorspeisensalat.html">- Gemischter Vorspeisensalat</a><br>
-    <a class="navitem" href="/TestDir1/Pulled_Pork_Bowl.html">- Pulled Pork Bowl</a><br>
+    <a class="navitem" href="/pages/TestDir1/Gemischter_Vorspeisensalat.html">- Gemischter Vorspeisensalat</a><br>
+    <a class="navitem" href="/pages/TestDir1/Pulled_Pork_Bowl.html">- Pulled Pork Bowl</a><br>
     </div>
     </div>
     <div>
-    <span class="navdir"><i>format</i></span><br>
+    <span class="navdir"><i>Subdir1</i></span><br>
     <div style="margin-left: 10pt">
-    <a class="navitem" href="/format/format.html">- format</a><br>
+    <div>
+    <span class="navdir"><i>Subdir2</i></span><br>
+    <div style="margin-left: 10pt">
+    <a class="navitem" href="/pages/Subdir1/Subdir2/file-2.html">- file-2</a><br>
+    </div>
+    </div>
+    <a class="navitem" href="/pages/Subdir1/file-1.html">- file-1</a><br>
     </div>
     </div>
     <div>
     <span class="navdir"><i>Curry</i></span><br>
     <div style="margin-left: 10pt">
-    <a class="navitem" href="/Curry/Rindfleisch_Curry_mit_Paprika.html">- Rindfleisch Curry mit Paprika</a><br>
+    <a class="navitem" href="/pages/Curry/Rindfleisch_Curry_mit_Paprika.html">- Rindfleisch Curry mit Paprika</a><br>
     </div>
     </div>
-    <a class="navitem" href="/test.html">- test</a><br>
-    <a class="navitem" href="/example.html">- example</a><br>
-    <a class="navitem" href="/index.html">- index</a><br>
+    <a class="navitem" href="/pages/Rezept1.html">- Rezept1</a><br>
+    <a class="navitem" href="/pages/Rezept2.html">- Rezept2</a><br>
+    <a class="navitem" href="/pages/test.html">- test</a><br>
+    <a class="navitem" href="/pages/format.html">- format</a><br>
+    <a class="navitem" href="/pages/example.html">- example</a><br>
+    <a class="navitem" href="/pages/asdf.html">- asdf</a><br>
     </div>
-        </div>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    </div>
 </div>
-<div id="main">
-    <div id="content">
-<h1 id="hl-Superfood-Smoothie-Bowl"><a class="hlink" href="#hl-Superfood-Smoothie-Bowl"># </a>Superfood Smoothie Bowl</h1>
+<div id="main" class="main-div">
+    <div id="content" class="content-div">
+    <!-- Main Page Content -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <h1 id="hl-Superfood-Smoothie-Bowl"><a class="hlink" href="#hl-Superfood-Smoothie-Bowl"># </a>Superfood Smoothie Bowl</h1>
     <h3 id="hl-Zutaten-für-2-Smoothie-Bowls"><a class="hlink" href="#hl-Zutaten-für-2-Smoothie-Bowls"># </a>Zutaten für 2 Smoothie-Bowls</h3>
     <p>Für den Smoothie:</p>
     <table class="maintable">
@@ -153,8 +176,12 @@
       </tr>
     </table>
     <h3 id="hl-Zubereitung"><a class="hlink" href="#hl-Zubereitung"># </a>Zubereitung</h3>
-        </div>
-    <div id="footer">
+    <p>Alle Zutaten für den Smoothie in einen Mixer geben und frein pürieren.</p>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    </div>
+
+    <!-- Footer -->
+    <div id="footer" class="content-div">
         <hr class="separator">
         <a href="/">&lt;&lt; Zurück zur Startseite</a><br>
         <p style="text-align:center;"><i></i>Bearbeiten Modus:</i> <span id="edit-on">AN</span><span id="edit-off">AUS</span></p>
